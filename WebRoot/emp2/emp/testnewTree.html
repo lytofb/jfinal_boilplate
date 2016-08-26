@@ -1,0 +1,147 @@
+  <!--external css
+  <link rel="stylesheet" type="text/css" href="${base_path}/emp2/js/fuelux/css/tree-style.css" />
+-->
+ <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+ <!--
+<link href="http://www.fuelcdn.com/fuelux/3.10.0/css/fuelux.min.css" rel="stylesheet">
+-->
+<link href="${base_path}/emp2/js/fuelux/css/fuelux.css" rel="stylesheet">
+<link href="${base_path}/emp2/js/fuelux/css/tree.css" rel="stylesheet">
+
+<script src="${base_path}/emp2/js/jquery-1.10.2.min.js"></script>
+<script src="${base_path}/emp2/js/bootstrap.js"></script>
+<script src="${base_path}/emp2/js/fuelux/js/tree.js"></script>
+<script src="${base_path}/emp2/js/jsrender.js" type="text/javascript"></script>
+<script src="${base_path}/emp2/js/nnitScript.js" type="text/javascript"></script>
+<!--
+<script src="http://www.fuelcdn.com/fuelux/3.10.0/js/fuelux.min.js"></script>
+-->
+<script type="text/javascript">
+</script>
+<script>
+    _global_tempsave = [];
+    _global_selected = [];
+
+    var getTreeFromSaved = function(){
+      $('#treeIllustration').tree('destroy');
+      $('.treeFormDiv').html($("#treeFolderTemplate").render())
+      initTree(0).tree_fun();
+      $.each(_global_selected, function(index, val) {
+        if(val.type=='folder'){
+          $('#treeIllustration').tree('selectFolder', $('#'+val.attr.id))
+        } else if(val.type=='item'){
+          $('#treeIllustration').tree('selectItem', $('#'+val.attr.id))
+        }
+         /* iterate through array or object */
+      });
+    }
+
+    var initTree = function(type){
+      var function_type = type?type:1;
+      var savedStructure = [];
+      var set_structure = function(struct){
+        savedStructure = struct;
+      }
+      var set_functionType = function(type){
+        if (type==0) {
+          function_type = type;
+        } else {
+          function_type = 1;
+        }
+        return treeObject;
+      }
+      var get_functionType = function(){
+        return function_type;
+      }
+      var treeFunction = function(){
+        var that = this;
+        $('#treeIllustration').tree({
+          dataSource: function (options, callback) {
+            if(function_type==1){
+              var url = "getMemberMeta";
+              var fun = function(data){
+                callback({data: data})
+              }
+              var errfun = function(){}
+              var datatype = 'json';
+              var data = {};
+              if(options.attr){
+                data.parentId = options.attr.id;
+              }
+              data.element_id = 1;
+              data.userId = 1;
+              data.token = 1;
+              var deferred = commonPost(url,fun,errfun,datatype,data);
+            } else {
+              callback({data: _global_tempsave})
+              that.setType(1)
+            }
+          },
+          multiSelect: true,
+          cacheItems: true,
+          folderSelect: true,
+        });
+      }
+      var treeObject = {setType:set_functionType,getType:get_functionType,tree_fun:treeFunction,setStruct:set_structure}
+      return treeObject;
+    }
+
+    jQuery(document).ready(function() {
+    	initTree().tree_fun();
+   });
+
+  var getStructure = function(){
+    var rootDom = $("#treeIllustration>li").filter(":visible");
+    _global_tempsave =  recursively_getStructure(rootDom)
+    _global_selected = $('#treeIllustration').tree('selectedItems');
+  }
+
+  var recursively_getStructure = function(dom){
+    var structure = [];
+    $.each(dom, function(index, val) {
+      var itemType = 'item';
+      if($(val).hasClass("tree-branch")){
+        itemType = 'folder';
+      }
+      var a =$(val).attr("id");
+      var label_id = "#"+a+"-label";
+      var label_text = $(label_id).text();
+      if(itemType == 'item'){
+        label_text = $(val).find(".tree-label").text()        
+      }
+      var subnode = recursively_getStructure($(val).find(">.tree-branch-children:visible>li"))
+      var node = {text:label_text,type:itemType,attr:{id:a}};
+      if(subnode.length>0){
+        node.attr.subnode = subnode;
+      }
+      structure.push(node)
+       /* iterate through array or object */
+    });
+    return structure;
+  }
+
+</script>
+<#include "/emp2/common/treeFolerComp.html"/>
+<body>
+  <div class="form-group treeFormDiv">
+    <ul class="tree" role="tree" id="treeIllustration">
+      <li class="tree-branch hide" data-template="treebranch" role="treeitem" aria-expanded="false">
+        <div class="tree-branch-header">
+          <button type="button" class="tree-branch-name">
+            <span class="glyphicon icon-caret glyphicon-play"></span>
+            <span class="glyphicon icon-folder glyphicon-folder-close"></span>
+            <span class="tree-label"></span>
+          </button>
+        </div>
+        <ul class="tree-branch-children" role="group"></ul>
+        <div class="tree-loader" role="alert">Loading...</div>
+      </li>
+      <li class="tree-item hide" data-template="treeitem" role="treeitem">
+        <button type="button" class="tree-item-name">
+          <span class="glyphicon icon-item fueluxicon-bullet"></span>
+          <span class="tree-label"></span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</body>

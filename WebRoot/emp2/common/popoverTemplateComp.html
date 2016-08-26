@@ -1,0 +1,77 @@
+<script id="measureTemplate" type="text/x-jsrender">
+<div class="measureable">
+<div id="{{>chartuuid}}">
+<div class="modal-header" style="width:300px">
+  <button type="button" class="close popoverclose" data-dismiss="modal" aria-label="Close" data-main="{{>chartuuid}}"><span aria-hidden="true">×</span></button>
+  <h4 class="modal-title" class="popovertitle">数据条件</h4>
+</div>
+<div class="modal-body" style="width:300px">
+
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div style="padding-top:7px">
+          {{for numberdata ~parenttemp=tempcontent}}
+          {{if property =='0'}}
+          <div class="slide-toggle" style="padding-bottom:10px">
+            <input type="checkbox" class="js-switch{{if #index%4==1}}-blue{{else #index%4==2}}-pink{{else #index%4==3}}-yellow{{/if}}" {{if (columname== ~parenttemp.nameCheckedid)||(columname== ~parenttemp.nameCheckedid2)}}checked{{/if}}/>
+            <span style="padding-left: 10px;" class="ioslabel" displayname="{{>columname}}">{{>displayname}}</span>
+          </div>
+          {{/if}}              
+          {{/for}}
+        </div>              
+      </div>
+      <div class="col-md-6">
+        <div>
+          <form class="form-horizontal bucket-form" method="get">
+              <div class="form-group">
+                  <div class="col-sm-12 icheck ">
+                      <div class="square-red single-row">
+                          <div class="radio ">
+                              <input tabindex="3" type="radio"  name="demo-radio" {{if tempcontent.statisticsTypeCheckid ==0}}checked{{/if}} id="max" class="statisticsType" data-value="max">
+                              <label>最大值</label>
+                          </div>
+                      </div>
+
+                      <div class="square-green single-row">
+                          <div class="radio ">
+                              <input tabindex="3" type="radio"  name="demo-radio"  {{if tempcontent.statisticsTypeCheckid ==1}}checked{{/if}} id="min" class="statisticsType" data-value="min">
+                              <label>最小值</label>
+                          </div>
+                      </div>
+
+                      <div class="square-blue single-row">
+                          <div class="radio ">
+                              <input tabindex="3" type="radio"  name="demo-radio"  {{if tempcontent.statisticsTypeCheckid ==2}}checked{{/if}} id="sum" class="statisticsType" data-value="sum">
+                              <label>总和值</label>
+                          </div>
+                      </div>
+
+                      <div class="square-yellow single-row">
+                          <div class="radio ">
+                              <input tabindex="3" type="radio"  name="demo-radio"  {{if tempcontent.statisticsTypeCheckid ==3}}checked{{/if}} id="avg" class="statisticsType" data-value="avg">
+                              <label>平均值</label>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </form>
+        </div>                            
+      </div>
+    </div>
+  
+
+</div>
+
+<div class="modal-footer" style="width:300px">
+  <button type="button" class="btn btn-default popoverclose axislink" data-main="{{>chartuuid}}">关闭</button>
+  <button type="button" class="btn btn-primary modalformsave axislink" data-main="{{>chartuuid}}">保存修改</button>
+</div>
+</div>
+</div>
+</script>
+<script id="infoPopoverTemplate" type="text/x-jsrender">
+  <div style="width:260px;padding: 9px 14px;">
+    <p>我的天啊，你们到底用了什么魔法</p>
+  </div>
+</script>

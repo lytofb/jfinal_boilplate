@@ -1,0 +1,72 @@
+<script id="axisModalTemplate" type="text/x-jsrender">
+        <!-- modal start here -->
+    <div class="modal-dialog lefttop">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="gridSystemModalLabel">Y轴选择</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-5 col-md-offset-1">
+        <div style="padding-top:7px">
+          {{for numberdata ~parenttemp=tempcontent}}
+          {{if property =='0'}}
+         <div class="slide-toggle" style="padding-bottom:10px">
+                    <input type="checkbox" class="js-switch{{if #index%4==1}}-blue{{else #index%4==2}}-pink{{else #index%4==3}}-yellow{{/if}}" {{if columname== ~parenttemp.nameCheckedid}}checked{{/if}}/>
+                    <span style="padding-left: 10px;" class="ioslabel" displayname="{{>columname}}">{{>displayname}}</span>
+                    </div>
+          {{/if}}              
+          {{/for}}
+                </div>              
+        </div>
+              <div class="col-md-5 col-md-offset-1">
+                <div>
+                  <form class="form-horizontal bucket-form" method="get">
+                      <div class="form-group">
+                          <div class="col-sm-12 icheck ">
+                              <div class="square-red single-row">
+                                  <div class="radio ">
+                                      <input tabindex="3" type="radio"  name="demo-radio" {{if statisticsTypeCheckid ==0}}checked{{/if}} id="max" class="statisticsType" data-value="max">
+                                      <label>最大值</label>
+                                  </div>
+                              </div>
+
+                              <div class="square-green single-row">
+                                  <div class="radio ">
+                                      <input tabindex="3" type="radio"  name="demo-radio" {{if statisticsTypeCheckid ==1}}checked{{/if}} id="min" class="statisticsType" data-value="min">
+                                      <label>最小值</label>
+                                  </div>
+                              </div>
+
+                              <div class="square-blue single-row">
+                                  <div class="radio ">
+                                      <input tabindex="3" type="radio"  name="demo-radio" {{if statisticsTypeCheckid ==2}}checked{{/if}} id="sum" class="statisticsType" data-value="sum">
+                                      <label>总和值</label>
+                                  </div>
+                              </div>
+
+                              <div class="square-yellow single-row">
+                                  <div class="radio ">
+                                      <input tabindex="3" type="radio"  name="demo-radio" {{if statisticsTypeCheckid ==3}}checked{{/if}} id="avg" class="statisticsType" data-value="avg">
+                                      <label>平均值</label>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+                </div>              
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary modalformsave axislink">保存修改</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>

@@ -1,0 +1,48 @@
+<script id="groupPopoverTemplate" type="text/x-jsrender">
+<div class="groupable">
+<div id="{{>chartuuid}}">
+<div class="modal-header" style="width:400px">
+  <button type="button" class="close popoverclose" data-dismiss="modal" aria-label="Close" data-main="{{>chartuuid}}"><span aria-hidden="true">×</span></button>
+  <h4 class="modal-title" class="popovertitle">分组信息</h4>
+</div>
+  <div class="modal-body" style="width:400px">
+      <div class="row">
+        <div class="col-md-6">
+           <div>
+            <form class="form-horizontal bucket-form" method="get">
+                <div class="form-group">
+                    <div class="col-sm-12 icheck ">
+                        {{for groupdata ~parenttemp=tempcontent}}
+                        <div class="square-{{if #index%4==0}}red{{else #index%4==1}}green{{else #index%4==2}}blue{{else #index%4==3}}yellow{{/if}} single-row">
+                            <div class="radio ">
+                                <input tabindex="3" type="radio"  name="demo-radio" class="firstGroup" data-value="{{>columname}}" {{if columname== ~parenttemp.groupstatisticsTypeCheckid}}checked{{/if}}>
+                                <label>{{>displayname}}</label>
+                            </div>
+                        </div>
+                        {{/for}}
+                    </div>
+                </div>
+            </form>
+          </div>              
+        
+        </div>
+        <div class="col-md-6">
+        <div style="padding-top:7px">
+          {{for groupdata}}
+          <div class="slide-toggle" style="padding-bottom:10px">
+                    <input type="checkbox" class="js-switch{{if #index%4==1}}-blue{{else #index%4==2}}-pink{{else #index%4==3}}-yellow{{/if}}" {{if columname==#parent.parent.data.tempcontent.groupnameCheckedid}}checked{{/if}}/>
+                    <span style="padding-left: 10px;" class="ioslabel" displayname="{{>columname}}">{{>displayname}}</span>
+                    </div>
+          {{/for}}
+          </div>              
+        </div>
+      </div>
+  </div>
+</div>
+<div class="modal-footer" style="width:400px">
+  <button type="button" class="btn btn-default popoverclose axislink" data-main="{{>chartuuid}}">关闭</button>
+  <button type="button" class="btn btn-primary modalformsave axislink" data-main="{{>chartuuid}}">保存修改</button>
+</div>
+</div>
+</div>
+</script>

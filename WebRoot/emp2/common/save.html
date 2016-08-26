@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>Login</title>
+
+</head>
+<body>
+        <input type="text" name="erro" id="error_code">
+        <button id="test4" class="templateSaveBtn" type="button">test4</button>
+        <button id="btn" class="templateSaveBtn" type="button">Submit</button>
+        
+        
+</body> 
+<script src="${base_path}/emp2/js/bootstrap.min.js"></script>
+<script src="${base_path}/emp2/js/modernizr.min.js"></script>
+<script src="${base_path}/emp2/js/jquery-1.10.2.min.js"></script>
+<script src="${base_path}/emp2/js/layer.js"></script>
+<script type="text/javascript">
+	var data = {};
+	data.userId = ${userid};
+	data.token = 1;
+	data.templates = [];
+	data.template_name ="临时模板测试"; 
+	data.template_id = "-1";
+	data.isTemplate = 1;
+	var datacontent = {};
+	var templateDataA = {};
+	var templateDataB = {};
+	var templateDataC = {};
+	var templateDataD = {};
+	$(document).on('click', '.templateSaveBtn', function(event) {
+		
+		var error_code = $("#error_code").val();
+		getTemplateBycode(error_code);
+		var url = "/eco/saveTemplate";
+		var fun = function (result) {
+			alert(result.template_id);
+			window.location.href = "/eco/main_page?template_id="+result.template_id;
+		};
+		var errfun = function () {};
+		var datatype = 'json';
+		var datatemplate = data;
+		commonPost(url,fun,errfun,datatype,datatemplate,false);
+		
+		
+		});
+	
+	function getTemplateBycode(error_code){
+		if(error_code==""){
+			error_code="500101";
+		}
+		templateDataA.datatype = 3;
+		templateDataA.graphtype = "pie";
+		templateDataA.schemaid = 15;
+		datacontent.filetercolumn=[{"itemName":"districtid","operator":"=","value":error_code,"displayName":"区域编码"}]  
+		datacontent.numbercolumn= [{
+	            "element": "energyvalue",
+	            "functionName": "max"
+	        }]
+		datacontent.groupcolumn=["energycodename"]; 
+		datacontent.fileterGroupColumn=[];
+		templateDataA.datacontent = datacontent;
+		templateDataA.containerId = "#chart";
+		data.templates.push(templateDataA);
+		datacontent = {};
+		templateDataB.datatype = 1;
+		templateDataB.graphtype = "pie";
+		templateDataB.schemaid = 15;
+		datacontent.filetercolumn=[{"itemName":"districtid","operator":"=","value":error_code,"displayName":"区域编码"}]  
+		datacontent.numbercolumn= [{
+            "element": "energyvalue",
+            "functionName": "max"
+        }]
+		datacontent.groupcolumn=["enterprisename"];
+		datacontent.fileterGroupColumn=[];
+		templateDataB.datacontent = datacontent;
+		templateDataB.containerId = "#chartA";
+		data.templates.push(templateDataB);
+		
+		templateDataC.datatype = 1;
+		templateDataC.graphtype = "column_complex";
+		templateDataC.schemaid = 15;
+		datacontent = {};
+		datacontent.filetercolumn=[{"itemName":"districtid","operator":"=","value":+error_code,"displayName":"区域编码"}]  
+		datacontent.numbercolumn= [{
+            "element": "energyvalue",
+            "functionName": "max"
+        }]
+		datacontent.groupcolumn=["energycodename",
+            					 "time_month"];
+		datacontent.fileterGroupColumn=[];
+		templateDataC.datacontent = datacontent;
+		templateDataC.containerId = "#chartB";
+		data.templates.push(templateDataC);
+		
+		templateDataD.datatype = 1;
+		templateDataD.graphtype = "line";
+		templateDataD.schemaid = 15;
+		datacontent = {};
+		datacontent.filetercolumn=[{"itemName":"districtid","operator":"=","value":error_code,"displayName":"区域编码"}]  
+		datacontent.numbercolumn= [{
+            "element": "energyvalue",
+            "functionName": "max"
+        }]
+		datacontent.groupcolumn=["enterprisename"];
+		datacontent.fileterGroupColumn=[];
+		templateDataD.datacontent = datacontent;
+		templateDataD.containerId = "#chartC";
+		data.templates.push(templateDataD);
+		data.templates = JSON.stringify(data.templates);
+	}
+	  
+	function commonPost(url,fun,errfun,datatype,data,async){
+		  if (!datatype) {
+			datatype="text"
+		  };
+		  if (!async) {
+		  	async = false;
+		  };
+		  $.ajax({
+		      url:url,
+		      dataType:datatype,
+		      async:async,
+		      type: "POST",
+		      success:fun,
+		      data:data
+		  }).fail(
+		  	  errfun
+		  )
+	}
+	  
+	</script>
+
+	</html>
+		
+

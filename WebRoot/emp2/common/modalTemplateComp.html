@@ -1,0 +1,40 @@
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="modaldom" class="modal fade" style="display: none;">
+</div>
+<script id="modalDomTemplate" type="text/x-jsrender">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+            <h4 class="modal-title">{{>title}}</h4>
+        </div>
+        <div class="modal-body">
+            {{>message}}
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default confirmModalCloseButton" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-success confirmModalButton">确定</button>
+        </div>
+    </div>
+</div>
+</script>
+<script>
+var confirmproxy = function(foo,title,message){
+    $("#modaldom").html($("#modalDomTemplate").render({title:title,message:message}))
+    $("#modaldom").modal("show")
+    // var thatarguments = arguments;
+    var thatarguments = Array.prototype.slice.call( arguments, 3 );
+    $(document).one('click', '.confirmModalButton', function(event) {
+        event.preventDefault();
+        $.proxy(foo,undefined,thatarguments)()
+        $("#modaldom").modal("hide")
+        // foo()
+    });
+    $(document).one('click', '.confirmModalCloseButton', function(event) {
+        event.preventDefault();
+        $("#modaldom").modal("hide")
+    });
+}
+
+$(function(){
+})
+</script>

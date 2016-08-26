@@ -1,0 +1,124 @@
+.tree {
+  border: 1px solid #999999;
+  border-radius: 4px 4px 4px 4px;
+  padding: 10px 15px 0 15px;
+  overflow-x: auto;
+  overflow-y: auto;
+  position: relative;
+  list-style: none;
+}
+.tree *:focus {
+  outline: none;
+}
+.tree button:focus {
+  color: #999999;
+}
+.tree ul {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.tree li {
+  margin: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.tree .tree-loader {
+  margin-left: 45px;
+}
+.tree .tree-open > .tree-branch-header .glyphicon-play {
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  position: relative;
+}
+.tree [data-children=false] > .tree-branch-header .icon-caret:before {
+  content: '\00a0';
+}
+.tree .tree-branch .tree-branch-header {
+  position: relative;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.tree .tree-branch .tree-branch-header .tree-branch-name:hover {
+  color: #999999;
+}
+.tree .tree-branch .tree-branch-header .glyphicon-play {
+  font-size: 10px;
+  padding-right: 5px;
+  padding-left: 7px;
+}
+.tree .tree-branch .tree-branch-header .glyphicon-play:before {
+  position: relative;
+  top: -2px;
+}
+.tree .tree-branch .tree-branch-header .tree-branch-name {
+  white-space: nowrap;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 0;
+}
+.tree .tree-branch .tree-branch-header label {
+  font-weight: normal;
+  padding-left: 3px;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+.tree .tree-branch .tree-branch-children {
+  margin-left: 14px;
+}
+.tree .tree-branch[haschildren='false'] .icon-caret,
+.tree .tree-branch[data-has-children='false'] .icon-caret {
+  visibility: hidden;
+}
+.tree .tree-item {
+  white-space: nowrap;
+  position: relative;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-left: 26px;
+}
+.tree .tree-item .tree-item-name {
+  white-space: nowrap;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 0;
+}
+.tree .tree-item .tree-item-name:hover {
+  color: #999999;
+}
+.tree .tree-item.tree-selected .tree-item-name {
+  background-color: #efefef;
+  color: #333333;
+}
+.tree .tree-item label {
+  font-weight: normal;
+  padding-left: 7px;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+.tree .icon-caret:hover + .tree-branch-name {
+  color: #999999;
+}
+.tree.tree-folder-select .tree-branch .icon-caret {
+  background-color: transparent;
+  border: 0;
+}
+.tree.tree-folder-select .tree-branch .icon-caret:hover {
+  cursor: pointer;
+  color: #999999;
+}
+.tree.tree-folder-select .tree-branch > .tree-branch-name {
+  padding: 1px 5px 0 5px;
+  border-radius: 6px;
+}
+.tree.tree-folder-select .tree-branch > .tree-branch-name.tree-selected {
+  background-color: #efefef;
+}
+.tree.tree-folder-select .tree-branch.tree-selected > .tree-branch-header .tree-branch-name {
+  background-color: #efefef;
+}
+.tree.tree-folder-select .tree-branch.tree-selected > .tree-branch-header .tree-branch-name:hover {
+  background-color: #efefef;
+}

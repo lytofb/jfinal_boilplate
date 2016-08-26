@@ -1,0 +1,7 @@
+<script id="groupTagTemplate" type="text/x-jsrender">
+{{for groupdata}}
+{{if #index<3}}
+<li class="{{if #getIndex()==0}}active{{/if}} grouptag axislink" data-value="{{>columname}}"><a href="javascript:void(0)">{{>displayname}}</a></li>
+{{/if}}
+{{/for}}
+</script>

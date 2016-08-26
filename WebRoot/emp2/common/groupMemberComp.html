@@ -1,0 +1,11 @@
+   
+          <div class="col-sm-12 icheck groupOptions sub_category" data-parent="{{>parent_id}}" data-level = "{{>l_id}}">
+            {{for memberdata}}
+            <div class="minimal">
+                <div class="checkbox ">
+                    <input type="checkbox" data-value="{{>m_name}}"  class="groupFilterDetailInput">
+                    <label>{{>m_name}}</label>
+                </div>
+            </div>
+            {{/for}}
+          </div>

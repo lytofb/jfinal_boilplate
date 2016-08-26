@@ -1,0 +1,22 @@
+<script id="tableTdTemplate" type="text/x-jsrender">
+<tr class="gradeA">
+    {{for}}
+	<td>{{>#data}}</td>
+    {{/for}}
+</tr>
+</script>
+<script id="tableTheadTemplate" type="text/x-jsrender">
+{{for}}
+    <th>{{>#data}}</td>
+{{/for}}
+</script>
+<script id="tableTemplate" type="text/x-jsrender">
+<table class="display table table-bordered" id="hidden-table-info">
+<thead>
+<tr id="tableTheadTemplateTarget">
+</tr>
+</thead>
+<tbody id="tableTdTemplateTarget">
+</tbody>
+</table>
+</script>

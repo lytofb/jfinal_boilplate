@@ -1,0 +1,3312 @@
+<#include "/emp2/common/_layout.html"/>
+    <@css>
+  <!--pickers css-->
+	<link rel="stylesheet" type="text/css" href="${base_path}/emp2/js/bootstrap-datepicker/css/datepicker-custom.css" />
+	<link rel="stylesheet" type="text/css" href="${base_path}/emp2/js/bootstrap-timepicker/css/timepicker.css" />
+	<link rel="stylesheet" type="text/css" href="${base_path}/emp2/js/bootstrap-colorpicker/css/colorpicker.css" />
+	<link rel="stylesheet" type="text/css" href="${base_path}/emp2/js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+	<link rel="stylesheet" type="text/css" href="${base_path}/emp2/js/bootstrap-datetimepicker/css/datetimepicker-custom.css" />
+    <!--ios7-->
+    <link rel="stylesheet" type="text/css" href="${base_path}/emp2/js/ios-switch/switchery.css" />
+    <!--icheck-->
+    <link href="${base_path}/emp2/js/iCheck/skins/minimal/minimal.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/iCheck/skins/minimal/red.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/iCheck/skins/minimal/green.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/iCheck/skins/minimal/blue.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/iCheck/skins/minimal/yellow.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/iCheck/skins/minimal/purple.css" rel="stylesheet">
+
+    <link href="${base_path}/emp2/js/iCheck/skins/square/square.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/iCheck/skins/square/red.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/iCheck/skins/square/green.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/iCheck/skins/square/blue.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/iCheck/skins/square/yellow.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/iCheck/skins/square/purple.css" rel="stylesheet">
+
+    <link href="${base_path}/emp2/js/iCheck/skins/flat/grey.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/iCheck/skins/flat/red.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/iCheck/skins/flat/blue.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/iCheck/skins/flat/yellow.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/iCheck/skins/flat/purple.css" rel="stylesheet">
+    <!--tags input-->
+    <link rel="stylesheet" type="text/css" href="${base_path}/emp2/js/jquery-tags-input/jquery.tagsinput.css" />
+	<!--iron slider-->
+	<link href="${base_path}/emp2/js/ion.rangeSlider-1.8.2/css/ion.rangeSlider.css" rel="stylesheet" />
+	<link href="${base_path}/emp2/js/ion.rangeSlider-1.8.2/css/ion.rangeSlider.skinFlat.css" rel="stylesheet"/>
+	<!-- datatable -->
+    <link href="${base_path}/emp2/js/advanced-datatable/css/demo_page.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/advanced-datatable/css/demo_table.css" rel="stylesheet">
+    <!-- 
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+     -->
+    <link href="${base_path}/emp2/js/data-tables/DT_bootstrap.css" rel="stylesheet">
+    <!-- tree css -->
+    <link href="${base_path}/emp2/js/fuelux/css/fuelux.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/fuelux/css/tree.css" rel="stylesheet">
+    <!-- gridster css -->
+    <link href="${base_path}/emp2/js/gridster/jquery.gridster.css" rel="stylesheet">
+    <link href="${base_path}/emp2/js/gridster/gridster_demo.css" rel="stylesheet">
+    </@css>
+	<@layout>
+    <link href="${base_path}/emp2/css/mainPageStyle.css" rel="stylesheet">
+        <!-- page heading start-->
+        <!-- 
+        <div class="page-heading">
+            <h3>仪表盘</h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="#">重庆节能中心</a>
+                </li>
+                <li class="active"> 仪表盘 </li>
+            </ul>
+        </div>
+         -->
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <sk id="mainboard">
+<div class="row"><div class="col-md-6"><section class="panel chartclass"></section></div><div class="col-md-6"><section class="panel chartAclass"></section></div></div><div class="row"><div class="col-md-6"><section class="panel chartBclass"></section></div><div class="col-md-6"><section class="panel chartCclass"></section></div></div>
+            </sk>
+
+<!--
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <section class="panel chartclass">
+                            </section>                        
+                        </div>
+                        <div class="col-md-4">
+                            <section class="panel chartBclass">
+                            </section>                        
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                        <section class="panel chartCclass">
+                        </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <section class="panel chartAclass">
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- modal start here  -->
+        <div class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" id="gridSM">
+		</div>
+<#include "/emp2/common/axisModalTemplate.html"/>
+<#include "/emp2/common/dataSourceComp.html"/>
+<#include "/emp2/common/groupComp.html"/>
+<div class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" id="groupModal">
+ </div>
+<#include "/emp2/common/filterComp.html"/>
+<div class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" id="filterModal">
+</div>
+<#include "/emp2/common/templateSaveModalComp.html"/>
+<div class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" id="templateModal">
+<#include "/emp2/common/templateModalComp.html"/>
+</div>
+<#include "/emp2/common/layoutAdjustComp.html"/>
+<div class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" id="layoutTemplateModal">
+<#include "/emp2/common/layoutComp.html"/>
+</div>
+<#include "/emp2/common/commentModalComp.html"/>
+<div class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" id="commentModal">
+</div>
+<#include "/emp2/common/groupFilterComp.html"/>
+<div class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" id="groupFilterModal">
+</div>
+<#include "/emp2/common/othersFunction.html"/>
+<div class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" id="othersFunctionModal">
+</div>
+<#include "/emp2/common/treeGroupFilterComp.html"/>
+<div class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" id="treeGroupFilterModal">
+</div>
+<!-- modal Form-->
+<div class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" aria-hidden="true" id="modalForm">
+<#include "/emp2/common/modalFormComp.html"/>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">保存模板</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form class="form-horizontal" role="form">
+                <div class="form-group has-success adv-table">
+                  <table class="display table table-bordered" id="hidden-table-info">
+                  <thead>
+                  <tr id="tableTheadTemplateTarget">
+                    <th>企业名称</td>
+                    <th>行业</td>
+                    <th>综合能耗</td>
+                  </tr>
+                  </thead>
+                  <tbody id="tableTdTemplateTarget">
+                  </tbody>
+                  </table>
+                </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- popoverTemplate -->
+<#include "/emp2/common/popoverTemplateComp.html"/>
+<!-- popoverTemplate -->
+<#include "/emp2/common/groupPopoverComp.html"/>
+<!-- chartTemplate -->
+<#include "/emp2/common/chartComp.html"/>
+<#include "/emp2/common/cwtpTableTemplateComp.html"/>
+<#include "/emp2/common/cwtpTableComp.html"/>
+<#include "/emp2/common/graphTypeComp.html"/>
+
+<div id="standalone">
+<div style="position:fixed;top:0;right:200px;width:200px;height:100px;z-index: 1">
+    <!--
+    <button class="btn btn-default filterButton axislink">
+        <i class="fa fa-filter"></i>
+    </button>
+    -->
+    <button class="btn btn-default configButton axislink">
+        <i class="fa fa-cogs"></i>
+    </button>
+    <button class="btn btn-default GroupFilterButton axislink" style="display:inline">
+        <i class="fa  fa-align-justify"></i>
+    </button>
+    <button class="btn btn-default close_standalone axislink" type="button">
+        <i class="fa fa-compress"></i>
+    </button>
+</div>
+<div id="popupHighcharts"></div>
+<!--
+    <button class="standalone_close active_bg_open btn btn-default">Next example</button>
+    <button class="standalone_close btn btn-default">Close</button>
+-->
+</div>
+</pre>
+
+</@layout>
+<@script>
+		<script src="${base_path}/emp2/js/ios-switch/switchery.js" ></script>
+		<!-- 
+		<script src="${base_path}/emp2/js/ios-switch/ios-init.js" ></script>
+		 -->
+		<!--icheck -->
+		<script src="${base_path}/emp2/js/iCheck/jquery.icheck.js"></script>
+		<script src="${base_path}/emp2/js/icheck-init.js"></script>
+
+		<!--tags input-->
+		<script src="${base_path}/emp2/js/jquery-tags-input/jquery.tagsinput.js"></script>
+		<!--ionRangeSlider input-->
+		
+		<!-- 
+		 -->
+		<script src="${base_path}/emp2/js/ion.rangeSlider-1.8.2/js/ion.rangeSlider.js"></script>
+		 <!-- 
+		<script src="${base_path}/emp2/js/ion.rangeSlider-1.8.2/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+		 -->
+		<script src="${base_path}/emp2/js/tagsinput-init.js"></script>
+		<!--pickers plugins-->
+		<script type="text/javascript" src="${base_path}/emp2/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+		<script type="text/javascript" src="${base_path}/emp2/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+		<!-- 
+		<script type="text/javascript" src="${base_path}/emp2/js/bootstrap-daterangepicker/moment.min.js"></script>
+		 -->
+		<script src="${base_path}/emp2/js/moment/moment-with-locales.js"></script>
+		<script type="text/javascript" src="${base_path}/emp2/js/bootstrap-daterangepicker/daterangepicker.js"></script>
+		<script type="text/javascript" src="${base_path}/emp2/js/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+		<script type="text/javascript" src="${base_path}/emp2/js/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+		<!--pickers initialization-->
+		<script src="${base_path}/emp2/js/pickers-init.js"></script>
+        <script src="${base_path}/emp2/js/fuelux/js/tree.js"></script>
+
+        <!-- popupoverlay  -->
+        <script src="${base_path}/emp2/js/popupoverlay/jquery.popupoverlay.js" type="text/javascript"></script>
+		<!--  
+		<script src="http://172.28.217.44:18004/target/target-script-min.js#anonymous"></script>
+		 -->
+         <!-- datatable -->
+         <!-- 
+        <script type="text/javascript"
+            src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.js"></script>
+             -->
+        <script type="text/javascript"
+            src="${base_path}/emp2/js/jquery.dataTables110.js"></script>
+        <!-- 
+        <script type="text/javascript"
+            src="${base_path}/emp2/js/advanced-datatable/js/jquery.dataTables.js"></script>
+         -->
+        <script type="text/javascript"
+            src="${base_path}/emp2/js/data-tables/DT_bootstrap.js"></script>
+        <script type="text/javascript"
+            src="${base_path}/emp2/js/gridster/jquery.gridster.js"></script>
+        <script type="text/javascript"
+            src="${base_path}/emp2/js/jqswipe/jquery.touchSwipe.js"></script>
+
+		<script type="text/javascript">
+		_global_count = {};
+		_global_switchery={};
+		_global_chart={};
+        _temp_chart = {};
+		_global_domSelectorMap = {};
+        _global_template = [];
+        _temp_template = [];
+        _temp_remove_array = [];
+		_window_height = $(window).height();
+		_window_width = $(window).width();
+        uuidArray = []
+        temp_uuidArray = [];
+
+		var categoryArray = []
+		var categoryArrayMap = {};
+		var seriesArray = []
+        var meta_data = [];
+		var seriesArrayMap = {};
+		var schema_data = {};
+		var schema_dict = {};
+		var controller_data = {};
+        var temp_controller_data = {};
+		var template_id = ${template_id!-1};
+        var session_schema_id = ${schema_id!-1};
+        var layoutSavedFlag = false;
+
+        //dataTable filterinput style
+        $.fn.dataTableExt.oStdClasses["sFilterInput"] = "form-control";
+
+		var initgridSM = function (data,uuid) {
+			data.statisticsTypeCheckid = controller_data[uuid].tempcontent.statisticsTypeCheckid
+			$( "#gridSM" ).html(
+				$( "#axisModalTemplate" ).render( data )
+			);
+			initIcheck();
+		}
+		
+        var initGroupFilterModal = function (data) {
+            $( "#groupFilterModal" ).html(
+                $( "#groupFilterTemplate" ).render(data)
+            );
+            initIcheck();
+        }
+        
+        var initOthersFunction  = function (data,uuid){
+        	data.uuid = uuid;
+        	$( "#othersFunctionModal").html(
+        		$( "#othersFunctionTemplate").render(data)
+        	);
+        }
+
+        var initTreeGroupFilterModal = function (uuid) {
+            $( "#treeGroupFilterModal" ).html(
+                $( "#treeGroupFilterTemplate" ).render({chartuuid:uuid})
+            );
+        }
+
+		var initgroupModal = function (data) {
+			$( "#groupModal" ).html(
+				$( "#groupModalTemplate" ).render( data )
+			);
+			initIcheck();
+		}
+
+		var initfilterModal = function (data,uuid) {
+			data.uuid = uuid;
+			$( "#filterModal" ).html(
+				$( "#filterModalTemplate" ).render( data )
+			);
+		}
+
+		var initGroupTags = function (data,uuid) {
+			var groupSelector = getChart(uuid).domSelector;
+			$(groupSelector).parentsUntil('section').find(".grouptags").each(function(index, val) {
+					 /* iterate through array or object */
+					var that = this;
+					$(this).html(
+						$(this).find('#groupTagTemplate').render(data[uuid])
+					)
+				}
+			);
+		}
+
+		var initTemplateSelector = function () {
+			var url = "getTemplate"
+			var fun = function (data) {
+				if(data.msg_code =="0x200001"){
+					var templates = data.template;
+					// $.each(templates, function(index, val) {
+					// 	var template_name = val.template_name;
+					// 	val.template_name = template_name.substring(0,2)+".."
+					// });
+					if(template_id<0&&templates.length>0) {
+						template_id = templates[0].template_id;
+					}
+					var htmlContent = $("#templateSelectorTemplate").render(data);
+					var saveTemplateButtonContent = $("#templateSelectorButtonTemplate").render();
+					$("#templateSelector").html(
+						htmlContent
+					)
+					$("#templateSelectorButton").html(
+						saveTemplateButtonContent
+					);
+				} else {
+					console.log(data.msg_code);
+				}
+			};
+			var errfun = function (){
+
+			};
+			var datatype = 'json';
+			var data = {};
+			data.userId = ${userid};
+			data.token = 1;
+			data.schemaId = window.schema_dict[session_schema_id].schemaid;
+			var async = true;
+			return commonPost(url,fun,errfun,datatype,data);
+			// commonPost(url,fun,errfun,datatype,data,async);
+		}
+
+        var initlayoutAdjuster = function(){
+            var layoutButtonContent = $("#layoutButtonTemplate").render();
+            $("#layoutButton").html(
+                layoutButtonContent
+            );
+            if (controller_data.position) {
+                $("#layoutTemplateModal").html($("#layoutAdjustTemplate").render(controller_data))
+            };
+            initGridster();
+        }
+
+		var initSchemaSelector = function() {
+			schema_data.current = window.schema_dict[session_schema_id].schemaname;
+			var schemaSelectorContent = $("#schemaSelectorTemplate").render(schema_data);
+			$("#schemaSelector").html(
+				schemaSelectorContent
+			)
+		}
+
+		var initios = function(domSelector,chartuuid){
+			delete _global_chart[chartuuid][".measureable #"+chartuuid]
+			setTimeout(function(){
+				renderSwitch(chartuuid,domSelector,' .js-switch');
+				renderSwitch(chartuuid,domSelector,' .js-switch-blue','#41b7f1');
+				renderSwitch(chartuuid,domSelector,' .js-switch-pink','#ff7791');
+				renderSwitch(chartuuid,domSelector,' .js-switch-teal','#3cc8ad');
+				renderSwitch(chartuuid,domSelector,' .js-switch-red','#db5554');
+				renderSwitch(chartuuid,domSelector,' .js-switch-yellow','#fec200');				
+			},10);  
+			
+		}
+		
+		
+		var renderSwitch = function (chartuuid,selector,switchClass,color){
+			var chartObject = _global_chart[chartuuid];
+			switchClass = selector + switchClass;
+			if(!chartObject[selector]){
+				chartObject[selector]={};
+			}
+			if(!chartObject[selector]['switcher']){
+				chartObject[selector]['switcher']={};
+			}
+			var elems = Array.prototype.slice.call($(switchClass));
+			// var elems = Array.prototype.slice.call(document.querySelectorAll(selector));
+			elems.forEach(function(html) {
+				var switchery={};
+				if (color) {
+				    switchery = new Switchery(html, { color: color });					
+				} else {
+					switchery = new Switchery(html);
+				}
+				if(switchery.switcher){
+					var uuid = guid();
+					$(switchery.switcher).on("mouseup",function (argument) {
+						// body...
+						switchClick(this.uuid,chartuuid,selector);
+						//console.log(this.uuid);
+					})
+					switchery.switcher.uuid = uuid;
+					chartObject[selector]['switcher'][uuid]=switchery;
+					if(!_global_switchery[chartuuid]){
+						_global_switchery[chartuuid]=[];
+					}
+					_global_switchery[chartuuid].push(switchery)
+				}
+			});
+		}
+
+		var switchClick = function (uuid,chartuuid,selector) {
+			// body...
+			if(selector.startsWith(".groupable")){
+				$.each(_global_switchery[chartuuid], function (index) {
+					if(_global_switchery[chartuuid][index].element.checked){
+						if(uuid!=_global_switchery[chartuuid][index].switcher.uuid){
+							$(_global_switchery[chartuuid][index].switcher).click();
+						}
+					}
+				})
+			}
+		}
+
+        var drawChartShowLegend = function(data_height,domSelector,categoryArray,seriesArray,type,height,width){
+            drawChartA(data_height,domSelector,categoryArray,seriesArray,type,height,width,true)
+        }
+
+		var drawChartA=function(data_height,domSelector,categoryArray,seriesArray,type,height,width,showLegend){
+			var tempCategory = categoryArray;
+			var tempSeries = seriesArray;
+			if(tempCategory){
+				tempCategory = JSON.parse(JSON.stringify(tempCategory));
+			}
+			if(tempSeries){
+				tempSeries = JSON.parse(JSON.stringify(tempSeries));
+			}
+			if(!type){
+				type='line';
+			}
+			if(!height){
+                // height = (_window_height-310)/2+32+10;
+                // height = eval("height*"+data_height);
+                height = eval("(_window_height-70)*"+data_height+"-80");
+                // height = (_window_height-310)/2;
+//				height = (_window_height-310)/2+25+32+40;
+			}
+            if(!showLegend){
+                showLegend = false;
+            }
+			var HCoption = 
+			{
+		    	chart:{
+		    		type:type,
+		    		height:height,
+		    	},
+		    	exporting:{
+		    		enabled:false	
+		    	},
+		        title: {
+		            text: null,
+		            x: -20 //center
+		        },
+		        subtitle: {
+		            text: null,
+		            x: -20
+		        },
+		        xAxis: {
+		            categories: tempCategory
+		        },
+		        yAxis:[{ // Primary yAxis
+		            labels: {
+
+		            },
+		            title: {
+		                text: null
+		            }
+		        }, { // Secondary yAxis
+		            title: {
+		            	text: null
+		            },
+		            labels: {
+
+		            },
+		            opposite: true
+		        }],
+		        tooltip: {
+		            valueSuffix: null,
+                    positioner: function () {
+                        return { x: 80, y: 0 };
+                    },
+                    crosshairs: {
+                        width: 2,
+                        color: 'gray',
+                        dashStyle: 'shortdot'
+                    }
+		        },
+		        legend: {
+			      	layout: 'vertical',
+		            align: 'left',
+		            x: 120,
+		            verticalAlign: 'top',
+		            y: 100,
+		            floating: true,
+		            backgroundColor: '#FFFFFF',
+		        	enabled:showLegend,
+		            borderWidth: 0
+		        },
+		        credits: {  
+		        	  enabled: false  
+		        },
+		        series: tempSeries		
+			}
+            if(HCoption.series){
+                $.each(HCoption.series, function(index, val) {
+                    HCoption.series[index] = $.extend(true, 
+                        {"events":
+                            {"click":function(events){
+                                $(event.currentTarget.parentElement).find(".detailImg").remove();
+                                var offsetX = event.offsetX;
+                                var offsetY = event.offsetY;
+                                var topPosition = 10;
+                                if(offsetY<110){
+                                    topPosition = 250;
+                                }
+                                $(event.currentTarget.parentElement).append('<div class="detailImg" style="position: absolute;top: '+topPosition+'px;left: '+(offsetX-50)+'px;"><img src="${base_path}/emp2/images/photos/lizhou.png" alt=""></div>');
+                            },
+                            }
+                        }, val);
+                });                
+            }
+            if(HCoption.chart){
+                HCoption.chart = $.extend(true, {"events":{"click":function(events){
+                    $(events.currentTarget.container.parentElement).find(".detailImg").remove();
+                }}}, HCoption.chart);
+                
+            }
+            
+            if(type=='column_complex'){
+                type='column';
+                var plotOptions = {column:{stacking:'normal'}};
+                HCoption.plotOptions = plotOptions;
+                HCoption.chart.type = type;
+            }
+            
+			if(width){
+				HCoption.chart.width=width;
+			}
+		    $(domSelector).highcharts(HCoption);
+		}
+
+        var drawDrillDownChart = function(data_height,domSelector,dataSeries,height){
+            if(!height){
+                // height = (_window_height-310)/2+32+10;
+                // height = eval("height*"+data_height);
+                height = eval("(_window_height-70)*"+data_height+"-80");
+                // height = (_window_height-310)/2;
+ //               height = (_window_height-310)/2+25+32+40;
+            }
+            var chartSeries = dataSeries.series?dataSeries.series:dataSeries
+            var drilldown = dataSeries.drilldown;
+            var options = {
+                chart:{
+                    type:'column',
+                    height:height
+                },
+                title:{
+                    text:null
+                },
+                tooltip:{
+                    positioner: function () {
+                        return { x: 80, y: 0 };
+                    },                    
+                },
+                xAxis: {
+                    type: 'category'
+                },
+                exporting:{
+                    enabled:false
+                },
+                credits:{
+                    enabled:false
+                },
+                plotOptions: {
+                    series: {
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: true,
+                        }
+                    }
+                },
+                series:chartSeries,
+                drilldown:drilldown
+            };
+            $(domSelector).highcharts(options);
+        }
+
+		var drawPieChart = function (data_height,domSelector,dataSeries,datatype,height) {
+			// body...
+			if(!height){
+                // height = (_window_height-310)/2+32+10;
+                // height = eval("height*"+data_height);
+                height = eval("(_window_height-70)*"+data_height+"-80");
+                // height = (_window_height-310)/2;
+//				height = (_window_height-310)/2+25+32+40;
+			}
+			var chartSeries = dataSeries.series?dataSeries.series:dataSeries
+			var drilldown = dataSeries.drilldown;
+			var options = {
+		        chart: {
+		        	type:'pie',
+		            plotBackgroundColor: null,
+		            plotBorderWidth: null,
+		            plotShadow: false,
+		    		height:height
+		        },
+		    	exporting:{
+		    		enabled:false	
+		    	},
+		        title: {
+		            text: null
+		        },
+		        tooltip: {
+		    	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+		        },
+		        plotOptions: {
+		            pie: {
+		                allowPointSelect: true,
+		                cursor: 'pointer',
+		                dataLabels: {
+		                    enabled: true,
+		                    color: '#000000',
+		                    connectorColor: '#000000',
+		                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+		                }
+		            }
+		        },
+		        credits: {  
+		        	  enabled: false  
+		        },
+		        series: chartSeries
+		    };
+		    if(datatype ==4){
+		    	if(drilldown){
+		    		options.drilldown = drilldown;
+		    	} else {
+		    		options.drilldown = {};
+		    	}
+		    	
+		    }
+		    $(domSelector).highcharts(options);
+		}
+
+        var togglePopover = function (chartuuid,event){
+            var button=$(event.target);
+            if(event.target.classList.contains("xaxis")){
+                if(controller_data[chartuuid]["popoverObj"]){
+                    controller_data[chartuuid]["popoverObj"].popover("destroy");
+                    delete controller_data[chartuuid]["popoverObj"];
+                } else {
+                    controller_data[chartuuid]["popoverObj"] = initPopover(button,chartuuid,1);
+                }                
+            } else if(event.target.classList.contains("groupLink")){
+                if(controller_data[chartuuid]["popoverGroupObj"]){
+                    controller_data[chartuuid]["popoverGroupObj"].popover("destroy");
+                    delete controller_data[chartuuid]["popoverGroupObj"];
+                } else {
+                    controller_data[chartuuid]["popoverGroupObj"] = initPopover(button,chartuuid,2);
+                }                
+
+            }
+        }
+
+        var showModal = function(chartuuid,domSelector,event){
+            $(domSelector)[0].uuid = chartuuid;
+            $(domSelector).one('show.bs.modal', function (e) {
+                if(e.target.id==''){return}
+                if(!_global_chart[chartuuid][domSelector]){
+                    _global_chart[chartuuid][domSelector]={}
+                }
+                if (domSelector=='#gridSM') {
+                        initgridSM(controller_data[chartuuid],chartuuid)
+                } else if (domSelector=='#groupModal') {
+                        initgroupModal(controller_data[chartuuid])
+                } else if (domSelector=='#filterModal') {
+                        initfilterModal(controller_data[chartuuid],chartuuid);
+                        
+                             _global_chart[chartuuid][domSelector][e.target.id]=1
+                                $("#filterTags").tagsInput({
+                                    width:'auto',
+                                    interactive:false,
+                                    onAddTag:function (value) {
+                                        console.log(this);
+                                    },
+                                    onRemoveTag:function (value) {
+                                        var uuid = this.uuid;
+                                        delete getChart(uuid)['filter'][value];
+                                    }
+                                });
+                                $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});                           
+                            
+                            $('#filterTags').importTags('');
+                            _global_chart[chartuuid].filter={};
+                            var filterObjectArray = _global_chart[chartuuid].datacontent.filetercolumn;
+                            $.each(filterObjectArray, function(index, val) {
+                                var filterObject = val;
+                                var column =filterObject.itemName;
+                                var operator = filterObject.operator;
+                                var comparevalue = filterObject.value;
+                                var displayName = filterObject.displayName;
+                                if(!displayName){
+                                    $.each(meta_data, function(index, val) {
+                                        if(column==val.columname){
+                                            displayName = val.displayName;
+                                        }
+                                    });
+                                }
+                                var valueKey = displayName+operator+comparevalue;
+                                $('#filterTags').addTag(valueKey);                      
+                            });
+                } else if (domSelector=='#groupFilterModal') {
+                      initGroupFilterModal(controller_data[chartuuid]);
+                      initifClickBind();
+                } else if (domSelector=='#treeGroupFilterModal'){
+                    initTreeGroupFilterModal(chartuuid)
+                    var treeStructure = controller_data[chartuuid].tempcontent.treeStructure
+                    if(!treeStructure){
+                        initTree().tree_fun();
+                    } else {
+                        getTreeFromSaved(chartuuid)
+                    }
+                } else if(domSelector=='#othersFunctionModal'){
+                	initOthersFunction(controller_data[chartuuid],chartuuid);
+                	initIcheck();
+                	$('.icheck input').on('ifChecked', function(event){  
+                		var click = $(this).attr('data-value');
+                		$("input[type=checkbox]").each(function(){//each()方法遍历所有的复选框 
+                			if($(this).attr('id')!='aggregate'){
+                	         if($(this).attr("checked")){//这里就可以判断当前是否被选择了 
+                	        	if($(this).attr('data-value')!=click){
+                	            	$(this).iCheck('uncheck');//如果已选择，可以用iCheck取消选择  
+                	        	}
+                	          }
+                			}
+                	    }) 
+                	});  
+                }
+            })
+
+            $(domSelector).modal({
+                show:true,
+            });
+
+            $(domSelector).one('shown.bs.modal', function (e) {
+                initios(domSelector,chartuuid)
+            })
+            
+            
+            //axislink uuid bind
+            $(domSelector).find('.axislink').each(function(index, val) {
+
+                 this.uuid = chartuuid;
+            });
+        }
+
+        /**
+        _jqueryObj:popover绑定的对象
+        chartuuid:图表的唯一id
+        popoverKind:popover的种类，根据种类初始化不同的模板，绑定不同的动作
+        **/
+		var initPopover = function(_jqueryObj,chartuuid,popoverKind){
+			var option = {};
+            var popoverDict = {1:{"popoverTemplate":"#measureTemplate","class":".measureable"},2:{"popoverTemplate":"#groupPopoverTemplate","class":".groupable"}};
+			option.content= $(popoverDict[popoverKind].popoverTemplate).render($.extend(true,{"chartuuid":chartuuid},controller_data[chartuuid]));
+			option.html=true;
+			option.container='body';
+            option.placement = 'auto';
+            option.trigger = 'manual';
+			var popoverObj = _jqueryObj.popover(option);
+            var callback = function(){
+                initIcheck();
+                initios(popoverDict[popoverKind].class+' #'+chartuuid,chartuuid)
+            }
+            _jqueryObj.one('shown.bs.popover', callback);
+            popoverObj.popover('show');
+            return popoverObj;
+		}
+
+        /**
+        **/
+
+        var initCommentPopover = function(){
+            var option = {};
+            option.html=true;
+            option.content = $("#infoPopoverTemplate").render();
+            option.placement = 'left';
+            option.trigger = 'hover';
+            $('[data-toggle="popover"]').popover(option)
+        }
+
+		var getTemplate = function  (templateName,templateid) {
+			var data = {};
+			data.userId = ${userid};
+			data.token = 1;
+			data.template_name = templateName;
+			data.templates = [];
+			if(templateid){
+				data.template_id = templateid;
+			} else {
+				data.template_id = -1;
+			}
+            // $.each(_global_template, function(index, val) {
+            //     var templateData = {};
+            //     templateData.datatype = val.datatype;
+            //     templateData.graphtype = val.graphtype;
+            //     templateData.schemaid = val.schemaid;
+            //     templateData.datacontent = val.datacontent;
+            //     templateData.containerId = val.containerId;
+            //     templateData.titledesc = val.titledesc;
+            //     data.templates.push(templateData);                
+            // });
+			$.each(_global_chart, function(index, val) {
+				var templateData = {};
+				templateData.datatype = val.data_type_enum;
+				templateData.graphtype = val.data_chart_type;
+				templateData.schemaid = val.schemaid;
+				templateData.datacontent = val.datacontent;
+				templateData.containerId = val.domSelector.replace(/#/g,"");
+                templateData.displaying_type = val.displaying_type;
+                $.each(_global_template, function(index, val) {
+                     if(templateData.containerId == val.containerId){
+                        templateData.titledesc = val.titledesc;
+                     }
+                });
+                templateData.layout = JSON.stringify(controller_data[index].tempcontent);
+				data.templates.push(templateData);
+			});
+			data.templates = JSON.stringify(data.templates);
+            data.position = JSON.stringify(controller_data.position);
+			return data;
+		}
+
+		var saveTemplate = function (templateName,templateId) {
+			var url = 'saveTemplate';
+			var fun = function (data) {
+                location.reload();
+			};
+			var errfun = function () {};
+			var datatype = 'json';
+			var data = getTemplate(templateName,templateId);
+			commonPost(url,fun,errfun,datatype,data,true);
+		}
+
+        var initFromTemplateData = function(){
+            var templates = _global_template;
+            $.each(templates, function(index, val) {
+                // qgy deleted 20151029
+                // var domSelector = val.containerId;
+                // qgy deleted 20151029
+                var domSelector = '[data-templateKey="'+val.containerId+'"]' 
+                var uuid = _global_domSelectorMap[domSelector];
+                var numbercolumn = val.datacontent.numbercolumn[0];
+                getChart(uuid).data_type_enum = val.datatype;
+                getChart(uuid).data_chart_type = val.graphtype;
+                getChart(uuid).schemaid = val.schemaId;
+                getChart(uuid).datacontent = val.datacontent;
+                getChart(uuid).displaying_type = val.displaying_type?val.displaying_type:0;
+                $('[data-templateKey="'+uuid+'"]').find('.xaxis').text("度量值："+getLabel(numbercolumn.element,numbercolumn.functionName));
+            });
+            setControllerFromTemplate(_global_template, controller_data, _global_chart)
+            // setControllerFromGlobalchart(_global_chart,controller_data);
+            $.each(templates, function(index, val) {
+                // qgy deleted 20151029
+                // var domSelector = val.containerId;
+                // qgy deleted 20151029
+                var domSelector = '[data-templateKey="'+val.containerId+'"]' 
+                var uuid = _global_domSelectorMap[domSelector];
+                var progress = $('[data-templateKey="'+uuid+'"]').find('.progress');
+                progressTimer(progress,uuid);
+            });
+        }
+
+        var testWhen = function(url,templateid) {
+            var fun = function(){}            
+            var errfun = function(){}            
+            var datatype = 'json';
+            var data = {'userId':${userid},'token':1,'template_id':templateid};
+            var async = true;
+            return commonPost(url,fun,errfun,datatype,data);
+        }
+
+        var callback_getTemplateRecord = function(data){
+            if (data.msg_code=='0x200001') {
+                controller_data.position = JSON.parse(data.template_record.serializedPosition);
+            } else if(data.msg_code=="0x200002"){
+                console.log("no data in templateRecord")
+                controller_data.position=[{"col":1,"row":1,"size_x":1,"size_y":1,"uuid":"uuid1","name":"1"},{"col":2,"row":1,"size_x":1,"size_y":1,"uuid":"uuid2","name":"2"},{"col":1,"row":2,"size_x":1,"size_y":1,"uuid":"uuid3","name":"3"},{"col":2,"row":2,"size_x":1,"size_y":1,"uuid":"uuid4","name":"4"}]
+            } else {
+                console.log(data.msg_code)
+            };
+            uuidArray = []
+            $.each(controller_data.position, function(index, val) {
+                uuidArray.push(val.uuid);
+            });
+            return buildLayout(controller_data.position)
+        }
+
+        var callback_getTemplateData = function(data){
+            if (data.msg_code=='0x200001') {
+                _global_template = data.data;
+            } else if(data.msg_code=="0x200002"){
+                _global_template = [];
+                $.each(uuidArray, function(index, val) {
+                    var template = {};
+                    template.containerId = val;
+                    template.titledesc="";
+                    _global_template.push(template)
+                });
+            } else {
+                console.log(data.msg_code)
+            };
+            
+            $.each(_global_template, function(index, val) {
+                // var $_target = $('#'+val.containerId)
+                var $_target = $('[data-templateKey="'+val.containerId+'"]')
+                $_target.html($("#chartTemplate").render({"displaying_type":val.displaying_type,"chartdesc":val.titledesc,"chartid":val.containerId}))
+            });
+
+        }
+
+        var getTemplateRecordAndDataFun = function(templateid){
+            console.log(templateid)
+            return function(){
+                $.when(testWhen('getTemplateData',templateid),testWhen('getTemplateRecord',templateid)).done(function(d1,d2){
+                    var innerHTML = callback_getTemplateRecord(d2[0])
+                    $("#mainboard").html(innerHTML);
+                    callback_getTemplateData(d1[0])
+                    //setControllerFromGlobalchart(_global_chart,controller_data);
+                });
+                $.each(uuidArray, function(index, val) {
+                    var id = val;
+                    setSchemaData(id,controller_data)
+                });
+                initlayoutAdjuster();
+            }
+        }
+
+        var removeUuid_global = function(uuidArray_rm){
+            $.each(uuidArray_rm, function(index, uuid) {
+                delete _global_chart[uuid];
+                delete controller_data[uuid];
+                var templateIndex = -1;
+                $.each(_global_template, function(index, val) {
+                    if (val.containerId==uuid) {
+                        templateIndex = index;
+                        return;
+                    };
+                });
+                if (templateIndex>=0) {
+                    _global_template.splice(templateIndex,1)
+                };
+                if(uuidArray.indexOf(uuid)>=0){
+                    uuidArray.splice(uuidArray.indexOf(uuid),1)
+                }
+            });
+        }
+
+        var rebuildLayout = function(){
+            $("#mainboard").html(buildLayout(controller_data.position));
+            //
+            $.extend(true,_global_chart,_temp_chart);
+            $.extend(true,controller_data,temp_controller_data);
+            _global_template = _global_template.concat(_temp_template)
+            uuidArray = uuidArray.concat(temp_uuidArray)
+            //
+            removeUuid_global(_temp_remove_array);
+            $.each(_global_template, function(index, val) {
+                // var $_target = $('#'+val.containerId)
+                var $_target = $('[data-templateKey="'+val.containerId+'"]')
+                $_target.html($("#chartTemplate").render({"displaying_type":val.displaying_type,"chartdesc":val.titledesc,"chartid":val.containerId}))
+            });
+            initChartAxisLinkBymap(_global_domSelectorMap);
+            redrawCharts(uuidArray);
+        }
+
+		var getTemplateData = function (templateid) {
+			var url = 'getTemplateData';
+			var fun = function (data) {
+				if(data.msg_code =="0x200001"){
+					_global_template = data.data;
+                    $.each(_global_template, function(index, val) {
+                        $("."+val.containerId.replace(/#/,"")+"class").html($("#chartTemplate").render({"displaying_type":val.displaying_type,"chartdesc":val.titledesc,"chartid":val.containerId.replace(/#/,"")}))
+                    });
+				} else if(data.msg_code =="0x200002"){
+                    _global_template = [];
+                    var template = {};
+                    template.containerId = "#chart";
+                    template.titledesc="";
+                    _global_template[0] = template;
+                    var template = {};
+                    template.containerId = "#chartA";
+                    template.titledesc="";
+                    _global_template[1] = template;
+                    var template = {};
+                    template.containerId = "#chartB";
+                    template.titledesc="";
+                    _global_template[2] = template;
+                    var template = {};
+                    template.containerId = "#chartC";
+                    template.titledesc="";
+                    _global_template[3] = template;
+                    $.each(_global_template, function(index, val) {
+                        $("."+val.containerId.replace(/#/,"")+"class").html($("#chartTemplate").render({"displaying_type":0,"chartdesc":val.titledesc,"chartid":val.containerId.replace(/#/,"")}))
+                    });
+                } else {
+                    console.log(data.msg_code);
+                }
+
+			};
+			var errfun = function () {};
+			var datatype = 'json';
+			var data = {'userId':${userid},'token':1,'template_id':templateid};
+			var async = true;
+            return commonPost(url,fun,errfun,datatype,data);
+            // commonPost(url,fun,errfun,datatype,data,async);
+		}
+
+		var progressTimer = function (progress,uuid) {
+            var domSelector = getChart(uuid).domSelector;
+            var displaying_type = getChart(uuid).displaying_type;
+            if($(domSelector).is(':visible')){
+                queryChartData(uuid);
+            } else {
+                queryChartData(uuid,true);
+            }
+            if(1==displaying_type){
+                var this_jqueryObject = $('[data-templateKey="'+uuid+'"]');
+                var data_height = this_jqueryObject.attr("data-height")
+                var height = eval("(_window_height-70)*"+data_height+"-80");
+                // this_jqueryObject.find(".tablediv").height((_window_height-70)/2-75);                
+                initTableFromBackend(uuid,$("#popupHighcharts"));
+            }
+		}
+
+        var getLabelshow = function(columname){
+            if (!window.metaDict) {
+                window.metaDict = getMetaDataDict(window.meta_data)
+            };
+            return window.metaDict[columname]
+            
+        }
+
+        var getMetaDataDict = function(meta_data){
+            var dict = {};
+            $.each(meta_data, function(index, val) {
+                dict[val["columname"]] = val["displayName"]
+            });
+            return dict;
+        }
+
+        var getLabel = function(columname,foo){
+            var displayname = getLabelshow(columname);
+            var functionName = "最大值";
+            if (foo=="max") {
+                functionName = "最大值";
+            } else if (foo=="min"){
+                functionName = "最小值";
+            } else if (foo=="sum"){
+                functionName = "总和值";
+            } else if (foo=="avg"){
+                functionName = "平均值";
+            };
+            return getLabelshow(columname)+functionName;
+        }
+
+        var initChart = function (chart_data,controller_data,domSelectorArray,type,uuidArray,queryDataFlag) {
+            var labelShow = "";
+            // if(schema_data&&schema_data.schema_list[schema_data_seq].data.numberdata){
+            //     var numberDataArray = schema_data.schema_list[schema_data_seq].data.numberdata;
+            //     $.each(numberDataArray, function(index, val) {
+            //         var i  = val;
+            //         if(i.property=="0"){
+            //             labelShow = i.displayname;
+            //             return false;
+            //         }
+            //     });
+
+            // }
+            
+            $.each(uuidArray, function(index, uuid) {
+            // for(i in domSelectorArray){
+                // var uuid = uuidArray[i];
+                var datacontent = {};
+                var labelkind = "最大值";
+                var ownlabel = labelShow;
+                var checkedid = controller_data[uuid].tempcontent.statisticsTypeCheckid
+                var nameCheckedid = controller_data[uuid].tempcontent.nameCheckedid;
+                ownlabel = getLabelshow(nameCheckedid)
+                if (checkedid==0) {
+                    labelkind = '最大值';
+                } else if(checkedid==1){
+                    labelkind = '最小值';
+                } else if(checkedid==2){
+                    labelkind = '总和值';
+                } else if(checkedid==3){
+                    labelkind = '平均值';
+                }
+                _global_domSelectorMap[domSelectorArray[index]]=uuid;
+                datacontent.filetercolumn=[];
+                datacontent.numbercolumn=[];
+                datacontent.groupcolumn=[];
+                datacontent.fileterGroupColumn=[];
+                // drawChartA(domSelectorArray[i],categoryArrayMap[uuid],seriesArrayMap[uuid],type);
+                // qgy 20151029 deleted start
+                // drawChartA(domSelectorArray[i],categoryArrayMap[uuid],seriesArrayMap[uuid],type);
+                chart_data[uuid]={};
+                chart_data[uuid].domSelector="#"+uuid;
+                // chart_data[uuid].domSelector=domSelectorArray[i];
+                chart_data[uuid].datacontent = datacontent;
+                chart_data[uuid].data_chart_type = 'line';
+                chart_data[uuid].displaying_type = 0;
+                $('[data-templateKey="'+uuid+'"]').find('.xaxis').text("度量值："+ownlabel+labelkind);
+            // }
+            })
+
+            $.each(chart_data, function(index, val) {
+                if(uuidArray.indexOf(index)<0){
+                    delete chart_data[index]
+                }
+            });
+
+            for (i in chart_data){
+                chart_data[i].schemaid = window.schema_dict[session_schema_id].schemaid;
+                chart_data[i].datacontent.groupcolumn.push(controller_data[i].groupdata[0].columname)
+                var num_column_object = {"element":controller_data[i].numberdata[0].columname,"functionName":'max'}
+                var count_seq_flag = 0;
+                $.each(controller_data[i].numberdata, function(index, val) {
+                    if(val.property == 0&&count_seq_flag==0){
+                        num_column_object.element = val.columname;
+                        //chart_data[i].datacontent.numbercolumn.push({"element":val.columname,"functionName":'max'})
+                        count_seq_flag = 1;
+                        return;                        
+                    }
+                });
+                chart_data[i].datacontent.numbercolumn.push(num_column_object)
+                chart_data[i].data_type_enum = 2;
+                if(!queryDataFlag){
+                    queryChartData(i);
+                }
+            }
+        }
+
+        var initChartAxisLinkBymap = function(domSelectorMap){
+            $.each(domSelectorMap, function(index, val) {
+                var uuid = val;
+                // 20151029 edited start
+                // $(index).parentsUntil('section').find('.axislink').each(function(index, val) {
+                //      this.uuid = uuid;
+                // });
+                $(index).find('.axislink').each(function(index, val) {
+                     this.uuid = uuid;
+                });
+                // 20151029 edited end
+            });
+        }
+
+        var setMetaData = function () {
+            var groupData = window.schema_dict[session_schema_id].data.groupdata;
+            var numberData = window.schema_dict[session_schema_id].data.numberdata;
+            $.each(groupData, function(index, val) {
+                 /* iterate through array or object */
+                 var meta = {};
+                 meta.displayName = val.displayname;
+                 meta.columname = val.columname;
+                 meta_data.push(meta);
+            });
+            $.each(numberData, function(index, val) {
+                 /* iterate through array or object */
+                 var meta = {};
+                 meta.displayName = val.displayname;
+                 meta.columname = val.columname;
+                 meta_data.push(meta);
+            });
+        }
+
+        var initSchema = function () {
+            var url = 'getSchema';
+            var fun = function (data) {
+                window.schema_data =data;
+                window.schema_dict ={};
+                schema_data.schema_list.map(function(object){schema_dict[object.schemaid]=object})
+                if(session_schema_id==-1){
+                    session_schema_id = window.schema_data.schema_list[0].schemaid
+                }
+                setMetaData();
+            };
+            var errfun = function () {};
+            var datatype = 'json';
+            var data = {'userId':${userid},'token':1,'magnitude':200,'schema_id':session_schema_id};
+            commonPost(url,fun,errfun,datatype,data);
+        }
+
+        var initdatasource = function (datasourceList) {
+            var url = 'initdatasource';
+            var fun = function (data) {
+                console.log(1)
+            };
+            var errfun = function () {};
+            var datatype = 'json';
+            var data = {'userId':${userid},'token':1};
+            data.datasourceid = datasourceList.join()
+            commonPost(url,fun,errfun,datatype,data);
+        }
+
+		var setSchemaData = function(uuid,controller_data) {
+            controller_data[uuid] = $.extend(true,{},window.schema_dict[session_schema_id].data);
+            // controller_data[uuid] = $.extend(true,{},schema_data.schema_list[schema_data_seq].data);
+			controller_data[uuid].tempcontent={};
+			controller_data[uuid].tempcontent.statisticsTypeCheckid = 0;
+            $.each(window.schema_dict[session_schema_id].data.numberdata, function(index, val) {
+                if(val.property==0){
+                    controller_data[uuid].tempcontent.nameCheckedid = val.columname;
+                    return false;
+                }
+            })
+			// controller_data[uuid].tempcontent.nameCheckedid = schema_data.schema_list[schema_data_seq].data.numberdata[0].columname;
+			controller_data[uuid].tempcontent.groupstatisticsTypeCheckid = window.schema_dict[session_schema_id].data.groupdata[0].columname;
+			controller_data[uuid].tempcontent.groupnameCheckedid = 0;
+			controller_data[uuid].tempcontent.groupFilter = {};
+			controller_data[uuid].tempcontent.groupFilter.value=[];
+		}
+
+        var setControllerFromTemplate = function(template_data,controller_data,chart_data){
+            $.each(template_data, function(index, template) {
+                var uuid = template.containerId;
+                var layout = template.layout;
+                if (controller_data[uuid] && layout) {
+                    controller_data[uuid].tempcontent = JSON.parse(template.layout)
+                } else {
+                    setControllerFromGlobalchart(chart_data,controller_data);
+                };
+            });
+        }
+		
+		var setControllerFromGlobalchart = function(chart_data,controller_data){
+			$.each(chart_data, function(index, val) {
+				var uuid = index;
+				var datacontent = chart_data[index].datacontent;
+				var groupcolumn = datacontent.groupcolumn;
+				var numbercolumn = datacontent.numbercolumn[0];
+				var fileterGroupColumn = datacontent.fileterGroupColumn;
+				if(fileterGroupColumn!=""){
+				controller_data[uuid].tempcontent.groupFilter.element = fileterGroupColumn[0].element;
+				controller_data[uuid].tempcontent.groupFilter.value = fileterGroupColumn[0].value;
+				}
+				controller_data[uuid].tempcontent.nameCheckedid = numbercolumn.element;
+				if(groupcolumn.length>1){
+					controller_data[uuid].tempcontent.groupnameCheckedid = groupcolumn[1];
+				}
+				controller_data[uuid].tempcontent.groupstatisticsTypeCheckid = groupcolumn[0];
+				var foo = numbercolumn.functionName;
+				if(foo=="max"){
+					controller_data[uuid].tempcontent.statisticsTypeCheckid = 0;
+				} else if(foo=="min"){
+					controller_data[uuid].tempcontent.statisticsTypeCheckid = 1;
+				} else if(foo=="sum"){
+					controller_data[uuid].tempcontent.statisticsTypeCheckid = 2;
+				} else if(foo=="avg"){
+					controller_data[uuid].tempcontent.statisticsTypeCheckid = 3;
+				}
+                //设置标签的值
+                var labelkind = "最大值";
+                var checkedid = controller_data[uuid].tempcontent.statisticsTypeCheckid;
+                if (checkedid==0) {
+                    labelkind = '最大值';
+                } else if(checkedid==1){
+                    labelkind = '最小值';
+                } else if(checkedid==2){
+                    labelkind = '总和值';
+                } else if(checkedid==3){
+                    labelkind = '平均值';
+                }
+                //设置displayname
+                var displayname = window.schema_dict[session_schema_id].data.numberdata[0].displayname;
+                $.each(window.schema_dict[session_schema_id].data.numberdata, function(index, val) {
+                    var columnname = val.columname;
+                    if(controller_data[uuid].tempcontent.nameCheckedid==columnname){
+                        displayname = val.displayname;
+                    }
+                });
+
+                $('[data-templateKey="'+uuid+'"]').find('.xaxis').text("度量值："+displayname+labelkind);
+
+			});
+
+            //清除多余的controller对象
+            var controllerKeys = Object.keys(controller_data);
+            var chartKeys = Object.keys(chart_data);
+            $.each(controllerKeys, function(index, val) {
+                if (chartKeys.indexOf(val)<0 && val!="position") {
+                    delete controller_data[val]
+                };
+            });
+		}
+
+		var progressBarShow =function  (progress) {
+			progress.find(".progress-bar").css("width","10%");
+			progress.slideDown("fast");
+			progress.find(".progress-bar").css("width","100%")
+		}
+
+	
+		var queryChartData = function(uuid,drawChartFlag){
+			var chartObject = getChart(uuid);
+			var progress = $('[data-templateKey="'+uuid+'"]').find('.progress');
+			var url = 'getChartData';
+			var fun = function (data) {
+				var type = getChart(uuid).data_chart_type;
+				if(!type) {
+					type = 'line';
+				}
+				chartObject.chartData = data;
+				if(progress){
+					progress.slideUp("fast");
+				}
+				if(data.msg_code =="0x200001"){
+					if(data.data.datatype!='3'&&data.data.datatype!='4'&&data.data.datatype!='5'&&data.data.datatype!='6'){
+						categoryArrayMap[uuid] = data.data.datacontent.xAxis.categories;
+						seriesArrayMap[uuid] = data.data.datacontent.series;
+					} else if(data.data.datatype=='5'){
+                        categoryArrayMap[uuid] = data.data.datacontent.xAxis.categories;
+                        seriesArrayMap[uuid] = data.data.datacontent.series;
+                    } else {
+						seriesArrayMap[uuid] = data.data.datacontent;
+					}
+                    var uuidArray = [];
+                    uuidArray.push(uuid)
+                    if(!drawChartFlag){
+                        var timeOut = Math.round(Math.random()*500);
+                        setTimeout(function(){redrawCharts(uuidArray)},timeOut);
+                    }
+				} else {
+					console.log(data.msg_code);
+				}
+			};
+			var errfun = function (){
+				console.log("hehe error here")
+			};
+			var datatype = 'json';
+			var data = {};
+			data.userId = ${userid};
+			data.token = 1;
+			//data.schemaid = getChart(uuid).schemaid;
+			data.schemaid = session_schema_id;
+            //data.topnum = 20;
+			var dataObject = inferDataObject(uuid);
+			dataObject.datacontent = getChart(uuid).datacontent;
+			data.data = JSON.stringify(dataObject);
+			var async = true;
+			if(progress) {
+				progressBarShow(progress);				
+			}
+			var deferred = commonPost(url,fun,errfun,datatype,data,async);
+            return deferred;
+		}
+
+		var inferDataObject = function(uuid) {
+			var dataObject = {};
+            var groupDimensionLength = getChart(uuid).datacontent.groupcolumn.length;
+            var numberDimensionLength = getChart(uuid).datacontent.numbercolumn.length;
+			if(getChart(uuid)&&getChart(uuid).data_chart_type=='pie'){
+				if(groupDimensionLength==1){
+					dataObject.datatype = 3;
+				} else {
+					dataObject.datatype = 4;
+				}
+			} else if (getChart(uuid).data_chart_type=='column_complex'){
+                dataObject.datatype = 5;
+            } else if (getChart(uuid).data_chart_type=='column_drilldown'){
+                if((groupDimensionLength==1)&&(numberDimensionLength==1)){
+                    dataObject.datatype = 1;
+                } else {
+                    dataObject.datatype = 6;
+                }
+            } else if((groupDimensionLength==1)&&(numberDimensionLength==1)){
+				dataObject.datatype = 1;
+			} else if(groupDimensionLength==2){
+				dataObject.datatype = 2;
+			} else if ((numberDimensionLength==2)&&(getChart(uuid).data_chart_type=='line')){
+				dataObject.datatype = 7
+			}
+			getChart(uuid).data_type_enum = dataObject.datatype;
+			return dataObject;			
+		}
+
+        var drawChartOnDOMWithlegend = function (data_height,domSelector,dataType,uuid,height,width){
+            drawChartOnDOM(data_height,domSelector,dataType,uuid,height,width,true);
+        }
+
+        var drawTableOnDOM = function(uuid,domSelector){
+            initTableFromBackend(uuid,$(domSelector))
+        }
+
+		var drawChartOnDOM = function (data_height,domSelector,dataType,uuid,height,width,withlegend){
+            var drawChartFoo = drawChartA;
+            if(withlegend){
+                drawChartFoo = drawChartShowLegend;
+            }
+			if(dataType=='pie'){
+				var graphtype = 3
+				if(seriesArrayMap[uuid].drilldown&&seriesArrayMap[uuid].drilldown.series.length>0){
+					graphtype = 4
+				}
+			 	drawPieChart(data_height,domSelector,seriesArrayMap[uuid],graphtype,height,width)
+			} else {
+                if(dataType=='column_drilldown'){
+                    drawDrillDownChart(data_height,domSelector,seriesArrayMap[uuid],height)
+                } else {
+                    drawChartFoo(data_height,domSelector,categoryArrayMap[uuid],seriesArrayMap[uuid],dataType,height,width)                                       
+                }
+			}
+		}
+
+		var redrawCharts = function (uuidArray) {
+
+			$.each(uuidArray, function(index, val) {
+                var uuid = val;
+				var domSelector = getChart(uuid).domSelector;
+				var dataType = getChart(uuid).data_chart_type;
+				var data_type_enum=getChart(uuid).data_type_enum;
+                var data_height = $('[data-templateKey="'+val+'"]').attr("data-height")
+				drawChartOnDOM(data_height,domSelector,dataType,val)
+				if(data_type_enum==7){
+					drawChartOnDOM(data_height,domSelector,dataType,val,"","",true);
+				}
+
+			});
+            if(uuidArray.length==1&&$("#standalone").is(":visible")&&_global_chart[uuidArray[0]].displaying_type==0){
+                var uuid = uuidArray[0]
+                var data_chart_type =getChart(uuid).data_chart_type
+                drawChartOnDOM(1,"#popupHighcharts",data_chart_type,uuid,_window_height*0.8,_window_width)
+            }
+
+		}
+		
+		var initTimeBar = function () {
+			var numberDataArray = window.schema_dict[session_schema_id].data.numberdata;
+			var dateRange = window.schema_dict[session_schema_id].dateRange;
+			var displayname = "";
+			var columnname = undefined;
+			$.each(numberDataArray, function(index, val) {
+				if(val){
+					if(val.property==1){
+						displayname = val.displayname;
+						columname = val.columname;
+					}
+				}
+			});
+			$.each(_global_domSelectorMap, function(index, val) {
+				 var functionObjectTemp=undefined;
+				 var factory = function(foo,array){
+					var timer;
+					var functionObject = {};
+					var resetTimeoutRun =  function(){
+						if(timer){
+							clearTimeout(timer);
+						};
+						timer = setTimeout(function(){foo.apply(null,array)},1000)
+					}
+					functionObject["resetTimeoutRun"] = resetTimeoutRun;
+					return functionObject;
+				 };
+				 var finishFun = function(data){
+			    	var filters =_global_chart[val].datacontent.filetercolumn;
+			    	var toDate = moment(data.to,"X").format("YYYY-MM-DD HH:mm")
+			    	var fromDate = moment(data.from,"X").format("YYYY-MM-DD HH:mm")
+			    	var toFilterCount = 0;
+			    	var fromFilterCount = 0;
+			    	$.each(filters, function(index, val) {
+			    		 if (val.itemName==columname) {
+			    		 	if(val.operator==">"||val.operator==">="){
+			    		 		val.value = fromDate;
+			    		 		fromFilterCount = 1;
+			    		 	} else if(val.operator=="<"||val.operator=="<="){
+			    		 		val.value = toDate;
+			    		 		toFilterCount = 1;
+			    		 	}
+			    		 };
+			    	});
+		    		 if(toFilterCount==0){
+		    		 	var filter = {};
+		    		 	filter.displayName = displayname;
+		    		 	filter.itemName = columname;
+		    		 	filter.operator = "<";
+		    		 	filter.value = toDate;
+		    		 	filters.push(filter);
+		    		 }
+		    		 if(fromFilterCount==0){
+		    		 	var filter = {};
+		    		 	filter.displayName = displayname;
+		    		 	filter.itemName = columname;
+		    		 	filter.operator = ">";
+		    		 	filter.value = fromDate;
+		    		 	filters.push(filter);
+		    		 }
+                    // qgy 20151029 edited start
+                    var progress = $(index).find('.progress');
+                    // var progress = $(index).parentsUntil('section').find('.progress');
+                    // qgy 20151029 edited start
+					progressTimer(progress,val);
+				 };
+				 var getDelayRun = function(data){
+				 	console.log(2);
+				 	if(!functionObjectTemp){
+				 		functionObjectTemp = factory(finishFun,[data]);
+				 	}
+				 	return functionObjectTemp.delayRun();
+				 }
+				 var getTimeOutRun = function(data){
+				 	console.log(1);
+				 	if(!functionObjectTemp){
+				 		functionObjectTemp = factory(finishFun,[data]);
+				 	}
+				 	return functionObjectTemp.resetTimeoutRun();
+				 }
+                 // qgy 20151029 edited start
+                $(index).find(".rangeSliderClass").ionRangeSlider({
+                // $(index).parentsUntil('section').find(".rangeSliderClass").ionRangeSlider({
+                // qgy 20151029 edited end
+					type: "double",
+				    min: dateRange ? +moment(dateRange.minDate).format("X") : +moment().subtract(1, "years").format("X"),
+				    max: dateRange ? +moment(dateRange.maxDate).format("X") : +moment().format("X"),
+				    prettify: function (num) {
+				        return moment(num, "X").format("LL");
+				    },
+				    onChange:getTimeOutRun,
+				});							 
+			});
+		}
+
+        var toggleToTable = function(uuid){
+            var this_jqueryObject = $('[data-templateKey="'+uuid+'"]');
+            var data_height = this_jqueryObject.attr("data-height")
+            var height = eval("(_window_height-70)*"+data_height+"-80");
+            this_jqueryObject.find(".toggleGraph").toggle();
+            this_jqueryObject.find(".tablediv").toggle();
+            this_jqueryObject.find(".tablediv").height(height);
+            // this_jqueryObject.find(".tablediv").height((_window_height-70)/2-75);
+        }
+
+        var initTableFromBackend = function(uuid,_jqObj){
+            if(!_jqObj){
+                _jqObj = $('[data-templateKey="'+uuid+'"]');
+            } else if(_jqObj.find( ".adv-table" ).length==0){
+                _jqObj.html('<div class="adv-table"></div>');
+            }
+            // var this_jqueryObject = $('[data-templateKey="'+uuid+'"]');
+            _jqObj.find( ".adv-table" ).html(
+                $( "#cwtpTableTemplateComp" ).render()
+            );
+            _jqObj.find( "#tableTheadTemplateTarget" ).html(
+                $( "#cwtpTableTheadTemplate" ).render( meta_data )
+            );
+
+            _jqObj.find('#hidden-table-info').dataTable({
+                "oLanguage": {
+                    "sProcessing":   "处理中...",
+                    "sLengthMenu":   "显示 _MENU_ 项结果",
+                    "sZeroRecords":  "没有匹配结果",
+                    "sInfo":         "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+                    "sInfoEmpty":    "显示第 0 至 0 项结果，共 0 项",
+                    "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+                    "sInfoPostFix":  "",
+                    "sSearch":       "搜索:",
+                    "sUrl":          "",
+                    "sEmptyTable":     "表中数据为空",
+                    "sLoadingRecords": "载入中...",
+                    "sInfoThousands":  ",",
+                    "oPaginate": {
+                        "sFirst":    "首页",
+                        "sPrevious": "上页",
+                        "sNext":     "下页",
+                        "sLast":     "末页"
+                    },
+                    "oAria": {
+                        "sSortAscending":  ": 以升序排列此列",
+                        "sSortDescending": ": 以降序排列此列"
+                    }
+                },
+               "bFilter": false,
+               "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "url": "${base_path}/eco/getDataForDraw",
+                    "type": "POST",
+                    "data": function ( d ) {
+                        var filter = {};
+                        var schema = [];
+                        $.each(meta_data, function(index, val) {
+                             schema.push(val.columname);
+                        });
+                        filter.schema = schema;
+                        filter.filterColumn = getChart(uuid).datacontent.filetercolumn;
+                        filter.groupFilterArray = getChart(uuid).datacontent.filterGroupColumnArray
+                        d.filter = JSON.stringify(filter);
+                        d.userId = ${userid};
+                        d.token = 1;
+                        d.schemaid = window.schema_dict[session_schema_id].schemaid;
+                    }
+                }
+            });
+        }
+
+        var changeChartOnStandalone = function(event){
+            event.stopImmediatePropagation();
+            var data_chart_type = $(this).attr('data-chart-type');
+            var uuid = $('#dsModal')[0].uuid;
+            // var uuid = $(".wdgt-profile").parentsUntil('section').find('#dsModal')[0].uuid;
+            $(".wdgt-profile").removeClass('graphShadow');
+            $(this).addClass('graphShadow')
+            var chartObject = getChart(uuid);
+            chartObject.data_chart_type = data_chart_type;
+            //$('#dsModal').modal('hide');
+            console.log(data_chart_type)
+
+            var statisticsType = undefined;
+            var name = undefined;
+            $('#dsModal').modal('hide')
+            console.log(getChart(uuid).data_chart_type)
+            var datatypeEnum = getChart(uuid).data_type_enum;
+            var dataObject = inferDataObject(uuid);
+            if(datatypeEnum==dataObject.datatype){
+                redrawCharts([uuid])
+            } else {
+                queryChartData(uuid);
+            }
+            if($("#standalone").is(":visible")){
+                drawChartOnDOMWithlegend(1,"#popupHighcharts",data_chart_type,uuid,_window_height*0.8,_window_width)
+            }
+        };
+
+        // $.fn.modal.Constructor.prototype.enforceFocus = function() {
+        //   modal_this = this
+        //   $(document).on('focusin.modal', function (e) {
+        //     console.log(e);
+        //     modal_this.$element.focus();
+        //     if (modal_this.$element[0] !== e.target && !modal_this.$element.has(e.target).length 
+        //     // add whatever conditions you need here:
+        //     && !$(e.target.parentNode).hasClass('cke_dialog_ui_input_select') && !$(e.target.parentNode).hasClass('cke_dialog_ui_input_text')) {
+
+        //       modal_this.$element.focus()
+        //     }
+        //   })
+        // };        
+
+        var getTreeFromSaved = function(uuid){
+          $('#treeIllustration').tree('destroy');
+          $('.treeFormDiv').html($("#treeFolderTemplate").render())
+          initTree(0,controller_data[uuid].tempcontent.treeStructure).tree_fun();
+          var selected = controller_data[uuid].tempcontent.selectedItems
+          $.each(selected, function(index, val) {
+            if(val.type=='folder'){
+              $('#treeIllustration').tree('selectFolder', $('#'+val.attr.id))
+            } else if(val.type=='item'){
+              $('#treeIllustration').tree('selectItem', $('#'+val.attr.id))
+            }
+             /* iterate through array or object */
+          });
+        }
+
+        var initGridster = function(){
+            window.gridster = $(".gridster ul").gridster({
+              widget_base_dimensions: [100, 55],
+              widget_margins: [5, 5],
+              autogrow_cols: true,
+              serialize_params: function($w, wgd) {
+               return { col: wgd.col, row: wgd.row, size_x: wgd.size_x, size_y: wgd.size_y,uuid:wgd.el.attr("data-uuid"),name:wgd.el.attr("data-name") } 
+              },
+              resize: {
+                enabled: true
+              }
+            }).data('gridster');
+            controller_data.position = window.gridster.serialize();
+        }
+
+        var getGridFromSeriailize = function(gridster,serialization){
+            gridster.remove_all_widgets();
+            serialization = serialization.sort(sortRow);
+            $.each(serialization, function(index,value) {
+                gridster.add_widget('<li data-uuid="'+value.uuid+'" data-name="'+value.name+'">'+value.uuid+'</li>', this.size_x, this.size_y, this.col, this.row);
+            });
+        }
+
+        var insertGridsterClick = function(){
+            var uuid = insertGridster();
+            var template = {};
+            template.containerId = uuid;
+            template.titledesc="";
+            _temp_template.push(template)
+            temp_uuidArray.push(uuid);
+            setSchemaData(uuid,temp_controller_data);
+            var domSelectorArray = []
+            $.each(temp_uuidArray, function(index, uuid) {
+                domSelectorArray.push('[data-templateKey="'+uuid+'"]');
+            });
+            initChart(_temp_chart,temp_controller_data,domSelectorArray,undefined,temp_uuidArray)
+        }
+
+        var insertGridster = function(){
+            var uuid = guid();
+            window.gridster.add_widget("<li data-uuid='"+uuid+"'>"+uuid.substr(0,4)+"</li>",1,1)
+            return uuid;
+        }
+
+        var getChart = function(uuid){
+            if (_global_chart[uuid]) {
+                return _global_chart[uuid]
+            } else{
+                return _temp_chart[uuid]
+            };
+            
+        }
+
+        var initTree = function(type,struct){
+          var function_type = 0;
+          var savedStructure = struct;
+          if(struct){
+            savedStructure = struct;
+          }
+          if(type||type==undefined){
+            function_type = 1;
+          } else {
+            function_type = 0;
+          }
+          var set_structure = function(struct){
+            savedStructure = struct;
+          }
+          var set_functionType = function(type){
+            if (type==0) {
+              function_type = type;
+            } else {
+              function_type = 1;
+            }
+          }
+          var get_functionType = function(){
+            return function_type;
+          }
+          var treeFunction = function(){
+            var that = this;
+            $('#treeIllustration').tree({
+              dataSource: function (options, callback) {
+                if(function_type==1){
+                  var url = "getMemberMeta";
+                  var fun = function(data){
+                    callback({data: data})
+                  }
+                  var errfun = function(){}
+                  var datatype = 'json';
+                  var data = {};
+
+                  if(options.attr){
+                    //data.parentId = options.attr.id;
+                    if(options.attr.element_id){
+                        data.element_id = options.attr.element_id;
+                    } else {
+                        data.parentId = options.attr.id;
+                        if(isNaN(data.parentId)){
+                            data.parentId = undefined;
+                        }
+                    }
+                  } else {
+                    url = "getMemberRoot"
+                  }
+                  data.schemaid = window.schema_dict[session_schema_id].schemaid;
+                  data.userId = 1;
+                  data.token = 1;
+                  var deferred = commonPost(url,fun,errfun,datatype,data);
+                } else {
+                  callback({data: savedStructure})
+                  that.setType(1)
+                }
+              },
+              multiSelect: true,
+              cacheItems: true,
+              folderSelect: true,
+            });
+          }
+          var treeObject = {setType:set_functionType,getType:get_functionType,tree_fun:treeFunction}
+          return treeObject;
+        }
+
+        var getStructure = function(chartuuid){
+            var rootDom = $("#treeIllustration>li").filter(":visible");
+            controller_data[chartuuid].tempcontent.treeStructure =  recursively_getStructure(rootDom)
+            controller_data[chartuuid].tempcontent.selectedItems =  $('#treeIllustration').tree('selectedItems');
+        }
+
+        var recursively_getStructure = function(dom){
+            var structure = [];
+            $.each(dom, function(index, val) {
+                  var itemType = 'item';
+                  if($(val).hasClass("tree-branch")){
+                    itemType = 'folder';
+                  }
+                  var a =$(val).attr("id");
+                  var element_id =$(val).attr("element_id");
+                  var field_name =$(val).attr("field_name");
+                  var label_id = "#"+a+"-label";
+                  var label_text = $(label_id).text();
+                  if(itemType == 'item'){
+                    label_text = $(val).find(".tree-label").text()        
+                  }
+                  var subnode = recursively_getStructure($(val).find(">.tree-branch-children:visible>li"))
+                  var node = {text:label_text,type:itemType,attr:{id:a,field_name:field_name,element_id:element_id}};
+                  if(subnode.length>0){
+                    node.attr.subnode = subnode;
+                  }
+                  structure.push(node)
+                   /* iterate through array or object */
+            });
+            return structure;
+        }
+
+        var sortCol = function(a,b){return a.col-b.col}
+
+        var sortRow = function(a,b){return a.row-b.row}
+
+        var rowfy = function(positionArray){
+            var copiedColPosition = $.extend(true, [], positionArray).sort(sortCol);
+            var copiedRowPosition = $.extend(true, [], positionArray).sort(sortRow);
+            var rowDict = {};
+            var firstColPosition = copiedColPosition[0];
+            var lastColPosition = copiedColPosition[copiedColPosition.length-1];
+            var firstRowPosition = copiedRowPosition[0];
+            var lastRowPosition = copiedRowPosition[copiedRowPosition.length-1];
+            var width = lastColPosition.size_x-firstColPosition.col+lastColPosition.col
+            var height = lastRowPosition.size_y-firstRowPosition.row+lastRowPosition.row
+            $.each(copiedRowPosition, function(index, val) {
+                if(rowDict[val.row]){
+                    rowDict[val.row].push(val)
+                } else {
+                    rowDict[val.row] = [val]
+                }
+            });
+            var horizontalArray = [];
+            $.each(rowDict, function(index, val) {
+                if(Number(index)!=firstRowPosition.row){
+                    var sumLength = 0;
+                    $.each(val, function(index, val) {
+                        sumLength = sumLength+val.size_x;
+                    });
+                    if(sumLength==width){
+                        horizontalArray.push(index)
+                    }
+                }
+            });
+            // console.log(horizontalArray)
+            return {"resultarray":horizontalArray,"resultdict":rowDict,"width":width,"height":height}
+        }
+
+        var colfy = function(positionArray){
+            var copiedColPosition = $.extend(true, [], positionArray).sort(sortCol);
+            var copiedRowPosition = $.extend(true, [], positionArray).sort(sortRow);
+            var colDict = {};
+            var firstColPosition = copiedColPosition[0];
+            var lastColPosition = copiedColPosition[copiedColPosition.length-1];
+            var firstRowPosition = copiedRowPosition[0];
+            var lastRowPosition = copiedRowPosition[copiedRowPosition.length-1];
+            var width = lastColPosition.size_x-firstColPosition.col+lastColPosition.col
+            var height = lastRowPosition.size_y-firstRowPosition.row+lastRowPosition.row
+            $.each(copiedColPosition, function(index, val) {
+                if(colDict[val.col]){
+                    colDict[val.col].push(val)
+                } else {
+                    colDict[val.col] = [val]
+                }
+            });
+            var verticalArray = [];
+            $.each(colDict, function(index, val) {
+                if(Number(index)!=firstColPosition.col){
+                    var sumLength = 0;
+                    $.each(val, function(index, val) {
+                        sumLength = sumLength+val.size_y;
+                    });
+                    if(sumLength==height){
+                        verticalArray.push(index)
+                    }
+                }
+            });
+            // console.log(verticalArray)
+            return {"resultarray":verticalArray,"resultdict":colDict,"width":width,"height":height}
+        }
+
+        /**
+         * 根据functionType获得横向/纵向分割模块的功能
+         * @param  {[type]} functionType 0为行分割，1为列分割
+         * @return {[type]}              0返回根据行分割，1返回根据列分割
+         */
+        var getGroupfyFunction = function(functionType){
+            if(functionType==0){
+                return rowfy;
+            } else if(functionType==1){
+                return colfy;
+            }
+        }
+
+        /**
+         *  把栅格数据划分成以行为单位
+            根据返回的分割行数组以及分块，获得以行为key的字典数据
+            求得分割好的数据对象数组
+         * @param  {[type]} position     [位置对象]
+         * @param  {[type]} functionType [0 rowfy，1 colfy]
+         * @return {[type]}              [fiedDict]
+         */
+        var getGroup = function(position,functionType){
+            var groupfyFunction = getGroupfyFunction(functionType);
+            var groupFied = groupfyFunction(position);
+            var fiedDict = {};
+            var groupFyingLineArray = groupFied.resultarray;
+            if (groupFyingLineArray.length==0) {
+                $.each(groupFied.resultdict, function(index, val) {
+                    if (fiedDict[1]) {
+                        fiedDict[1] = fiedDict[1].concat(val)
+                    } else{
+                        fiedDict[1] = val;
+                    };
+                });
+            } else{
+                $.each(groupFyingLineArray, function(index, val) {
+                    var linenumber = val;
+                    if(index+1<groupFyingLineArray.length&&index>0){
+                        var minVal = val;
+                        var maxVal = groupFyingLineArray[index+1];
+                        $.each(groupFied.resultdict, function(index, val) {
+                            if(index>=minVal&&index<maxVal){
+                                if(fiedDict[linenumber]){
+                                    fiedDict[linenumber] = fiedDict[linenumber].concat(val)
+                                } else {
+                                    fiedDict[linenumber] = val;
+                                }
+                            }
+                        });
+                    } else if(index-0==0){
+                        var maxVal = val;
+                        $.each(groupFied.resultdict, function(index, val) {
+                            if(index<maxVal){
+                                if(fiedDict[1]){
+                                    fiedDict[1] = fiedDict[1].concat(val)
+                                } else {
+                                    fiedDict[1] = val;
+                                }
+                            } else {
+                                if(fiedDict[linenumber]){
+                                    if (groupFyingLineArray.length==1) {
+                                        fiedDict[linenumber] = fiedDict[linenumber].concat(val)
+                                    };
+                                } else {
+                                    fiedDict[linenumber] = val;
+                                }
+                            }
+                        });
+                    } else {
+                        var minVal = val;
+                        $.each(groupFied.resultdict, function(index, val) {
+                            if(index>=minVal){
+                                if(fiedDict[linenumber]){
+                                    fiedDict[linenumber] = fiedDict[linenumber].concat(val)
+                                } else {
+                                    fiedDict[linenumber] = val;
+                                }
+                            }
+                        });
+                    }
+                });
+            };
+            return {"fiedDict":fiedDict,"width":groupFied.width,"height":groupFied.height};
+        }
+
+        var getRowGroup = function(position){
+            return getGroup(position,0)
+        }
+
+        var getColGroup = function(position){
+            return getGroup(position,1)
+        }
+
+        /**
+         * 根据position对象创建layout布局
+         * @param  {[type]} position   position对象
+         * @param  {[type]} fullheight 缩略图的总高度
+         * @param  {[type]} container  包含子节点的父节点对象
+         * @return {[type]}            添加过子节点的父节点
+         */
+        var buildLayout = function(position,fullheight,container){
+            var rowGroup = getRowGroup(position);
+            var rowfied  = rowGroup.fiedDict
+            if (!container) {
+                container = document.createElement("div");
+                fullheight = rowGroup.height;
+            }
+            $.each(rowfied, function(index, val) {
+                var rowfied_keys = Object.keys(rowfied);
+                if (rowfied_keys.length==1 &&val.length==1) {
+                    //递归终止于单行单列的元素
+                    var section_node = document.createElement("section");
+                    var att = document.createAttribute("data-templateKey")
+                    att.value = val[0].uuid;
+                    //panel class
+                    var panelClass = document.createAttribute("class")
+                    panelClass.value = "panel";
+                    //data-height attribute
+                    var heightAtt = document.createAttribute("data-height")
+                    heightAtt.value = val[0].size_y+"/"+fullheight
+                    section_node.setAttributeNode(att);
+                    section_node.setAttributeNode(heightAtt);
+                    section_node.setAttributeNode(panelClass);
+                    container.appendChild(section_node);
+                    return;
+                } else {
+                    var node = document.createElement("div");
+                    var att = document.createAttribute("class")
+                    att.value = "row";
+                    node.setAttributeNode(att);
+                    container.appendChild(node)
+
+                    var col_width = 12;
+                    var colObject = getColGroup(val);
+                    var colfied = colObject.fiedDict;
+                    var col_sum = Object.keys(colfied).length;
+                    var width = colObject.width;
+                    $.each(colfied, function(index, val) {
+                        var colwidth = getRowGroup(val).width;
+                        var this_column = Math.round(colwidth/width*col_width);
+                        col_width = col_width-this_column;
+                        width = width-colwidth;
+
+                        var column_node = document.createElement("div");
+                        var column_class = document.createAttribute("class")
+                        column_class.value = "col-md-"+this_column;
+                        column_node.setAttributeNode(column_class);
+                        node.appendChild(column_node)
+                        //递归处理子节点
+                        buildLayout(val,fullheight,column_node)
+                    });                    
+                };
+            });
+            // console.log(container.innerHTML)
+            return container.innerHTML;
+        }
+
+        var initgridsterRemove = function(){
+            //Enable swiping...
+            $(".gridster li").swipe( {
+                longTap:function(event, target) {
+                    window.gridster.remove_widget(this);
+                    var uuid = $(this).attr('data-uuid');
+                    _temp_remove_array.push(uuid)
+                },
+                longTapThreshold:1000
+            });
+
+        }
+
+        var standAloneShow = function(uuid){
+            $("#standalone").find('.axislink').each(function(index, val) {
+                 this.uuid = uuid;
+            });
+            //$("#standalone").append($("#graphTypeTemplate").render())
+            $('#standalone').data('uuid', uuid)
+            $('#standalone').popup('show');
+        }
+
+        var arrayEquals = function(element,index,array){if (index>0){return element==array[index-1]} else {return true}};
+
+        var caculateSquare = function(position){
+            var widthMap = {};
+            $.each(position, function(index, val) {
+                for (var i = val.row; i < val.row+val.size_y; i++) {
+                    if(widthMap[i]){
+                        widthMap[i] = widthMap[i]+val.size_x;
+                    } else {
+                        widthMap[i] = val.size_x;
+                    }
+                };
+            });
+            var widthArray = Object.keys(widthMap).map(function(obj){return widthMap[obj]})
+            return widthArray.every(arrayEquals);
+        }
+
+
+		;(function($){
+			$.fn.extend({
+				'setPosition':function(event){
+					var button=$(event.target);
+                    var modal=$(this);
+
+					var window_height=parseInt($(window).height());
+					var window_width=parseInt($(window).width());	
+
+					var button_left=parseInt(button.offset().left);
+					var button_top=parseInt(button.offset().top);
+					var button_width=parseInt(button.outerWidth());
+					var button_height=parseInt(button.outerHeight());	
+					var modal_width=parseInt(modal.outerWidth());
+					var modal_height=parseInt(modal.outerHeight());
+                    
+                    function setTri(position){
+                        // $('.tri').remove();
+                        modal.children().filter('.tri').remove();
+                        modal.prepend('<div class="tri"></div>');
+                        var tri=modal.children().eq(0);
+                        switch(position){
+                            case 'up':
+                                tri.css({
+                                    'border-bottom': '15px solid #65cea7',
+                                    'top': -15
+                                });
+                                break;
+                            case 'down':
+                                tri.css({
+                                    'border-top': '15px solid #65cea7',
+                                    'top': modal_height-1
+                                });  
+                                break;
+                        }
+                    }
+
+                    modal.parent().css({
+                        'width':'100%',
+                        'height':'100%'
+                    })
+                    if (button_top+modal_height>window_height&&button_top<modal_height) {
+                        modal.css('margin','50px auto');
+                        return;
+                    }else{
+                        // alert(modal.html())
+                        modal.parent().css({
+                            'overflow':'visible',
+                            'overflow-y':'visible',
+                            'position':'absolute',
+                            'left':0,
+                            'top':0
+                        });
+                        modal.parent().find('.modal-content').css('position','static');
+                        $('.modal-backdrop').css({
+                            'width':0,
+                            'height':0
+                        });
+                        modal.parent().find('.fade').css({
+                            'width':0,
+                            'height':0
+                        })
+                        // alert(this.html())
+                        if (button_top+modal_height>window_height&&button_top>modal_height) {
+                            modal.css('top',button_top-modal_height-15);
+                            setTri('down');
+                        }else{
+                            modal.css('top',button_top+button_height+15);
+                            setTri('up');
+                        }
+
+                        var tri=modal.children().filter('.tri');
+                        if (button_left<modal_width/2) {
+                            modal.css('left', button_left+button_width-15);
+                            tri.css('left',0);
+                        }else if (button_left+modal_width/2>window_width) {
+                            modal.css('left', button_left+button_width-modal_width+15);
+                            tri.css('left', modal_width-30);
+                        }else{
+                            modal.css('left', button_left+button_width/2-modal_width/2);
+                            tri.css('left', modal_width/2-15);
+                        }
+                        // alert(modal_height)
+                    }
+
+				},
+			})
+		})(jQuery);
+
+		jQuery(document).ready(function($) {
+			
+			
+			$('.grouptagsList:eq(0)').click(function(){
+				if($('.grouptagsList:eq(0)').attr('turnSta')=='a'){
+					$('.tagsList:eq(0)').css('display','block');	
+					$('scripttags:eq(0)').children('li').children('a').css({'borderRadius':'0px','dispaly':'block'});
+					$('scripttags:eq(0)').children('li').css({'borderRadius':'0px','display':'block'});
+					$('.grouptagsList:eq(0)').attr('turnSta','b');
+					$('scripttags:eq(0)').children('li').children('a').eq(0).css({'borderTop':'2px solid rgb(204,204,204)','borderLeft':'2px solid rgb(204,204,204)',
+						   'borderRight':'2px solid rgb(204,204,204)','borderTopLeftRadius':'5px','borderTopRightRadius':'5px','display':'block'});
+					$('scripttags:eq(0)').children('li').children('a').eq(1).css({'borderLeft':'2px solid rgb(204,204,204)','borderRight':'2px solid rgb(204,204,204)','display':'block'});
+					$('scripttags:eq(0)').children('li').children('a').eq(2).css({'borderBottom':'2px solid rgb(204,204,204)','borderLeft':'2px solid rgb(204,204,204)',
+						   'borderRight':'2px solid rgb(204,204,204)','borderBottomLeftRadius':'5px','borderBottomRightRadius':'5px','display':'block'});		
+					$('.triangle-up:eq(0)').show();
+			
+				}else{
+					$('.tagsList:eq(0)').css('display','none');
+					$('.grouptagsList:eq(0)').attr('turnSta','a')
+					$('.triangle-up:eq(0)').hide();
+				}		
+			});
+		
+			$('.grouptagsList:eq(1)').click(function(){
+				if($('.grouptagsList:eq(1)').attr('turnSta')=='a'){
+				//	$('.tagsList').css('display','none');
+					$('.tagsList:eq(1)').css('display','block');				
+					$('scripttags:eq(1)').children('li').children('a').css({'borderRadius':'0px','display':'block'});
+					$('scripttags:eq(1)').children('li').css({'borderRadius':'0px','display':'block'});
+					$('.grouptagsList:eq(1)').attr('turnSta','b');
+					$('scripttags:eq(1)').children('li').children('a').eq(0).css({'borderTop':'2px solid rgb(204,204,204)','borderLeft':'2px solid rgb(204,204,204)',
+						   'borderRight':'2px solid rgb(204,204,204)','borderTopLeftRadius':'5px','borderTopRightRadius':'5px','display':'block'});
+					$('scripttags:eq(1)').children('li').children('a').eq(1).css({'borderLeft':'2px solid rgb(204,204,204)','borderRight':'2px solid rgb(204,204,204)','display':'block'});
+					$('scripttags:eq(1)').children('li').children('a').eq(2).css({'borderBottom':'2px solid rgb(204,204,204)','borderLeft':'2px solid rgb(204,204,204)',
+						   'borderRight':'2px solid rgb(204,204,204)','borderBottomLeftRadius':'5px','borderBottomRightRadius':'5px','display':'block'});		
+					$('.triangle-up:eq(1)').show();
+			
+				}else{
+					$('.tagsList:eq(1)').css('display','none');
+					$('.grouptagsList:eq(1)').attr('turnSta','a')
+					$('.triangle-up:eq(1)').hide();
+				}		
+			});
+			
+			$('.grouptagsList:eq(2)').click(function(){
+				if($('.grouptagsList:eq(2)').attr('turnSta')=='a'){
+				//	$('.tagsList').css('display','none');
+					$('.tagsList:eq(2)').css('display','block');				
+					$('scripttags:eq(2)').children('li').children('a').css({'borderRadius':'0px','display':'block'});
+					$('scripttags:eq(2)').children('li').css({'borderRadius':'0px','display':'block'});
+					$('.grouptagsList:eq(2)').attr('turnSta','b');
+					$('scripttags:eq(2)').children('li').children('a').eq(0).css({'borderTop':'2px solid rgb(204,204,204)','borderLeft':'2px solid rgb(204,204,204)',
+						   'borderRight':'2px solid rgb(204,204,204)','borderTopLeftRadius':'5px','borderTopRightRadius':'5px','display':'block'});
+					$('scripttags:eq(2)').children('li').children('a').eq(1).css({'borderLeft':'2px solid rgb(204,204,204)','borderRight':'2px solid rgb(204,204,204)','display':'block'});
+					$('scripttags:eq(2)').children('li').children('a').eq(2).css({'borderBottom':'2px solid rgb(204,204,204)','borderLeft':'2px solid rgb(204,204,204)',
+						   'borderRight':'2px solid rgb(204,204,204)','borderBottomLeftRadius':'5px','borderBottomRightRadius':'5px','display':'block'});		
+					$('.triangle-up:eq(2)').show();
+			
+				}else{
+					$('.tagsList:eq(2)').css('display','none');
+					$('.grouptagsList:eq(2)').attr('turnSta','a')
+					$('.triangle-up:eq(2)').hide();
+				}		
+			});
+			$('.grouptagsList:eq(3)').click(function(){
+				if($('.grouptagsList:eq(3)').attr('turnSta')=='a'){
+				//	$('.tagsList').css('display','none');
+					$('.tagsList:eq(3)').css('display','block');				
+					$('scripttags:eq(3)').children('li').children('a').css({'borderRadius':'0px','display':'block'});
+					$('scripttags:eq(3)').children('li').css({'borderRadius':'0px','display':'block'});
+					$('.grouptagsList:eq(3)').attr('turnSta','b');
+					$('scripttags:eq(3)').children('li').children('a').eq(0).css({'borderTop':'2px solid rgb(204,204,204)','borderLeft':'2px solid rgb(204,204,204)',
+						   'borderRight':'2px solid rgb(204,204,204)','borderTopLeftRadius':'5px','borderTopRightRadius':'5px','display':'block'});
+					$('scripttags:eq(3)').children('li').children('a').eq(1).css({'borderLeft':'2px solid rgb(204,204,204)','borderRight':'2px solid rgb(204,204,204)','display':'block'});
+					$('scripttags:eq(3)').children('li').children('a').eq(2).css({'borderBottom':'2px solid rgb(204,204,204)','borderLeft':'2px solid rgb(204,204,204)',
+						   'borderRight':'2px solid rgb(204,204,204)','borderBottomLeftRadius':'5px','borderBottomRightRadius':'5px','display':'block'});		
+					$('.triangle-up:eq(3)').show();
+			
+				}else{
+					$('.tagsList:eq(3)').css('display','none');
+					$('.grouptagsList:eq(3)').attr('turnSta','a')
+					$('.triangle-up:eq(3)').hide();
+				}		
+			});
+            
+            // to be continued
+            // $(document).on('click', '.grouptagsList', function(event) {
+            //     event.preventDefault();
+            //     if ($(this).attr('turnSta')=='a') {
+
+            //     } else {
+
+            //     };
+            // });
+
+            
+
+            $(document).on('click', '.openlist', function(event) {
+                event.preventDefault();
+                /* Act on the event */
+                    var that = this
+                if($(this).attr('turnSta')=='a'){
+                	
+                	setTimeout(function(){$(that).parentsUntil("section").find(".othersFunctionButton").css('display','inline-block')},10); 
+                    setTimeout(function(){$(that).parentsUntil("section").find(".GroupFilterButton").css('display','inline-block')},20); 
+                    setTimeout(function(){$(that).parentsUntil("section").find(".expandButton").css('display','inline-block')},40); 
+                    setTimeout(function(){$(that).parentsUntil("section").find(".timeBarButton").css('display','inline-block')},60); 
+                    setTimeout(function(){$(that).parentsUntil("section").find(".filterButton").css('display','inline-block')},80); 
+                    setTimeout(function(){$(that).parentsUntil("section").find(".configButton").css('display','inline-block')},100);
+                    $(this).attr('turnSta','b');
+                } else {
+                     setTimeout(function(){$(that).parentsUntil("section").find(".GroupFilterButton").css('display','none')},100);
+                     setTimeout(function(){$(that).parentsUntil("section").find(".expandButton").css('display','none')},80);
+                     setTimeout(function(){$(that).parentsUntil("section").find(".timeBarButton").css('display','none')},60);
+                     setTimeout(function(){$(that).parentsUntil("section").find(".filterButton").css('display','none')},40);
+                     setTimeout(function(){$(that).parentsUntil("section").find(".configButton").css('display','none')},20);
+                     setTimeout(function(){$(that).parentsUntil("section").find(".othersFunctionButton").css('display','none')},10);
+                     $(this).attr('turnSta','a');
+                }
+            });
+
+            //初始化渲染所有chart
+			
+			$(document).ajaxError(function(event, xhr, settings, thrownError) {
+				if(xhr.status === 401){
+					location.href="${base_path}/"
+				}
+			});
+
+            //判断是否是移动设备
+            var isMobile = {
+                Android: function () {
+                    return navigator.userAgent.match(/Android/i) ? true : false;
+                },
+                BlackBerry: function () {
+                    return navigator.userAgent.match(/BlackBerry/i) ? true : false;
+                },
+                iOS: function () {
+                    return navigator.userAgent.match(/iPhone|iPad|iPod/i) ? true : false;
+                },
+                Windows: function () {
+                    return navigator.userAgent.match(/IEMobile/i) ? true : false;
+                },
+                any: function () {
+                    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
+                }
+            };
+			// $('#gridSM').modal({
+			// 	show:false,
+			// 	backdrop:false
+			// })
+
+			$("#popupHighcharts").css('width', _window_width+'px');
+			$(".main-content").css('min-height', _window_height+'px');
+		    $('#standalone').popup({
+		      color: 'white',
+		      opacity: 1,
+		      transition: '0.3s',
+		      scrolllock: true,
+		      opentransitionend:function(e){
+		      	var uuid = $(e).data("uuid");
+		      	console.log(uuid);
+		      	console.log("popupoverlay will open");
+		      	var dataType = getChart(uuid).data_chart_type;
+                var displaying_type = getChart(uuid).displaying_type;
+                if(displaying_type==1){
+                    drawTableOnDOM(uuid,"#popupHighcharts");
+                } else if(displaying_type==0){
+                    drawChartOnDOMWithlegend(1,"#popupHighcharts",dataType,uuid,_window_height*0.8,_window_width)
+                }
+		      }
+		    });
+		    $(".close_standalone").on('click', function(event) {
+                var uuid = this.uuid;
+		    	$('#standalone').popup('hide')
+                getChart(uuid).displaying_type=0;
+		    	/* Act on the event */
+		    });
+            //绑定弹出popover控件的关闭事件
+            $(document).on('click', '.measureable .popoverclose', function(event) {
+                event.preventDefault();
+                /* Act on the event */
+                var chartuuid = $(this).attr("data-main");
+                controller_data[chartuuid]["popoverObj"].popover("destroy");
+                delete controller_data[chartuuid]["popoverObj"];
+            });
+            $(document).on('click', '.groupable .popoverclose', function(event) {
+                event.preventDefault();
+                /* Act on the event */
+                var chartuuid = $(this).attr("data-main");
+                controller_data[chartuuid]["popoverGroupObj"].popover("destroy");
+                delete controller_data[chartuuid]["popoverGroupObj"];
+            });
+            //绑定弹出popover控件的保存事件
+            $(document).on('click', '.measureable .modalformsave', function(event) {
+                event.preventDefault();
+                var uuid = $(this).attr("data-main");
+                var statisticsType = undefined;
+                var name = undefined;
+                var displayname = undefined;
+                var statisticsTypeCheckid = controller_data[uuid].tempcontent.statisticsTypeCheckid;
+                var statisticsTypeName = '最大值';
+                var nameCheckedid = controller_data[uuid].tempcontent.nameCheckedid;
+                $(".statisticsType").each(function(index,val){
+                    if(this.checked){
+                        statisticsType = $(this).attr("data-value");
+                        console.log(statisticsType+" "+index)
+                        statisticsTypeCheckid = index;
+                    }
+                })
+                // body...
+                var numbercolumn = [];
+                var nameCheckedids=[];
+                $.each(getChart(uuid)[".measureable #"+uuid].switcher, function(index, val) {
+                    if(val.element.checked){
+                        name = $(val.element).parent().find('span.ioslabel').attr("displayname");
+                        displayname = $(val.element).parent().find('span.ioslabel').text();
+                        nameCheckedids.push(name);
+                        var numbercolumnelement = {};
+                        numbercolumnelement.element = name;
+                        numbercolumnelement.functionName = statisticsType;
+                        numbercolumn.push(numbercolumnelement);
+                    }
+                });
+                
+                getChart(uuid).datacontent.numbercolumn = numbercolumn;
+                //temp content
+                if(!controller_data[uuid].tempcontent ){
+                    controller_data[uuid].tempcontent = {};                 
+                }
+                controller_data[uuid].tempcontent.statisticsTypeCheckid = statisticsTypeCheckid;
+                controller_data[uuid].tempcontent.nameCheckedid = nameCheckedids[0];
+                controller_data[uuid].tempcontent.nameCheckedid2 = nameCheckedids[1];
+                if (statisticsTypeCheckid==0) {
+                    statisticsTypeName = '最大值';
+                } else if(statisticsTypeCheckid==1){
+                    statisticsTypeName = '最小值';
+                } else if(statisticsTypeCheckid==2){
+                    statisticsTypeName = '总和值';
+                } else if(statisticsTypeCheckid==3){
+                    statisticsTypeName = '平均值';
+                }
+                controller_data[uuid].tempcontent.labelShow = displayname+statisticsTypeName;
+                getChart(uuid).domSelector
+                var progress = $('[data-templateKey="'+uuid+'"]').find('.progress');
+                $('[data-templateKey="'+uuid+'"]').find('.xaxis').text("度量值："+controller_data[uuid].tempcontent.labelShow);
+                //destroy the popover
+                controller_data[uuid]["popoverObj"].popover("destroy");
+                delete controller_data[uuid]["popoverObj"];
+                //显示加载动画
+                progressTimer(progress,uuid);                
+            })
+            //绑定选择popover分组
+            $(document).on("click",".groupable .modalformsave",function () {
+                event.preventDefault();
+                var uuid = $(this).attr("data-main");
+                var columname = undefined;
+                var name = undefined;
+                var statisticsTypeCheckid = controller_data[uuid].tempcontent.statisticsTypeCheckid;
+                var nameCheckedid = 0;
+                $('#groupModal').modal('hide')
+                $(".firstGroup").each(function(index,val){
+                    if(this.checked){
+                        columname = $(this).attr("data-value");
+                        statisticsTypeCheckid = columname;
+                    }
+                })
+                // body...
+                $.each(getChart(uuid)[".groupable #"+uuid].switcher, function(index, val) {
+                    if(val.element.checked){
+                        name = $(val.element).parent().find('span.ioslabel').attr("displayname");
+                        console.log(name)
+                        nameCheckedid = name;
+                    }
+                });
+                getChart(uuid).datacontent.groupcolumn=[]
+                getChart(uuid).datacontent.groupcolumn.push(columname)
+                if(name) {
+                    getChart(uuid).datacontent.groupcolumn.push(name)
+                }
+                //temp
+                if(!controller_data[uuid].tempcontent ){
+                    controller_data[uuid].tempcontent = {};                 
+                }
+                controller_data[uuid].tempcontent.groupstatisticsTypeCheckid = statisticsTypeCheckid;
+                controller_data[uuid].tempcontent.groupnameCheckedid = nameCheckedid;
+                var progress = $('[data-templateKey="'+uuid+'"]').find('.progress');
+                //destroy the popover
+                controller_data[uuid]["popoverGroupObj"].popover("destroy");
+                delete controller_data[uuid]["popoverGroupObj"];
+                //显示加载动画
+                progressTimer(progress,uuid);
+            })
+
+            //绑定comment的操作
+            $(document).on('click', '.templateCommentSaveBtn', function(event) {
+                event.preventDefault();
+                var uuid = $(this).attr("data-main");
+                console.log(uuid);
+                /* Act on the event */
+            });
+
+            //开始初始化操作
+			uuidArray = [guid(),guid(),guid(),guid()];
+			initSchema();
+            initTemplateSelector().done(function(){
+                getTemplateRecordAndDataFun(template_id)()
+            });
+            
+            //20151029 qgy deleted start
+            //getTemplateData(template_id);
+            //20151029 qgy deleted end
+            
+            var domSelectorArray = []
+            $.each(_global_template, function(index, val) {
+                domSelectorArray.push('[data-templateKey="'+val.containerId+'"]');
+            });
+			if(template_id>0){
+                initChart(_global_chart,controller_data,domSelectorArray,undefined,uuidArray,true);
+                //20151029 qgy deleted start
+                // initChart(['#chart','#chartA','#chartB','#chartC'],undefined,uuidArray,true);
+                // //20151029 qgy deleted end
+                initFromTemplateData();
+			} else {
+                initChart(_global_chart,controller_data,domSelectorArray,undefined,uuidArray)
+                //20151029 qgy deleted start                 
+                // initChart(['#chart','#chartA','#chartB','#chartC'],undefined,uuidArray)
+                //20151029 qgy deleted end
+			}
+			$.each(uuidArray, function(index, val) {
+				var id = val;
+			});
+			initSchemaSelector();
+            initChartAxisLinkBymap(_global_domSelectorMap)
+			initTimeBar();
+
+            //this is for cq ecocenter start
+            //ecocenter 1-1-1 business
+            var redirectToTemplate = function(classname){
+                var tempdata = {};
+                tempdata.templates = [];
+                tempdata.templates.push(setenterpriseClassname(classname,"#chart"));
+                tempdata.templates.push(setEnergyStruct(classname,"#chartA"));
+                tempdata.templates.push(setEnergyStruct(classname,"#chartB"));
+                tempdata.templates.push(setEnergyStruct(classname,"#chartC"));
+            }
+
+            //ecocenter 1-1-1-1 business
+            var setenterpriseClassname = function(classname,domSelector){
+                var datacontent = {};
+                var templateDataA = {};
+                templateDataA.datatype = 1;
+                templateDataA.graphtype = "line";
+                templateDataA.schemaid = session_schema_id;
+                datacontent.filetercolumn=[{"itemName":"classname","operator":"=","value":classname}]  
+                datacontent.numbercolumn= [{
+                        "element": "energyvalue",
+                        "functionName": "sum"
+                    }]
+                datacontent.groupcolumn=["energycodename","time_month"]; 
+                datacontent.fileterGroupColumn=[];
+                templateDataA.datacontent = datacontent;
+                templateDataA.containerId = domSelector;
+                return templateDataA;
+            }
+            //ecocenter 1-1-1-2 business
+            var setEnergyStruct = function(classname,domSelector){
+                var datacontent = {};
+                var templateDataA = {};
+                templateDataA.datatype = 3;
+                templateDataA.graphtype = "pie";
+                templateDataA.schemaid = session_schema_id;
+                datacontent.filetercolumn=[{"itemName":"classname","operator":"=","value":classname}]  
+                datacontent.numbercolumn= [{
+                        "element": "energyvalue",
+                        "functionName": "sum"
+                    }]
+                datacontent.groupcolumn=["energycodename"]; 
+                datacontent.fileterGroupColumn=[];
+                templateDataA.datacontent = datacontent;
+                templateDataA.containerId = domSelector;
+                return templateDataA;
+            }
+
+            //ecocenter 1-1-1 common business
+            var setCommon = function(columnname,columnparam,datatype,graphtype,schemaid,domSelector){
+
+            }
+
+            var getShowModalFormFun = function(){
+                var inited = false;
+                var oTable;
+                var renderdata;
+                return function(){
+                    var url = '${base_path}/eco/getFormData';
+                    var fun = function(data){
+                        //renderdata = data;
+                        renderdata = [{"enterprisename":1,"classname":2,"energyvalue":3}];
+                        $("#modalForm").modal('show');
+                        if(!inited){
+                            $("#modalForm").append(
+                                $("#modalFormTemplate").render(renderdata)
+                            )                            
+                            $("#modalForm").one('shown.bs.modal', function (e) {
+                                oTable = $('#hidden-table-info').dataTable({
+                                    "createdRow": function( row, data, dataIndex ) {
+                                        $(row).on("click",function(){
+                                            console.log(dataIndex);
+                                            console.log(data[0]);
+                                        });
+                                    }
+                                })
+                            })
+                            inited = true;
+                        }                        
+                    };
+                    var errfun = function(data){};
+                    var datatype = 'json';
+                    var data = {'userId':${userid},'token':1,"schema_id":session_schema_id};
+                    var async = true;
+                    if(!inited){
+                        renderdata = [{"enterprisename":1,"classname":2,"energyvalue":3}];
+                        fun(renderdata);
+                        //commonPost(url,fun,errfun,datatype,data,async);
+                    } else {
+                        fun(renderdata);
+                    }
+                }
+            }
+
+            //test modal form
+            var showModalFun = getShowModalFormFun();
+
+            $(document).on('click', '.formmodal', function(event) {
+                showModalFun();
+            });
+            //this is for cq ecocenter end
+			$(".toggle-btn").on("click",function(){redrawCharts(uuidArray)});
+            // $(".xaxis").on("click",function(event){
+            $(document).on('click', '.xaxis', function(event) {
+				event.preventDefault();
+				//showModal(this.uuid,'#gridSM',event);
+                togglePopover(this.uuid,event)
+			})
+            // $(".groupLink").on("click",function(){
+            $(document).on('click', '.groupLink', function(event) {
+				event.preventDefault();
+                togglePopover(this.uuid,event);
+				// showModal(this.uuid,'#groupModal');
+				//$('.groupComp').setPosition(event);
+			})
+			//
+			// $(".grouptag").on("click",function () {
+            $(document).on('click', '.grouptag', function(event) {
+				event.preventDefault();
+				var uuid = this.uuid;
+				$(this).parent().find('.grouptag').removeClass('active');
+				$(this).addClass('active');
+				getChart(uuid).datacontent.groupcolumn[0] = $(this).attr('data-value');
+				controller_data[uuid].tempcontent.groupstatisticsTypeCheckid = $(this).attr('data-value');
+				var progress = $(this).parentsUntil('section').find('.progress');
+				progressTimer(progress,this.uuid);
+			})
+
+			$(document).on('click', '.templateSaveBtn', function(event) {
+				event.preventDefault();
+				/* Act on the event */
+				var templatename = $(".templateNameText").val();
+				var templateId = $(".templateItem").val();
+                // qgy 20151029 deleted start
+                // if(!_global_template[0]){
+                //     _global_template[0] = {};
+                    
+                // }
+                // if(!_global_template[1]){
+                //     _global_template[1] = {};
+                // }
+                // if(!_global_template[2]){
+                //     _global_template[2] = {};
+                    
+                // }
+                // if(!_global_template[3]){
+                //     _global_template[3] = {};
+                // }
+                // _global_template[0].titledesc = $(".chartname").val();
+                // _global_template[0]["containerId"]="#chart";
+                // _global_template[1].titledesc = $(".chartAname").val();
+                // _global_template[1]["containerId"]="#chartA";
+                // _global_template[2].titledesc = $(".chartBname").val();
+                // _global_template[2]["containerId"]="#chartB";
+                // _global_template[3].titledesc = $(".chartCname").val();
+                // _global_template[3]["containerId"]="#chartC";                    
+                // qgy 20151029 deleted end
+                var tempPosition = {}
+                $.each(controller_data.position, function(index, val) {
+                    tempPosition[val.uuid]=val;
+                });
+                $.each(_global_template, function(index, val) {
+                    val.titledesc = $("."+val.containerId).val()
+                    tempPosition[val.containerId].name = val.titledesc;
+                });
+
+				console.log(templatename);
+				if(templateId==""){
+					templateId=undefined;
+				}
+				saveTemplate(templatename,templateId);
+				$('#templateModal').modal('hide');
+				// location.reload();
+			});
+
+            $(document).on('click', '.layoutSaveBtn', function(event) {
+                event.preventDefault();
+                /* Act on the event */
+                var tempPosition = window.gridster.serialize();
+                if (caculateSquare(tempPosition)) {
+                    controller_data.position = tempPosition;
+                    $('#layoutTemplateModal').modal('hide');
+                    rebuildLayout();
+                    initTimeBar();
+                    window.layoutSavedFlag = true;
+                 } else{
+                    alert("布局必须是长方形")
+                };
+            });
+
+            initgridsterRemove()
+            //Enable swiping...
+            // $(".gridster li").swipe( {
+            //     longTap:function(event, target) {
+            //         window.gridster.remove_widget(this);
+            //         var uuid = $(this).attr('data-uuid');
+            //         _temp_remove_array.push(uuid)
+            //     },
+            //     longTapThreshold:1000
+            // });
+              
+
+            initgridsterRemove()
+            //Enable swiping...
+            // $(".gridster li").swipe( {
+            //     longTap:function(event, target) {
+            //         window.gridster.remove_widget(this);
+            //         var uuid = $(this).attr('data-uuid');
+            //         _temp_remove_array.push(uuid)
+            //     },
+            //     longTapThreshold:1000
+            // });
+              
+
+            $(document).on('click', '.gridster li', function(event) {
+                if(event.ctrlKey) {
+                    window.gridster.remove_widget(this);
+                    var uuid = $(this).attr('data-uuid');
+                    _temp_remove_array.push(uuid)
+                }
+            });
+
+            $(document).on('click', '.templateInsertButton', function(event) {
+                insertGridsterClick();
+            });
+            
+            $(document).on('click', '.othersFunctionSave', function(event) {
+            	event.preventDefault();            	
+            	var uuid = $(this).attr("data-main");
+            	var checkitem ="";
+                $('#othersFunctionModal').modal('hide');
+                $(".headcount").each(function(index,val){
+                    if(this.checked){
+                    	checkitem = $(this).attr("data-value");
+                        console.log(checkitem+" "+index)
+                        getChart(uuid).datacontent.headcount=checkitem;
+                        controller_data[uuid].tempcontent.headcount = checkitem;
+                        getChart(uuid).datacontent.numbercolumn[0].functionName="sum";
+                        if(getChart(uuid).datacontent.numbercolumn[1]!=null){
+                        	getChart(uuid).datacontent.numbercolumn[1].functionName="sum";
+                        }
+                    }
+                })
+                
+                if(checkitem==""){
+                	delete getChart(uuid).datacontent.headcount ;
+                	delete controller_data[uuid].tempcontent.headcount ;
+                	var statisticsTypeCheckid = controller_data[uuid].tempcontent.statisticsTypeCheckid
+                	var functionName="";
+                	   if (statisticsTypeCheckid==0) {
+                		   functionName = 'max';
+                       } else if(statisticsTypeCheckid==1){
+                    	   functionName = 'min';
+                       } else if(statisticsTypeCheckid==2){
+                    	   functionName = 'sum';
+                       } else if(statisticsTypeCheckid==3){
+                    	   functionName = 'avg';
+                       }
+                	  getChart(uuid).datacontent.numbercolumn[0].functionName=functionName;
+                      if(getChart(uuid).datacontent.numbercolumn[1]!=null){
+                      	 getChart(uuid).datacontent.numbercolumn[1].functionName=functionName;
+                      } 
+                }
+                
+                if($("#aggregate").attr("checked")=='checked'){
+                	 getChart(uuid).datacontent.aggregateColumn='1';
+                	 controller_data[uuid].tempcontent.aggregate = '1';
+                }else{
+                	getChart(uuid).datacontent.aggregateColumn='0';
+                    controller_data[uuid].tempcontent.aggregate ='0' ;
+                }
+               
+               // getChart(uuid).datacontent.headcount="sub_category"
+          
+                /* Act on the event */
+                var progress = $('[data-templateKey="'+uuid+'"]').find('.progress');
+                progressTimer(progress,uuid);
+            });
+
+            $(document).on('click', '.treeGroupFilterSaveBtn', function(event) {
+                var uuid = $(this).attr("data-main");
+                getStructure(uuid);
+                $('#treeGroupFilterModal').modal('hide');
+                event.preventDefault();
+                filterGroupColumnArray = [];
+                $.each(controller_data[uuid].tempcontent.selectedItems, function(index, val) {
+                    var filterGroupColumn = {}
+                    filterGroupColumn.element = val.attr.field_name;
+                    filterGroupColumn.value = val.text;
+                    filterGroupColumnArray.push(filterGroupColumn)
+                });
+                getChart(uuid).datacontent.filterGroupColumnArray = filterGroupColumnArray;
+                /* Act on the event */
+                var progress = $('[data-templateKey="'+uuid+'"]').find('.progress');
+                progressTimer(progress,uuid);
+            });
+
+			$(document).on('click', '.timeBarButton', function(event) {
+				event.preventDefault();
+				/* Act on the event */
+				$(this).parentsUntil('section').find('.rangeSliderClass').parent().toggle("fast");
+			});
+
+			$(document).on('click', '.expandButton', function(event) {
+				event.stopImmediatePropagation();
+				/* Act on the event */
+                var uuid = this.uuid;
+                standAloneShow(uuid)
+    //             $("#standalone").find('.axislink').each(function(index, val) {
+    //                  this.uuid = uuid;
+    //             });
+    //             //$("#standalone").append($("#graphTypeTemplate").render())
+				// $('#standalone').data('uuid', uuid)
+				// $('#standalone').popup('show');
+			});
+
+
+            $(document).on('click', '[data-toggle="popover"]', function(event) {
+                event.preventDefault();
+                var that = this.uuid;
+                var innerHtml = $("#commentModalTemplate").render({"chartuuid":that})
+                $("#commentModal").html(innerHtml)
+                $("#commentModal").modal("show");
+            });
+
+            $(document).on('click', '.tableswitch', function(event) {
+                event.preventDefault();
+                var uuid = this.uuid;
+                // toggleToTable(uuid);
+                if(getChart(uuid).displaying_type==1){
+                    //getChart(uuid).displaying_type=0;
+                    // redrawCharts([uuid])
+                } else {
+                    // initTableFromBackend(uuid);
+                    getChart(uuid).displaying_type=1;                    
+                    standAloneShow(uuid)
+                }
+                /* Act on the event */
+            });
+            $(document).on('click', '.dimensionswitch', function(event) {
+                $(this).parentsUntil('section').find(".chartOption").toggle("fast");
+            });
+
+            $(document).on('click','.templateSave', function(event) {
+                event.preventDefault();
+                $('#templateModal').html(
+                    $("#templateSaveModalTemplate").render(controller_data)
+                )
+                $(".templateNameText").val($(".templateItem option:selected").text());
+                $.each(_global_template, function(index, val) {
+                    $("."+val.containerId).val(val.titledesc);
+                });
+                setTimeout(function(){$('#templateModal').modal('show')},200)
+            });
+
+            $(document).on('click','.layoutShow', function(event) {
+                event.preventDefault();
+                $("#layoutTemplateModal").modal("show")
+                //清空temp值
+                if (layoutSavedFlag) {temp_uuidArray=[];temp_controller_data={};_temp_chart={};_temp_template=[];_temp_remove_array=[];};
+                
+            });
+
+			$(document).on('change', '.templateItem', function(event) {
+				event.preventDefault();
+				/* Act on the event */
+                if($(this).val()!=""){
+                    // qgy edited start
+                    // getTemplateData($(this).val());
+                    var getTemplateDataAndReocrd = getTemplateRecordAndDataFun($(this).val());
+                    getTemplateDataAndReocrd();
+                    var domSelectorArray = []
+                    uuidArray = [];
+                    $.each(_global_template, function(index, val) {
+                        domSelectorArray.push('[data-templateKey="'+val.containerId+'"]');
+                        uuidArray.push(val.containerId)
+                    });
+                    initChart(_global_chart,controller_data,domSelectorArray,undefined,uuidArray,true);
+                    // qgy edited end
+                    initFromTemplateData();
+                    initChartAxisLinkBymap(_global_domSelectorMap);
+                    initTimeBar();
+                    initgridsterRemove();
+                    console.log("已开始查询模板id为"+$(this).val())
+                    if (!isMobile.any()) { //判断是否为android,BlackBerry,ios,windows
+                        $("li[data-toggle='tooltip']").tooltip();
+                    }
+                }
+			});
+
+            $(document).on('click','.axislink', function(event) {
+				event.preventDefault();
+				/* Act on the event */
+			});
+			//modal form save
+			$("#gridSM").on("click",".modalformsave",function () {
+				event.preventDefault();
+				var uuid = $('#gridSM')[0].uuid;
+				var statisticsType = undefined;
+				var name = undefined;
+				var displayname = undefined;
+				var statisticsTypeCheckid = controller_data[uuid].tempcontent.statisticsTypeCheckid;
+				var statisticsTypeName = '最大值';
+				var nameCheckedid = controller_data[uuid].tempcontent.nameCheckedid;
+				$('#gridSM').modal('hide')
+				$(".statisticsType").each(function(index,val){
+					if(this.checked){
+						statisticsType = $(this).attr("data-value");
+						console.log(statisticsType+" "+index)
+						statisticsTypeCheckid = index;
+					}
+				})
+				// body...
+				$.each(getChart(uuid)["#gridSM"].switcher, function(index, val) {
+					if(val.element.checked){
+						name = $(val.element).parent().find('span.ioslabel').attr("displayname");
+						displayname = $(val.element).parent().find('span.ioslabel').text();
+						nameCheckedid =name;
+					}
+				});
+				var numbercolumn = [];
+				var numbercolumnelement = {};
+				numbercolumnelement.element = name;
+				numbercolumnelement.functionName = statisticsType;
+				numbercolumn.push(numbercolumnelement);
+				getChart(uuid).datacontent.numbercolumn = numbercolumn;
+				//temp content
+				if(!controller_data[uuid].tempcontent ){
+					controller_data[uuid].tempcontent = {};					
+				}
+				controller_data[uuid].tempcontent.statisticsTypeCheckid = statisticsTypeCheckid;
+				controller_data[uuid].tempcontent.nameCheckedid = nameCheckedid;
+				if (statisticsTypeCheckid==0) {
+					statisticsTypeName = '最大值';
+				} else if(statisticsTypeCheckid==1){
+					statisticsTypeName = '最小值';
+				} else if(statisticsTypeCheckid==2){
+					statisticsTypeName = '总和值';
+				} else if(statisticsTypeCheckid==3){
+					statisticsTypeName = '平均值';
+				}
+				controller_data[uuid].tempcontent.labelShow = displayname+statisticsTypeName;
+				getChart(uuid).domSelector
+				var progress = $('[data-templateKey="'+uuid+'"]').find('.progress');
+				$('[data-templateKey="'+uuid+'"]').find('.xaxis').text("度量值："+controller_data[uuid].tempcontent.labelShow);
+				progressTimer(progress,this.uuid);
+			})
+			//modal form save
+			$("#groupModal").on("click",".modalformsave",function () {
+				event.preventDefault();
+				var uuid = $('#groupModal')[0].uuid;
+				var columname = undefined;
+				var name = undefined;
+				var statisticsTypeCheckid = controller_data[uuid].tempcontent.statisticsTypeCheckid;
+				var nameCheckedid = 0;
+				$('#groupModal').modal('hide')
+				$(".firstGroup").each(function(index,val){
+					if(this.checked){
+						columname = $(this).attr("data-value");
+						statisticsTypeCheckid = columname;
+					}
+				})
+				// body...
+				$.each(getChart(uuid)["#groupModal"].switcher, function(index, val) {
+					if(val.element.checked){
+						name = $(val.element).parent().find('span.ioslabel').attr("displayname");
+						console.log(name)
+						nameCheckedid = name;
+					}
+				});
+				getChart(uuid).datacontent.groupcolumn=[]
+				getChart(uuid).datacontent.groupcolumn.push(columname)
+				if(name) {
+					getChart(uuid).datacontent.groupcolumn.push(name)
+				}
+				//temp
+				if(!controller_data[uuid].tempcontent ){
+					controller_data[uuid].tempcontent = {};					
+				}
+				controller_data[uuid].tempcontent.groupstatisticsTypeCheckid = statisticsTypeCheckid;
+				controller_data[uuid].tempcontent.groupnameCheckedid = nameCheckedid;
+				var progress = $('[data-templateKey="'+uuid+'"]').find('.progress');
+				progressTimer(progress,uuid);
+			})
+
+			//modal chart save
+			$("#filterModal").on("click",".modalfiltersave",function () {
+				event.preventDefault();
+				var filterColumn = [];
+				var uuid = $('#filterModal')[0].uuid;
+				$('#filterModal').modal('hide');
+				var filterObject = getChart(uuid).filter;
+				for(f in filterObject){
+					filterColumn.push(filterObject[f]);
+				}
+				getChart(uuid).datacontent.filetercolumn = filterColumn;
+				var progress = $('[data-templateKey="'+uuid+'"]').find('.progress');
+				progressTimer(progress,uuid);
+			})
+			
+			$("#groupFilterModal").on("click",".modalgroupfiltersave",function () {
+	      
+	   		    var uuid = $('#groupFilterModal')[0].uuid;
+				var columname = undefined;
+				var name = undefined;
+				var groupFilter = undefined;
+			    var groupInput = undefined;
+				var groupstatisticsTypeCheckid = controller_data[uuid].tempcontent.groupstatisticsTypeCheckid;
+				var nameCheckedid = 0;
+				var groupFilterDetail = [];
+				var fileterGroupColumn = {};
+				var itemName="";
+				var value = [];
+			    $('#groupFilterModal').modal('hide')
+				$(".firstGroup").each(function(index,val){
+					if(this.checked){
+						columname = $(this).attr("data-value");
+						statisticsTypeCheckid = columname;
+					}
+				})
+				// body...
+			    $(".groupFilterInput").each(function(index,val){
+			        if(this.checked){
+			        	itemName = $(this).attr("data-value");
+			            console.log(itemName);
+			            fileterGroupColumn.element=itemName;
+			        }
+			    })
+
+			    $(".groupFilterDetailInput:visible").each(function(index,val){
+			        if(this.checked){
+			            columname = $(this).attr("data-value");
+			            console.log(columname)
+			            value.push(columname);
+			        }
+			    })
+			    fileterGroupColumn.value=value;
+			 	getChart(uuid).datacontent.fileterGroupColumn=[]
+			    if(value==""){
+			    	getChart(uuid).datacontent.fileterGroupColumn=[]
+			    }else{
+			    	getChart(uuid).datacontent.fileterGroupColumn[0]=fileterGroupColumn;
+			    }
+				//temp
+				if(!controller_data[uuid].tempcontent ){
+					controller_data[uuid].tempcontent = {};					
+				}
+			
+				controller_data[uuid].tempcontent.groupFilter.element = itemName;
+				controller_data[uuid].tempcontent.groupFilter.value = value;
+				
+				var progress = $('[data-templateKey="'+uuid+'"]').find('.progress');
+				progressTimer(progress,uuid);
+	    })
+
+			$("#filterModal").on('change', 'select', function(event) {
+				event.preventDefault();
+				/* Act on the event */
+		        var property = $(".column option:selected").attr('dtype');
+		        property = Number(property);
+		        if(property==0||property+1==0){
+		            $('#valueinput').show('fast');
+		            $('#caldateinput').hide('fast');
+		            if(property==0){
+		                $(".operator").show('fast');
+		                $(".likeOperator").hide('fast');
+		            } else {
+		                $(".operator").hide('fast');
+		                $(".likeOperator").show('fast');
+		            }
+		        } else {
+		            $('#caldateinput').show('fast');
+		            $('#valueinput').hide('fast');
+                    $(".operator").show('fast');
+                    $(".likeOperator").hide('fast');
+		        }
+			});
+			
+
+
+            $(document).on('click','.configButton', function(event) {
+			// $(".configButton").on('click', function(event) {
+                event.stopImmediatePropagation();
+				//event.preventDefault();
+				showModal(this.uuid,'#dsModal');
+				$('.dataSource').setPosition(event);
+			});
+            $(document).on('click','.filterButton', function(event) {
+			// $(".filterButton").on('click', function(event) {
+				event.preventDefault();
+				/* Act on the event */
+				showModal(this.uuid,'#filterModal');
+				$('.filterdialog').setPosition(event);
+			});
+			
+			 $(document).on('click','.othersFunctionButton', function(event) {
+			        event.preventDefault();
+			        var uuid = this.uuid;
+	                showModal(this.uuid,'#othersFunctionModal');
+		     });
+			
+            $(document).on('click','.GroupFilterButton', function(event) {
+			// $(".GroupFilterButton").on('click', function(event) {
+		        event.preventDefault();
+		        var uuid = this.uuid;
+                showModal(this.uuid,'#treeGroupFilterModal');
+		        // showModal(this.uuid,'#groupFilterModal');
+          //       $('.groupFilterComp').setPosition(event);
+		    });
+
+
+            $(document).on('click', '#dsModal', function(event) {
+                event.stopImmediatePropagation();
+                console.log("stop by dsModal");
+            })
+
+            $(document).on('click', '#filterModal', function(event) {
+                event.stopPropagation();
+                console.log("stop by filterModal")
+                // event.stopImmediatePropagation();
+                /* Act on the event */
+            });
+             //点击切换图表类型
+            $(document).on('click', '.wdgt-profile', function(event) {
+			// $(".wdgt-profile").on("click",function(){
+                event.stopImmediatePropagation();
+				var data_chart_type = $(this).attr('data-chart-type');
+                var uuid = $('#dsModal')[0].uuid;
+				// var uuid = $(".wdgt-profile").parentsUntil('section').find('#dsModal')[0].uuid;
+				$(".wdgt-profile").removeClass('graphShadow');
+				$(this).addClass('graphShadow')
+				var chartObject = getChart(uuid);
+				chartObject.data_chart_type = data_chart_type;
+                //$('#dsModal').modal('hide');
+				console.log(data_chart_type)
+
+                var statisticsType = undefined;
+                var name = undefined;
+                $('#dsModal').modal('hide')
+                console.log(getChart(uuid).data_chart_type)
+                var datatypeEnum = getChart(uuid).data_type_enum;
+                var dataObject = inferDataObject(uuid);
+                if(datatypeEnum==dataObject.datatype){
+                    redrawCharts([uuid])
+                } else {
+                    var deferred = queryChartData(uuid);
+                }
+			})
+
+			$("#filterModal").on('click',"#addfilter", function(event) {
+				event.preventDefault();
+				var filterObject = {};
+		        var column = $(".column").val();
+		        var columnDisplay = $(".column option:selected").text();
+		        var operator = $(".opgroup:visible").val();
+		        var comparevalue = '';
+				$(".comparevalue").each(function(index, val) {
+					 /* iterate through array or object */
+					 var that = $(this);
+					 if (that.is(':visible')) {
+					 	comparevalue =  that.val();
+				};
+					 
+				});;
+				var valueKey = columnDisplay+operator+comparevalue;
+				filterObject.itemName = column;
+				filterObject.operator = operator;
+		        if(operator=="like"){
+		            filterObject.value = "%"+comparevalue+"%";
+		        } else {
+		            filterObject.value = comparevalue;
+		        }
+				filterObject.displayName = columnDisplay;
+				$('#filterTags').addTag(valueKey);
+				// $('#filterTags'+this.uuid).addTag(valueKey);
+				if(_global_chart[this.uuid]){
+					if (!_global_chart[this.uuid].filter) {
+						_global_chart[this.uuid].filter={};
+					}
+					_global_chart[this.uuid].filter[valueKey]=filterObject;
+				}
+			});
+			jQuery.fn.isChildAndSelfOf = function(b){ 
+				return (this.closest(b).length > 0); 
+			}; 
+            $(document).on('click', '.wrapper', function(event) {
+			// $('.wrapper').on('click', function(event) {
+				event.preventDefault();
+				var obj=$(event.target);
+				if(obj.isChildAndSelfOf($(".wrapper"))&&!obj.isChildAndSelfOf($(".xaxis"))
+						&&!obj.isChildAndSelfOf($(".openlist"))&&!obj.isChildAndSelfOf($(".grouptagsList"))&&!obj.isChildAndSelfOf($(".groupLink"))&&!obj.isChildAndSelfOf($(".configButton"))&&!obj.isChildAndSelfOf($(".filterButton"))){					
+					$('#gridSM').modal('hide');
+					$('#groupModal').modal('hide');
+					$('#filterModal').modal('hide');
+					$('#dsModal').modal('hide');
+					$(".grouptagsList").attr('turnsta','a');
+					$('.tagsList').hide();
+					$('.triangle-up').hide();
+				}		
+			});
+            if (!isMobile.any()) { //判断是否为android,BlackBerry,ios,windows
+                $("li[data-toggle='tooltip']").tooltip();
+            }
+
+		});
+		
+		function guid() {
+		  function s4() {
+		    return Math.floor((1 + Math.random()) * 0x10000)
+		      .toString(16)
+		      .substring(1);
+		  }
+		  return s4() + s4() + s4() + s4() +
+		    s4() + s4() + s4() + s4();
+		}		
+
+		function commonPost(url,fun,errfun,datatype,data,async){
+		  if (!datatype) {
+			datatype="text"
+		  };
+		  if (!async) {
+		  	async = false;
+		  };
+		  return $.ajax({
+		      url:url,
+              method:'POST',
+		      dataType:datatype,
+		      async:async,
+		      //type: "POST",
+		      success:fun,
+		      data:data
+		  }).fail(
+		  	  errfun
+		  )
+		}
+		
+	   
+	    var initifClickBind = function () {
+            $(document).on('ifChecked', '.groupFilter input', function(event) {
+	        // $(".groupFilter input").on('ifChecked', function(event) {
+	            event.preventDefault();
+	            /* Act on the event */
+	            var col = $(this).attr("data-value");
+	            $(this).parents(".icheck").find(".groupFilter").hide();
+	            $(this).parents(".groupFilter").show();
+	            $("."+col).show();
+	            // $(".groupOptions").find("."+col).show();
+	        });
+
+            $(document).on('ifUnchecked', '.groupFilter input', function(event) {
+	        // $(".groupFilter input").on('ifUnchecked', function(event) {
+	            event.preventDefault();
+	            /* Act on the event */
+	            var col = $(this).attr("data-value");
+	            $(this).parents(".icheck").find(".groupFilter").show();
+	            $("."+col).hide();
+	            // $(".groupOptions").find("."+col).hide();
+	        });    
+	    }
+	
+
+		</script>
+</@script>

@@ -1,0 +1,45 @@
+<script id="groupFilterTemplate" type="text/x-jsrender">
+    <div class="modal-dialog groupFilterComp">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="xx">维度选择</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+          <div class="col-sm-12" >比较信息</div>
+          <div class="col-sm-12 icheck">
+            {{for groupDataDetail}}
+            <div class="minimal single-rows groupFilter" {{if msourceElement.hide}}style="display:none"{{else msourceElement.hide==1}}style="display:none"{{else}}{{/if}}>
+                <div class="checkbox ">
+                    <input type="checkbox" data-value="{{>msourceElement.field}}" class="groupFilterInput" {{if msourceElement.checked}}checked{{/if}}>
+                    <label>{{>msourceElement.fieldname}}</label>
+                </div>
+            </div>
+            {{/for}}
+          </div>
+
+          {{for groupDataDetail}}
+          <div class="col-sm-12 icheck groupOptions {{>msourceElement.field}}" {{if msourceElement.hide==0}}style="display:block"{{/if}}>
+            {{for mmemberList}}
+            <div class="minimal">
+                <div class="checkbox ">
+                    <input type="checkbox" data-value="{{>id}}" data-displayname="{{>mName}}" {{if checked}}checked{{/if}} class="groupFilterDetailInput">
+                    <label>{{>mName}}</label>
+                </div>
+            </div>
+            {{/for}}
+          </div>
+          {{/for}}
+
+
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary modalgroupfiltersave">保存修改</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    </script>

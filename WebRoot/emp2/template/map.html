@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>Login</title>
+
+</head>
+<body>
+        <input type="text" name="erro" id="error_code">
+        <button id="btn" class="templateSaveBtn" type="button">Submit</button>
+        
+        
+</body> 
+<script src="${base_path}/emp2/js/bootstrap.min.js"></script>
+<script src="${base_path}/emp2/js/modernizr.min.js"></script>
+<script src="${base_path}/emp2/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+	var data = {};
+	data.userId = ${userid};
+	data.token = 1;
+	data.templates = [];
+	var datacontent = {};
+	
+	var templateDataB = {};
+	var templateDataC = {};
+	var templateDataD = {};
+	var templateDataA = {};
+	
+	function temlateA(){
+		templateDataA.datatype = 1;
+		templateDataA.graphtype = "pie";
+		templateDataA.schemaid = 5;
+		datacontent.filetercolumn=[];
+		datacontent.numbercolumn= {
+	            "element": "sale_amount",
+	            "functionName": "max"
+	        }
+		datacontent.groupcolumn=["vip_name"];
+		datacontent.fileterGroupColumn=[];
+		templateDataB.datacontent = datacontent;
+		templateDataB.containerId = "#chart";
+	}
+	function templateB(){
+		templateDataB.datatype = 1;
+		templateDataB.graphtype = "pie";
+		templateDataB.schemaid = 5;
+		datacontent.filetercolumn=[];
+		datacontent.numbercolumn= {
+	            "element": "sale_amount",
+	            "functionName": "max"
+	        }
+		datacontent.groupcolumn=["vip_name"];
+		datacontent.fileterGroupColumn=[];
+		templateDataB.datacontent = datacontent;
+		templateDataB.containerId = "#chartA";
+	}
+	function templateC(){
+		templateDataC.datatype = 1;
+		templateDataC.graphtype = "line";
+		templateDataC.schemaid = 5;
+		datacontent.filetercolumn=[];
+		datacontent.numbercolumn= {
+	            "element": "sale_amount",
+	            "functionName": "max"
+	        }
+		datacontent.groupcolumn=["vip_name"];
+		datacontent.fileterGroupColumn=[];
+		templateDataC.datacontent = datacontent;
+		templateDataC.containerId = "#chartB";
+	}
+	function templateD(){
+		templateDataD.datatype = 1;
+		templateDataD.graphtype = "line";
+		templateDataD.schemaid = 5;
+		datacontent.filetercolumn=[];
+		datacontent.numbercolumn= {
+	            "element": "sale_amount",
+	            "functionName": "max"
+	        }
+		datacontent.groupcolumn=["vip_name"];
+		datacontent.fileterGroupColumn=[];
+		templateDataD.datacontent = datacontent;
+		templateDataD.containerId = "#chartC";
+	}
+	temlateA();
+	temlateB();
+	temlateC();
+	temlateD();
+	data.templates.push(templateDataA);
+	data.templates.push(templateDataB);
+	data.templates.push(templateDataC);
+	data.templates.push(templateDataD);
+	data.templates = JSON.stringify(data.templates);
+
+	$(document).on('click', '.templateSaveBtn', function(event) {
+		event.preventDefault();
+		/* Act on the event */
+		var error_code = $("#error_code").val();
+		if(error_code==123){
+			var url = 'saveTemplate';
+			var fun = function (data1) {
+
+			};
+			var errfun = function () {};
+			var datatype = 'json';
+			var data1 = data;
+			commonPost(url,fun,errfun,datatype,data1,false);
+		}
+	});
+	
+	  
+	function commonPost(url,fun,errfun,datatype,data,async){
+		  if (!datatype) {
+			datatype="text"
+		  };
+		  if (!async) {
+		  	async = false;
+		  };
+		  $.ajax({
+		      url:url,
+		      dataType:datatype,
+		      async:async,
+		      type: "POST",
+		      success:fun,
+		      data:data
+		  }).fail(
+		  	  errfun
+		  )
+	}
+	  
+	</script>
+
+	</html>
+		
+

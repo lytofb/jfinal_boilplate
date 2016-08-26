@@ -1,0 +1,18 @@
+<script id="templateSelectorTemplate" type="text/x-jsrender">
+<select class="form-control templateItem" style="margin: 8px">
+<option></option>
+{{for template}}
+<option value="{{>template_id}}" {{if #index==0}}selected{{/if}}>{{>template_name}}</option>
+{{/for}}
+</select>	
+</script>
+<script id="templateSelectorButtonTemplate" type="text/x-jsrender">
+<button class="btn btn-default templateSave" style="margin: 8px">
+<i class="fa fa-save"></i> 保存模板
+</button>
+</script>
+<script id="layoutButtonTemplate" type="text/x-jsrender">
+<button class="btn btn-default layoutShow" style="margin: 8px">
+<i class="fa fa-save"></i> 修改布局
+</button>
+</script>

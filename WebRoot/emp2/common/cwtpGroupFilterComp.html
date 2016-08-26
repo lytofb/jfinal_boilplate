@@ -1,0 +1,108 @@
+<script id="cwtpGroupFilterTemplate" type="text/x-jsrender">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="xx">维度选择</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+          <div class="col-sm-12" >比较信息</div>
+          <div class="col-sm-12 icheck">
+            {{for groupdata ~parenttemp=cwtp}}
+            {{if selectable==1}}
+            <div class="minimal{{if #index%4==1}}-red{{else #index%4==2}}-green{{else #index%4==3}}-blue{{/if}} single-row groupFilter" {{if ~parenttemp.groupFilter.element !=columname}}style="display:none"{{/if}}>
+                <div class="checkbox ">
+                    <input type="checkbox" data-value="{{>columname}}" {{if ~parenttemp.groupFilter.element ==columname}}checked{{/if}} class="groupFilterInput">
+                    <label>{{>displayname}}</label>
+                </div>
+            </div>
+            {{/if}}
+            {{/for}}
+          </div>
+
+          {{for groupdata ~parenttemp=cwtp}}
+          {{if selectable==1}}
+          <div class="col-sm-12 icheck groupOptions {{>columname}}" {{if ~parenttemp.groupFilter.element !=columname}}style="display:none"{{/if}}>
+            {{for optionalItems}}
+            <div class="minimal{{if #index%4==1}}-red{{else #index%4==2}}-green{{else #index%4==3}}-blue{{/if}} single-row">
+                <div class="checkbox ">
+                    <input type="checkbox" data-value="{{>#data}}" {{if ~exsits(#data, ~parenttemp.groupFilter.value)}}checked{{/if}} class="groupFilterDetailInput">
+                    <label>{{>#data}}</label>
+                </div>
+            </div>
+            {{/for}}
+          </div>
+          {{/if}}
+          {{/for}}
+          </div>
+
+          <div class="row">
+          <div class="col-sm-12">分组信息</div>
+          <div class="col-sm-12 icheck">
+            {{for groupdata ~parenttemp=cwtp}}
+            <div class="minimal{{if #index%4==1}}-red{{else #index%4==2}}-green{{else #index%4==3}}-blue{{/if}} single-row">
+                <div class="radio ">
+                    <input type="radio"  data-value="{{>columname}}" name="groupRadio" {{if ~parenttemp.sortGroup.element ==columname}}checked{{/if}} class="groupInput">
+                    <label>{{>displayname}}</label>
+                </div>
+            </div>
+            {{/for}}
+          </div>
+          </div>
+
+
+          <div class="row">
+          <div class="col-sm-12">统计信息</div>
+          <div class="col-sm-12 icheck">
+            {{for numberdata ~parenttemp=cwtp}}
+            {{if property =='0'}}
+            <div class="minimal{{if #index%4==1}}-red{{else #index%4==2}}-green{{else #index%4==3}}-blue{{/if}} single-row">
+                <div class="radio ">
+                    <input type="radio"  data-value="{{>columname}}" name="statisticRadio" {{if ~parenttemp.sortNumber.element ==columname}}checked{{/if}} class="sortNumberInput">
+                    <label>{{>displayname}}</label>
+                </div>
+            </div>
+            {{/if}}
+            {{/for}}
+          </div>
+          </div>
+
+
+          <div class="row">
+          <div class="col-sm-12">比较选项</div>
+          <div class="col-sm-12 icheck">
+            <div class="minimal single-row">
+                <div class="radio ">
+                    <input type="radio" name="demo-radio" {{if cwtp.sortGroup.sortType=="desc"}}checked{{/if}} class="sortTypeInput" data-value="desc">
+                    <label>由高到低</label>
+                </div>
+            </div>
+            <div class="minimal-red single-row">
+                <div class="radio ">
+                    <input type="radio" name="demo-radio" {{if cwtp.sortGroup.sortType=="asc"}}checked{{/if}} class="sortTypeInput" data-value="asc">
+                    <label>由低到高</label>
+                </div>
+            </div>
+            <div style="display:inline;line-height:40px;padding-left: 10px;">
+              <span>前</span>
+              <select class="rangeSelector">
+                <option></option>
+                <option {{if cwtp.sortGroup.topNum=="10"}}selected{{/if}}>10</option>
+                <option {{if cwtp.sortGroup.topNum=="50"}}selected{{/if}}>50</option>
+                <option {{if cwtp.sortGroup.topNum=="100"}}selected{{/if}}>100</option>
+              </select>
+              <span>排名</span>
+            </div>
+          </div>
+          </div>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary modalsave">保存修改</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</script>

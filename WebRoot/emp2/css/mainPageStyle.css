@@ -1,0 +1,345 @@
+    #groupFilterModal{
+        z-index:1000010;
+    }
+    #othersFunctionModal{
+        z-index:1000010;
+    }
+    #treeGroupFilterModal{
+        z-index:1000010;
+    }
+    #templateModal{
+        z-index:1000010;
+    }
+    #layoutTemplateModal{
+        z-index:1000010;
+    }
+    body > div.modal-backdrop.fade.in{
+        z-index:1000000;
+    }
+
+    .revenue-nav{
+    margin-left:-30px;
+    }
+     .modal-dialog{
+          border: 1px solid #65CEA7;
+    }
+    .tri{
+    	width: 0;
+    	height: 0;
+    	border-left: 15px solid transparent;
+		border-right:15px solid transparent;
+		position: absolute;
+    }
+    #filterModal {
+        z-index: 105000;
+    	width:0px !important;
+    	height:0px !important;
+    	overflow:visible !important;
+    	overflow-y:visible !important;
+    	position:absolute !important;
+    }
+    .datetimepicker {
+        z-index: 1000011 !important;
+    }
+    
+    #filterModal   .modal-dialog{
+    	width:500px !important;
+    	position: absolute;
+    	margin: 0;
+    }
+    #filterModal .main-body{
+    	padding:0 !important;
+    }
+    #filterModal .modal-header{
+    	padding:5px !important;
+    }
+    #filterModal .close{
+    	padding-top: 3px !important;
+    }
+    #filterModal .modal-body{
+    	padding-top: 5px !important;
+    	padding-bottom:5px !important;
+    	padding-left:0 !important;
+    	padding-right:0 !important;
+    }
+    #filterModal .modal-footer{
+    	margin-top:0 !important;
+    	padding:5px !important;
+    	padding-right:15px !important;
+    }
+    #filterModal .form-group{
+    	margin-bottom:0 !important;
+    }
+    #filterModal .col-md-3{
+    	/*right:-33px !important;*/
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+     #filterModal .col-md-2{
+    	/*right:-18px !important;*/
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    #filterModal .col-md-4{
+        /*padding-left: 8px;*/
+        padding-right: 8px;
+    }
+    #filterModal .col-md-12{
+    	margin-top:5px !important;
+    }
+    #filterModal .btn{
+        padding: 6px 22px;
+    }
+    #dsModal{
+        z-index: 105000;
+    }
+	.comp-a{
+    	/*padding:6px 15px;*/
+    	display: block;
+    	width: 100%;
+    	height: 44px;
+    	line-height: 42px;
+    	border-bottom: 1px solid #ccc;
+    }
+    .comp-a:hover{
+    	background-color: #ddd;
+    	text-decoration: none;
+    }
+    .comp-a:active{
+    	text-decoration: none;
+    }
+    .comp-a>img{
+    	margin-left: 15px;
+    }
+    .comp-a>span{
+    	margin-left: 8px;
+    }
+  	.dataSource{
+    	width: 250px;
+    	position: absolute;
+    	margin:0;
+    }
+    .dataSource .modal-header{
+    	padding-top: 5px;
+    	padding-bottom: 5px;
+    }
+    .dataSource .modal-body{
+    	padding: 0;
+    }
+    .dataSource .modal-footer{
+    	margin-top:0 !important;
+    	padding:5px !important;
+    	padding-right:15px !important;
+    }
+
+    .dataSource-col{
+    	padding-left: 30px;
+    	padding-right: 0;
+    }
+    .dataSource-col .radio{
+    	margin-bottom: 7px;
+    }
+    .dataSource-col .single-row{
+    	padding-top: 5px;
+    }
+    .groupFilterComp{
+        margin: 0;
+        height: 1000px;
+        border: 0;
+    }
+    .graphShadow{
+		/*box-shadow: 0px 0px 0px 4px #68AD45;*/
+		background-color: #ddd;
+		text-decoration: none;
+    }
+    div.revenue-states h4{
+    	font-size: 16px;
+		padding-left: 20px;
+  		font-family: 微软雅黑;
+    }
+	#standalone {
+	  transform: scale(0.8);
+	}
+	.popup_visible #standalone {
+	  transform: scale(1);
+	}
+	@media only screen and (max-device-width: 480px)  {
+		#templateSelector{
+			display:none;
+		}
+		#templateSelectorButton{
+			display:none;
+		}
+		.grouptag{
+			display:none!important;
+		}		
+		ul.revenue-nav {
+			margin-top:0px;
+		}
+	}
+	@media only screen and (-webkit-device-pixel-ratio: 2) {
+		.grouptag{
+			display:none!important;
+		}		
+		ul.revenue-nav {
+			margin-top:0px;
+		}
+	}
+	@media (max-device-width: 1024px) and (orientation: landscape) {
+		.grouptag{
+			display:none!important;
+		}		
+		ul.revenue-nav {
+			margin-top:0px;
+		}
+	}
+	.progress {
+		height:2px!important;
+	}
+	
+	.wrapper::after {
+	  margin-bottom: 0px!important;
+	}
+	body > section > div.main-content > div.wrapper {
+		padding-bottom: 0px;
+	}
+	.radio, .checkbox {
+        padding-left: 0px;
+    }
+    .odd {
+        background-color: #F9F9F9!important;
+    }
+    .icheck .single-rows {
+      width: auto;
+    }
+    
+    #standalone .configButton{
+     display:inline;
+    }
+
+    #standalone .filterButton{
+     display:inline;
+    }
+
+   .othersFunctionButton{
+     display:none
+    }
+    
+   .GroupFilterButton{
+     display:none
+    }
+    
+    .configButton{
+     display:none
+    }
+   .filterButton{
+     display:none
+    }
+    .timeBarButton{
+     display:none
+    }
+    .expandButton{
+     display:none
+    }
+    .openlist{
+     margin-right: 0 ;
+     display: inline-block !important;   
+    }
+    .tagsList{
+    width:125px;
+    border-radius:20px;
+    top:35px;
+    left:-90px;
+    position:absolute;
+    display:none;
+    z-index:99999;
+    }
+    .grouptagsList{
+        top:1px;
+        display:block;
+        position:relative;
+        margin-right:2px;
+        position:relative;
+    }
+    ul.revenue-nav{
+        margin-top:0 !important;
+    }
+    li .grouptag {
+        margin-left:0px !important;
+    }
+    
+    .triangle-up {
+        display:none;
+        position:absolute;
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 10px solid rgb(204,204,204);
+        margin-left:10px;
+        
+    }
+
+    .popover{
+        max-width: initial;
+        padding: 0px;
+        border: 1px solid #65CEA7;
+        top: 297px;
+        left: 537px;
+        display: block;
+        border-radius: initial;
+    }
+
+    .popover-content{
+        padding:0px;
+    }
+
+    .modal-body{
+        padding: 10px 15px 0px 15px;
+    }
+
+    .modal-header{
+        padding:8px;
+    }
+
+    .modal-title{
+        font-size:14px;
+    }
+    .modal-footer{
+        padding: 5px;
+        margin-top:initial;
+    }
+    /***/
+    .popover.top{margin-top: -20px}
+    .popover.right{margin-left:20px}
+    .popover.bottom{margin-top:20px}
+    .popover.left{margin-left:-20px}
+    /***/
+
+    .chartOption{
+        display: none;
+    }
+    section.panel{
+        margin-bottom: 10px;
+    }
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+        padding-right: 0px;
+        padding-left: 10px;        
+    }
+    .row{
+        margin-right: 0px;
+        margin-left: -10px;
+    }
+
+    .tablediv{
+        display: none;
+    }
+
+    #treeGroupFilterModal .col-sm-12{
+        padding-right: 10px;
+    }
+
+    body {
+        -webkit-user-select: none;/*禁用手机浏览器的用户选择功能 */
+        -moz-user-select: none;
+    }
