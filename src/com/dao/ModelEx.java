@@ -29,7 +29,7 @@ public class ModelEx<M extends Model> extends Model<M> {
     }
     
     public List<M> selectAll() {
-		String sql = "select * from "+tableName+" where deleteflag = 1";
+		String sql = "select * from "+tableName+" where enabled = 1";
 		return find(sql);
 	}
  
@@ -39,7 +39,7 @@ public class ModelEx<M extends Model> extends Model<M> {
  
     public List<M> search(String key, Object value, String orderBy) {
         checkTableName();
-        String sql = "select * from " + tableName + " where "+ key +"=? and deleteflag = 1 " + orderBy;
+        String sql = "select * from " + tableName + " where "+ key +"=? and enabled = 1 " + orderBy;
         return find(sql, value);
     }
  
@@ -55,7 +55,7 @@ public class ModelEx<M extends Model> extends Model<M> {
     public List<M> search(Map<String, Object> maps, String orderBy) {
         checkTableName();
         StringBuilder sb = new StringBuilder();
-        sb.append("select * from ").append(tableName).append(" where 1=1 and deleteflag = 1 ");
+        sb.append("select * from ").append(tableName).append(" where 1=1 and enabled = 1 ");
         List<Object> values = new ArrayList<Object>();
         for(Entry<String,Object> entry:maps.entrySet()){
             if(entry.getValue() != null){
@@ -88,7 +88,7 @@ public class ModelEx<M extends Model> extends Model<M> {
     public Page<M> searchPaginate(int pageNumber, int pageSize, Map<String, Object> maps, String orderBy) {
         checkTableName();
         StringBuilder sb = new StringBuilder();
-        sb.append("from ").append(tableName).append(" where 1=1 and deleteflag = 1 ");
+        sb.append("from ").append(tableName).append(" where 1=1 and enabled = 1 ");
         List<Object> values = new ArrayList<Object>();
         for(Entry<String,Object> entry:maps.entrySet()){
             if(entry.getValue() != null){

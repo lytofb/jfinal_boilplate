@@ -1,0 +1,16 @@
+main_page=零售视图
+dataFullList=零售列表
+cwtp=零售环比
+formattedForm=零售概况
+userForm=用户列表
+roleForm=角色列表
+getUserList=用户列表
+getRoleList=角色列表
+getUserList=权限列表
+getUserRel=角色用户关联
+editUserRel=更改角色关联
+getTemplateList=模板列表
+energyForm = 能源消耗列表
+energyPCForm = 能源消耗占比表格列表
+class_energyForm = 行业能源消耗列表
+class_energyPCForm = 行业能源消耗占比表格列表

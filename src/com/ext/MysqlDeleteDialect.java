@@ -10,7 +10,7 @@ public class MysqlDeleteDialect extends MysqlDialect {
 		StringBuilder sql = new StringBuilder(45);
 		sql.append("update `");
 		sql.append(table.getName());
-		sql.append("` set deleteflag = 0");
+		sql.append("` set enabled = 0");
 		sql.append(" where `").append(primaryKey[0]).append("` = ?");
 		return sql.toString();
 	}
@@ -31,7 +31,7 @@ public class MysqlDeleteDialect extends MysqlDialect {
 		sql.append(" from `");
 		sql.append(table.getName());
 		sql.append("` where `").append(table.getPrimaryKey()).append("` = ?");
-		sql.append(" and deleteflag = 1");
+		sql.append(" and enabled = 1");
 		return sql.toString();
 	}
 	
@@ -51,7 +51,7 @@ public class MysqlDeleteDialect extends MysqlDialect {
 		sql.append(" from `");
 		sql.append(tableName.trim());
 		sql.append("` where `").append(primaryKey).append("` = ?");
-		sql.append(" and deleteflag = 1");
+		sql.append(" and enabled = 1");
 		return sql.toString();
 	}
 
