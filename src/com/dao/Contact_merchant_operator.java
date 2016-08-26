@@ -1,8 +1,6 @@
 package com.dao;
 
-import com.jfinal.plugin.activerecord.Model;
+public class contact_merchant_operator extends ModelEx<contact_merchant_operator> {
 
-public class Contact_merchant_operator extends ModelEx<Contact_merchant_operator> {
-
-	public final static Contact_merchant_operator dao = new Contact_merchant_operator();
+	public final static contact_merchant_operator dao = new contact_merchant_operator();
 }

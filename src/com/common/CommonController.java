@@ -16,15 +16,14 @@ import com.toolkit.Md5Kit;
  */
 public class CommonController extends Controller {
 	
+	protected final Logger logger = Logger.getLogger(getClass());
+	
 	public void index() {
-		System.out.println("hello saleForce hellonpp");
+		logger.debug("load login");
 		render("login.html");
 	}
-	public void save() {
-		Subject currentUser  = SecurityUtils.getSubject();
-		Integer userid = (Integer) currentUser.getSession().getAttribute("userId");
-		setAttr("userid", userid);
-		render("save.html");
+	public void tables() {
+		render("tables.html");
 	}
 	public void energyForm(){
 		Subject currentUser  = SecurityUtils.getSubject();

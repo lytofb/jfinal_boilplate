@@ -13,9 +13,15 @@ import com.jfinal.plugin.ehcache.CacheKit;
 
 public class ModelEx<M extends Model> extends Model<M> {
 	private String tableName;
-	
+
+    public ModelEx(Boolean init){
+        if (!init){
+            tableName = TableMapping.me().getTable(getClass()).getName();
+        }
+    }
+
 	public ModelEx(){
-		tableName = TableMapping.me().getTable(getClass()).getName();
+
 	}
     
     private void checkTableName(){

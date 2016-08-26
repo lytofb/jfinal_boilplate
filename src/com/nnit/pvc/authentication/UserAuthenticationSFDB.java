@@ -10,7 +10,7 @@ import org.apache.shiro.authz.Permission;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.session.Session;
 
-import com.dao.Data_user;
+import com.dao.data_user;
 
 public class UserAuthenticationSFDB implements UserAuthenticationInterface {
 
@@ -23,7 +23,7 @@ public class UserAuthenticationSFDB implements UserAuthenticationInterface {
 		this.token = token;
         String password = String.valueOf(token.getPassword());
         // 调用操作数据库的方法查询user信息
-        Data_user user = new Data_user();
+        data_user user = new data_user();
         HashMap<String, Object> paramMap = new HashMap<String, Object>();
 //        paramMap.put("user_password", password);
         paramMap.put("user_account", token.getUsername());

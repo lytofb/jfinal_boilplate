@@ -1,6 +1,6 @@
 package com.dao;
 
-public class Data_operate_history extends ModelEx<Data_operate_history> {
+public class data_operate_history extends ModelEx<data_operate_history> {
 
-	public final static Data_operate_history dao = new Data_operate_history();
+	public final static data_operate_history dao = new data_operate_history();
 }

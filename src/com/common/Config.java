@@ -1,5 +1,6 @@
 package com.common;
 
+import com.dao.ModelEx;
 import com.ext.Slf4jLoggerFactory;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
@@ -33,7 +34,7 @@ public class Config extends JFinalConfig {
 		// 加载少量必要配置，随后可用getProperty(...)获取值
 		loadPropertyFile("config.properties");
 		me.setDevMode(getPropertyToBoolean("devMode", false));
-		me.setError401View("/emp2/common/login.html");
+//		me.setError401View("/emp2/common/login.html");
 		me.setLoggerFactory(new Slf4jLoggerFactory());
 //		me.setI18n("i18n");
 	}
@@ -43,7 +44,7 @@ public class Config extends JFinalConfig {
 	 */
 	public void configRoute(Routes me) {
 		this.routes = me;
-		me.add("/", CommonController.class,"/emp2/common");
+		me.add("/", CommonController.class,"/html");
 		//设置权限错误路径
 		
 	}
@@ -55,6 +56,7 @@ public class Config extends JFinalConfig {
 		// 配置C3p0   数据库连接池插件
 		DruidPlugin duirdPlugin = new DruidPlugin(getProperty("jdbcUrl"), getProperty("user"), getProperty("password"),getProperty("Driver"));
 		AutoTableBindPlugin atbp = new AutoTableBindPlugin(duirdPlugin);
+		atbp.addExcludeClasses(ModelEx.class);
 		me.add(duirdPlugin);
 		
 		// 配置ActiveRecord插件
@@ -110,7 +112,7 @@ public class Config extends JFinalConfig {
 	 * 配置全局拦截器
 	 */
 	public void configInterceptor(Interceptors me) {
-		me.add(new ShiroInterceptor());
+//		me.add(new ShiroInterceptor());
 //		me.add(new CommonInterceptor());
 		me.add(new DipSysMenuInterceptor());
 		me.add(new XssInterceptor());
@@ -128,6 +130,6 @@ public class Config extends JFinalConfig {
 	 * 运行此 main 方法可以启动项目，此main方法可以放置在任意的Class类定义中，不一定要放于此
 	 */
 	public static void main(String[] args) {
-		JFinal.start("WebRoot", 8085, "/", 5);
+		JFinal.start("WebRoot", 8080, "/", 5);
 	}
 }
