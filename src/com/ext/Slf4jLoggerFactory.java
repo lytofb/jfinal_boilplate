@@ -1,18 +1,17 @@
 package com.ext;
 
-import com.jfinal.log.ILoggerFactory;
-import com.jfinal.log.Logger;
+import com.jfinal.log.ILogFactory;
+import com.jfinal.log.Log;
 
-public class Slf4jLoggerFactory implements ILoggerFactory {
+public class Slf4jLoggerFactory implements ILogFactory {
 
 	@Override
-	public Logger getLogger(Class<?> clazz) {
+	public Log getLog(Class<?> clazz) {
 		return new Slf4jLogger(clazz);
 	}
 
 	@Override
-	public Logger getLogger(String name) {
+	public Log getLog(String name) {
 		return new Slf4jLogger(name);
 	}
-
 }

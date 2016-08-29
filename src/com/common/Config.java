@@ -35,7 +35,7 @@ public class Config extends JFinalConfig {
 		loadPropertyFile("config.properties");
 		me.setDevMode(getPropertyToBoolean("devMode", false));
 //		me.setError401View("/emp2/common/login.html");
-		me.setLoggerFactory(new Slf4jLoggerFactory());
+		me.setLogFactory(new Slf4jLoggerFactory());
 //		me.setI18n("i18n");
 	}
 	

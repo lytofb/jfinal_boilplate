@@ -4,7 +4,6 @@ import org.apache.shiro.SecurityUtils;
 
 import com.jfinal.aop.Interceptor;
 import com.jfinal.aop.Invocation;
-import com.jfinal.log.Logger;
 import com.toolkit.DipI18nTool;
 
 public class DipSysMenuInterceptor implements Interceptor {

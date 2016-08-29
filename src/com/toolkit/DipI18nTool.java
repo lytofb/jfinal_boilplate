@@ -20,7 +20,7 @@ public class DipI18nTool {
 	
 	public static String getError(Controller c, String key) {
 		String local = getLocal(c);
-		Res res = I18n.use(BaseName, false);
+		Res res = I18n.use(BaseName);
 		if (local!=null) {
 			res = I18n.use(BaseName, local);
 		}

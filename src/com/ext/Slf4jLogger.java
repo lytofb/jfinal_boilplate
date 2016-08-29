@@ -2,9 +2,9 @@ package com.ext;
 
 import org.slf4j.LoggerFactory;
 
-import com.jfinal.log.Logger;
+import com.jfinal.log.Log;
 
-public class Slf4jLogger extends Logger {
+public class Slf4jLogger extends Log {
 
 	private org.slf4j.Logger log;
 

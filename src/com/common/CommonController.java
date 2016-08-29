@@ -7,7 +7,7 @@ import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 
 import com.jfinal.core.Controller;
-import com.jfinal.log.Logger;
+import com.jfinal.log.Log;
 import com.nnit.pvc.authentication.PVCUserNamePasswordToken;
 import com.toolkit.Md5Kit;
 
@@ -16,7 +16,7 @@ import com.toolkit.Md5Kit;
  */
 public class CommonController extends Controller {
 	
-	protected final Logger logger = Logger.getLogger(getClass());
+	protected final Log logger = Log.getLog(getClass());
 	
 	public void index() {
 		logger.debug("load login");
@@ -73,7 +73,7 @@ public class CommonController extends Controller {
 			System.out.println(userid);
 			redirect("/eco/main_page");
 		} catch (Exception e) {
-			Logger.getLogger(CommonController.class).info("auth error", e);
+			Log.getLog(CommonController.class).info("auth error", e);
 			// TODO: handle exception
 		}
 	}
