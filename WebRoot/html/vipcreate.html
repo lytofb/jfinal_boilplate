@@ -23,31 +23,31 @@
                                 <fieldset>
                                     <div class="form-group">
                                         <label for="name">姓名</label>
-                                        <input type="text" class="validate[required] form-control placeholder" id="personName" placeholder="姓名" data-bind="value: name">
+                                        <input type="text" class="validate[required] form-control placeholder" id="personName" placeholder="姓名" name="createvip.name">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">车牌</label>
-                                        <input type="email" class="validate[required,custom[email]] form-control placeholder" id="chepai" placeholder="车牌" data-original-title="Your activation email will be sent to this address." data-bind="value: email, event: { change: checkDuplicateEmail }">
+                                        <input type="email" class="validate[required,custom[email]] form-control placeholder" id="chepai" placeholder="车牌" name="createvip.carnum">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">车型</label>
-                                        <input type="email" class="validate[required,custom[email]] form-control placeholder" id="chexing" placeholder="车型" data-original-title="Your activation email will be sent to this address." data-bind="value: email, event: { change: checkDuplicateEmail }">
+                                        <input type="email" class="validate[required,custom[email]] form-control placeholder" id="chexing" placeholder="车型" name="createvip.cartype">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">电话</label>
-                                        <input type="password" class="validate[required] form-control placeholder" id="password" placeholder="电话" data-bind="value: password">
+                                        <input type="password" class="validate[required] form-control placeholder" id="password" placeholder="电话" name="createvip.tel_num">
                                     </div>
                                     <div class="form-group">
                                         <label for="confirmPassword">充值</label>
-                                        <input type="password" class="validate[required,equals[password]] form-control placeholder" id="repeatPassword" placeholder="充值" data-bind="value: confirmPassword, event: { change: matchPassword }">
+                                        <input type="password" class="validate[required,equals[password]] form-control placeholder" id="repeatPassword" placeholder="充值" name="createvip.totalnum">
                                     </div>
                                     <div class="form-group">
                                         <label for="companyName">原卡号</label>
-                                        <input type="text" class="validate[required] form-control placeholder" id="companyName" placeholder="原卡号" data-bind="value: company">
+                                        <input type="text" class="validate[required] form-control placeholder" id="companyName" placeholder="原卡号" name="createvip.originalcardid">
                                     </div>
                                     <div class="form-group">
                                         <label for="companyName">新卡号</label>
-                                        <input type="text" class="validate[required] form-control placeholder" id="companyName" placeholder="新卡号" data-bind="value: company">
+                                        <input type="text" class="validate[required] form-control placeholder" id="companyName" placeholder="新卡号" name="createvip.newcardid">
                                     </div>
                                     <button id="signupuser" type="submit" class="btn btn-primary btn-block">建立会员</button>
                                 </fieldset>

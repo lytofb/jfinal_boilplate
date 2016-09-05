@@ -1,5 +1,6 @@
 package com.common;
 
+import com.controller.CommonController;
 import com.dao.ModelEx;
 import com.ext.Slf4jLoggerFactory;
 import com.jfinal.config.Constants;
@@ -10,10 +11,8 @@ import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.core.JFinal;
 import com.jfinal.ext.handler.ContextPathHandler;
-import com.jfinal.ext.plugin.shiro.ShiroInterceptor;
 import com.jfinal.ext.plugin.shiro.ShiroPlugin;
 import com.jfinal.ext.plugin.tablebind.AutoTableBindPlugin;
-import com.jfinal.ext.plugin.tablebind.SimpleNameStyles;
 import com.jfinal.plugin.activerecord.dialect.Dialect;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.plugin.ehcache.EhCachePlugin;

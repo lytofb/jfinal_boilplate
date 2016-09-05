@@ -1,4 +1,4 @@
-package com.common;
+package com.controller;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
