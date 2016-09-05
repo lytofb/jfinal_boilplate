@@ -1,0 +1,88 @@
+<#include "/html/common/_layout.html"/>
+<@layout>
+<!-- Matter -->
+
+<div class="matter">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+
+
+                <div class="widget">
+
+                    <div class="widget-head">
+                        <div class="pull-left">下单</div>
+                        <div class="widget-icons pull-right">
+                            <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="widget-content">
+                        <div class="padd">
+
+                            <!-- Form starts.  -->
+                            <form class="form-horizontal" role="form">
+
+                                <div class="form-group">
+                                    <label class="col-lg-1 control-label">会员卡号</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" class="form-control" placeholder="会员卡号">
+                                    </div>
+                                    <label class="col-lg-3 control-label" style="text-align: left">会员余额：<span>0</span></label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-lg-1 control-label">业务选择</label>
+                                    <div class="col-lg-11">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 洗车（25）
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" id="inlineCheckbox2" value="option2"> 打蜡 （25）
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" id="inlineCheckbox3" value="option3"> 车内清洁 （75）
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-lg-1 control-label">Select Box</label>
+                                    <div class="col-lg-11">
+                                        <select class="form-control">
+                                            <option></option>
+                                            <option>洗车+打蜡（55）</option>
+                                            <option>洗车+打蜡+保养（75）</option>
+                                            <option>洗车+打蜡+保养+维修（555）</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-lg-1 control-label">调整金额</label>
+                                    <div class="col-lg-5">
+                                        <input type="text" class="form-control" placeholder="调整减免">
+                                    </div>
+                                    <label class="col-lg-3 control-label" style="text-align: left">金额调整：<span>0</span></label>
+                                    <label class="col-lg-3 control-label" style="text-align: left">总计余额：<span>0</span></label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-lg-1 control-label">备注</label>
+                                    <div class="col-lg-11">
+                                        <textarea class="form-control" rows="3" placeholder="备注"></textarea>
+                                    </div>
+                                </div>
+                                <button id="signupuser" type="submit" class="btn btn-primary btn-block">确认下单</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</@layout>

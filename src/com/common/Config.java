@@ -76,29 +76,6 @@ public class Config extends JFinalConfig {
 	     	e.printStackTrace();
 		  }
 		me.add(atbp);
-//		arp.addMapping("user_info", Users.class);
-//		arp.addMapping("role_info", Roles.class);
-//		arp.addMapping("permission_info", Permission.class);
-//		arp.addMapping("role_permission_rel", Role_Permission_Rel.class);
-//		arp.addMapping("user_role_rel", User_Role_Rel.class);
-//		arp.addMapping("m_datasource", DataSource.class);
-//		arp.addMapping("role_scheme_rel", Role_Scheme_Rel.class);
-//		arp.addMapping("user_template", Template.class);
-//		
-//		arp.addMapping("sys_menu", "menu_id", SysMenu.class);
-//		arp.addMapping("role_menu_rel", Role_Menu_Rel.class);
-		
-//		C3p0Plugin c3p0PluginDis = new C3p0Plugin(getProperty("userDistributejdbcUrl"), getProperty("userDistributejdbcUrluser"), getProperty("userDistributejdbcUrlpassword").trim());
-//		me.add(c3p0PluginDis);
-//		ActiveRecordPlugin arpDis = new ActiveRecordPlugin("userDitribute",c3p0PluginDis);
-//		arpDis.setDialect(new MysqlDeleteDialect());
-//		me.add(arpDis);
-		
-//		C3p0Plugin c3p0PluginUInfo = new C3p0Plugin(getProperty("ujdbcUrl"), getProperty("uuser"), getProperty("upassword").trim());
-//		me.add(c3p0PluginUInfo);
-//		ActiveRecordPlugin arpDisU = new ActiveRecordPlugin("UInfo",c3p0PluginUInfo);
-//		arpDisU.setDialect(new MysqlDeleteDialect());
-//		me.add(arpDisU);
 		//shiro plugin
 		me.add(new ShiroPlugin(routes));
 		

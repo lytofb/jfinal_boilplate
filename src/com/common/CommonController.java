@@ -25,36 +25,30 @@ public class CommonController extends Controller {
 	public void tables() {
 		render("tables.html");
 	}
-	public void energyForm(){
-		Subject currentUser  = SecurityUtils.getSubject();
-		Integer userid = (Integer) currentUser.getSession().getAttribute("userId");
-		setAttr("userid", userid);
-		render("energyForm.html");
+	public void vipcreate() {
+		render("vipcreate.html");
 	}
-	public void energyPCForm(){
-		Subject currentUser  = SecurityUtils.getSubject();
-		Integer userid = (Integer) currentUser.getSession().getAttribute("userId");
-		System.out.println(userid);
-		setAttr("userid", userid);
-		render("energyPCForm.html");
+	public void ordercreate() {
+		render("ordercreate.html");
 	}
-	public void class_energyForm(){
-		Subject currentUser  = SecurityUtils.getSubject();
-		Integer userid = (Integer) currentUser.getSession().getAttribute("userId");
-		setAttr("userid", userid);
-		render("class_energyForm.html");
+
+	public void accountbook() {
+		render("accountbook.html");
 	}
-	public void class_energyPCForm(){
-		Subject currentUser  = SecurityUtils.getSubject();
-		Integer userid = (Integer) currentUser.getSession().getAttribute("userId");
-		setAttr("userid", userid);
-		render("class_energyPCForm.html");
+
+	public void incomehistory() {
+		render("incomehistory.html");
 	}
-	
-	public void amdFile() {
-		
+
+	public void vipinfo() {
+		render("vipinfo.html");
 	}
-	
+
+	public void vipcharge() {
+		render("vipcharge.html");
+	}
+
+
 	public void login() {
 		Subject currentUser  = SecurityUtils.getSubject();
 		String password=null;

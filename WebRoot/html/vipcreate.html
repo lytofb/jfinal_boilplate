@@ -1,0 +1,63 @@
+<#include "/html/common/_layout.html"/>
+<@layout>
+<!-- Matter -->
+
+<div class="matter">
+    <div class="container">
+        <div class="row">
+            <!--<div class="col-md-1"></div>-->
+            <div class="col-md-12">
+                <div class="widget">
+
+                    <div class="widget-head">
+                        <div class="pull-left">办理会员</div>
+                        <div class="widget-icons pull-right">
+                            <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="widget-content">
+                        <div class="padd">
+                            <form action="/" class="validate" id="form1">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <label for="name">姓名</label>
+                                        <input type="text" class="validate[required] form-control placeholder" id="personName" placeholder="姓名" data-bind="value: name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">车牌</label>
+                                        <input type="email" class="validate[required,custom[email]] form-control placeholder" id="chepai" placeholder="车牌" data-original-title="Your activation email will be sent to this address." data-bind="value: email, event: { change: checkDuplicateEmail }">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">车型</label>
+                                        <input type="email" class="validate[required,custom[email]] form-control placeholder" id="chexing" placeholder="车型" data-original-title="Your activation email will be sent to this address." data-bind="value: email, event: { change: checkDuplicateEmail }">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">电话</label>
+                                        <input type="password" class="validate[required] form-control placeholder" id="password" placeholder="电话" data-bind="value: password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirmPassword">充值</label>
+                                        <input type="password" class="validate[required,equals[password]] form-control placeholder" id="repeatPassword" placeholder="充值" data-bind="value: confirmPassword, event: { change: matchPassword }">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="companyName">原卡号</label>
+                                        <input type="text" class="validate[required] form-control placeholder" id="companyName" placeholder="原卡号" data-bind="value: company">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="companyName">新卡号</label>
+                                        <input type="text" class="validate[required] form-control placeholder" id="companyName" placeholder="新卡号" data-bind="value: company">
+                                    </div>
+                                    <button id="signupuser" type="submit" class="btn btn-primary btn-block">建立会员</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="col-md-1"></div>-->
+        </div>
+    </div>
+</div>
+</@layout>
