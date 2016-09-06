@@ -43,34 +43,34 @@
               <div class="widget-content">
                 <div class="padd">
                   <!-- Login form -->
-                  <form class="form-horizontal" action='index.html'>
+                  <form class="form-horizontal" action='${base_path}/login'>
                     <!-- Email -->
                     <div class="form-group">
-                      <label class="control-label col-lg-3" for="inputEmail">Email</label>
+                      <label class="control-label col-lg-3" for="inputEmail">账户</label>
                       <div class="col-lg-9">
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="账户" name="username">
                       </div>
                     </div>
                     <!-- Password -->
                     <div class="form-group">
-                      <label class="control-label col-lg-3" for="inputPassword">Password</label>
+                      <label class="control-label col-lg-3" for="inputPassword">密码</label>
                       <div class="col-lg-9">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="密码" name="password">
                       </div>
                     </div>
                     <!-- Remember me checkbox and sign in button -->
-                    <div class="form-group">
-					<div class="col-lg-9 col-lg-offset-3">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Remember me
-                        </label>
-						</div>
-					</div>
-					</div>
-                        <div class="col-lg-9 col-lg-offset-3">
-							<button type="submit" class="btn btn-danger">Sign in</button>
-							<button type="reset" class="btn btn-default">Reset</button>
+                    <!--<div class="form-group">-->
+					<!--<div class="col-lg-9 col-lg-offset-3">-->
+                      <!--<div class="checkbox">-->
+                        <!--<label>-->
+                          <!--<input type="checkbox"> Remember me-->
+                        <!--</label>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--</div>-->
+                        <div class="col-lg-9 col-lg-offset-3" style="padding-left: 5px">
+							<button type="submit" class="btn btn-danger">登录</button>
+							<!--<button type="reset" class="btn btn-default">Reset</button>-->
 						</div>
                     <br />
                   </form>
@@ -78,9 +78,9 @@
 				</div>
                 </div>
               
-                <div class="widget-foot">
-                  Not Registred? <a href="#">Register here</a>
-                </div>
+                <!--<div class="widget-foot">-->
+                  <!--Not Registred? <a href="#">Register here</a>-->
+                <!--</div>-->
             </div>  
       </div>
     </div>

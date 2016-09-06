@@ -28,7 +28,7 @@
                                 <div class="form-group">
                                     <label class="col-lg-1 control-label">会员卡号</label>
                                     <div class="col-lg-8">
-                                        <input type="text" class="form-control" placeholder="会员卡号">
+                                        <input type="text" class="form-control" placeholder="会员卡号" name="createorder.vipcardid">
                                     </div>
                                     <label class="col-lg-3 control-label" style="text-align: left">会员余额：<span>0</span></label>
                                 </div>
@@ -36,34 +36,33 @@
                                 <div class="form-group">
                                     <label class="col-lg-1 control-label">业务选择</label>
                                     <div class="col-lg-11">
+                                        <#list singleServiceList as singleservice>
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" id="inlineCheckbox1" value="option1"> 洗车（25）
+                                            <input type="checkbox" id="inlineCheckbox1" value="${singleservice.id}" name="createorder.single"> ${singleservice.showtitle}
                                         </label>
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" id="inlineCheckbox2" value="option2"> 打蜡 （25）
-                                        </label>
-                                        <label class="checkbox-inline">
-                                            <input type="checkbox" id="inlineCheckbox3" value="option3"> 车内清洁 （75）
-                                        </label>
+                                        </#list>
                                     </div>
                                 </div>
+                                <input type="hidden" id="hiddenchkbox">
 
                                 <div class="form-group">
-                                    <label class="col-lg-1 control-label">Select Box</label>
+                                    <label class="col-lg-1 control-label">套餐选择</label>
                                     <div class="col-lg-11">
-                                        <select class="form-control">
+                                        <select class="form-control" id="serve_suite">
                                             <option></option>
-                                            <option>洗车+打蜡（55）</option>
-                                            <option>洗车+打蜡+保养（75）</option>
-                                            <option>洗车+打蜡+保养+维修（555）</option>
+                                            <#list suiteServiceList as suiteService>
+                                                <option value="${suiteService.id}">${suiteService.showtitle}</option>
+                                            </#list>
                                         </select>
                                     </div>
                                 </div>
+                                <input type="hidden" id="hiddenselect" name="createorder.suite">
+                                <input type="hidden" name="createorder.desc" id="hiddendesc">
 
                                 <div class="form-group">
                                     <label class="col-lg-1 control-label">调整金额</label>
                                     <div class="col-lg-5">
-                                        <input type="text" class="form-control" placeholder="调整减免">
+                                        <input type="text" class="form-control" placeholder="调整减免" name="createorder.ext_money">
                                     </div>
                                     <label class="col-lg-3 control-label" style="text-align: left">金额调整：<span>0</span></label>
                                     <label class="col-lg-3 control-label" style="text-align: left">总计余额：<span>0</span></label>
@@ -75,7 +74,7 @@
                                         <textarea class="form-control" rows="3" placeholder="备注"></textarea>
                                     </div>
                                 </div>
-                                <button id="signupuser" type="submit" class="btn btn-primary btn-block">确认下单</button>
+                                <button id="signupuser" type="button" class="btn btn-primary btn-block">确认下单</button>
                             </form>
                         </div>
                     </div>
@@ -86,3 +85,34 @@
     </div>
 </div>
 </@layout>
+<@script>
+<script type="text/javascript">
+    var orderclick = function(){
+        var checkedObject = $("input:checked")
+        single_order_array = [];
+        checkedObject.each(function(index,ele){
+            single_order_array.push($(ele).val())
+        })
+        $("#hiddenchkbox").val(single_order_array)
+
+        var selectVal = $("select").val();
+        $("#hiddenselect").val(selectVal);
+
+        $("#hiddendesc").val($("textarea").val())
+
+        commonPost("${base_path}/order/createOrder",defaultSuccessCallback,errfun,null,$('form').serialize(),true)
+    }
+
+    var successfun = function(){
+        console.log("sucess")
+    }
+    var errfun = function(){
+        console.log("err")
+    }
+    $(function(){
+        $(".btn").on("click",function(){
+            orderclick()
+        })
+    })
+</script>
+</@script>

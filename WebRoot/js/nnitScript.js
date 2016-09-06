@@ -30,6 +30,14 @@
       }
    }
 
+    function initAlert(title,text) {
+        $.gritter.add({title:title,text:text})
+    }
+
+    function defaultSuccessCallback(){
+        initAlert("操作成功","")
+    }
+
     function initSchemaSelector () {
       schema_data.current = schema_data.schema_list[schema_data_seq].schemaname;
       var schemaSelectorContent = $("#schemaSelectorTemplate").render(schema_data);
@@ -46,24 +54,24 @@
         );
     }
 
-    $.views.helpers({
-
-      format: function( val, format ) {
-        var ret;
-        switch( format ) {
-          case "upper":
-            return val.toUpperCase();
-          case "lower":
-            return val.toLowerCase();
-        }
-      },
-      exsits:function (val,array) {
-        var flag = array.indexOf(val);
-        if(flag<0){
-          return false;
-        } else {
-          return true;
-        }
-      }
-    });
+    //$.views.helpers({
+    //
+    //  format: function( val, format ) {
+    //    var ret;
+    //    switch( format ) {
+    //      case "upper":
+    //        return val.toUpperCase();
+    //      case "lower":
+    //        return val.toLowerCase();
+    //    }
+    //  },
+    //  exsits:function (val,array) {
+    //    var flag = array.indexOf(val);
+    //    if(flag<0){
+    //      return false;
+    //    } else {
+    //      return true;
+    //    }
+    //  }
+    //});
 

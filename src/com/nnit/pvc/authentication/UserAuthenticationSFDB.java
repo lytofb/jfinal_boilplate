@@ -3,6 +3,8 @@ package com.nnit.pvc.authentication;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.dao.contact_merchant_operator;
+import com.dao.data_operator;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -16,25 +18,37 @@ public class UserAuthenticationSFDB implements UserAuthenticationInterface {
 
 	private SimpleAuthenticationInfo authenticationInfo;
 	private UsernamePasswordToken token;
-	private Integer userId;
+	private Long userId;
 	
 	@Override
 	public Boolean validateUser(UsernamePasswordToken token,String realmName) {
 		this.token = token;
         String password = String.valueOf(token.getPassword());
         // 调用操作数据库的方法查询user信息
-        data_user user = new data_user();
+        data_operator user = new data_operator();
         HashMap<String, Object> paramMap = new HashMap<String, Object>();
 //        paramMap.put("user_password", password);
-        paramMap.put("user_account", token.getUsername());
+        paramMap.put("operator_account", token.getUsername());
         user = user.searchFirst(paramMap);
         if (user != null) {
-            if (password.equals(user.getStr("password"))) {
+            if (password.equals(user.getStr("operator_password"))) {
+				contact_merchant_operator merchant_operator = new contact_merchant_operator();
+				HashMap<String, Object> operatorParam = new HashMap<String, Object>();
+				operatorParam.put("operator_id",merchant_operator.getLong("id"));
+				merchant_operator = contact_merchant_operator.dao.searchFirst(operatorParam);
+				if (merchant_operator==null){
+					return false;
+				}
                 Session session = SecurityUtils.getSubject().getSession();
-                session.setAttribute("username", user.getStr("user_name"));
-                authenticationInfo =  new SimpleAuthenticationInfo(user.getInt("id"),
-                        user.getStr("password"), realmName);
-                userId = user.getInt("id");
+				session.setAttribute("operator_name", user.getStr("operator_name"));
+				session.setAttribute("operator_account", user.getStr("operator_account"));
+				session.setAttribute("operator_id", user.getLong("id"));
+				session.setAttribute("operator_name", user.getStr("operator_name"));
+				session.setAttribute("merchant_id", merchant_operator.getLong("merchant_id"));
+				session.setAttribute("merchant_name", merchant_operator.getStr("merchant_name"));
+                authenticationInfo =  new SimpleAuthenticationInfo(user.getLong("id"),
+                        user.getStr("operator_password"), realmName);
+                userId = user.getLong("id");
                 return true;
             } else {
                 return false;

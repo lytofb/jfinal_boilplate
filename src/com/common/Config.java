@@ -1,6 +1,8 @@
 package com.common;
 
 import com.controller.CommonController;
+import com.controller.OrderController;
+import com.controller.VipController;
 import com.dao.ModelEx;
 import com.ext.Slf4jLoggerFactory;
 import com.jfinal.config.Constants;
@@ -44,6 +46,8 @@ public class Config extends JFinalConfig {
 	public void configRoute(Routes me) {
 		this.routes = me;
 		me.add("/", CommonController.class,"/html");
+		me.add("/vip", VipController.class,"/html");
+		me.add("/order", OrderController.class,"/html");
 		//设置权限错误路径
 		
 	}

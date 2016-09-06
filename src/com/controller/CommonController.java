@@ -19,19 +19,11 @@ public class CommonController extends Controller {
 	protected final Log logger = Log.getLog(getClass());
 	
 	public void index() {
-		logger.debug("load login");
-		render("login.html");
+		render("vipcreate.html");
 	}
 	public void tables() {
 		render("tables.html");
 	}
-	public void vipcreate() {
-		render("vipcreate.html");
-	}
-	public void ordercreate() {
-		render("ordercreate.html");
-	}
-
 	public void accountbook() {
 		render("accountbook.html");
 	}
@@ -53,7 +45,8 @@ public class CommonController extends Controller {
 		Subject currentUser  = SecurityUtils.getSubject();
 		String password=null;
 		try {
-			password = Md5Kit.getMd5(getPara("password"));
+			password = getPara("password");
+//			password = Md5Kit.getMd5(getPara("password"));
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -63,9 +56,9 @@ public class CommonController extends Controller {
 		token.setRememberMe(true);
 		try {
 			currentUser.login(pvctoken);
-			Integer userid = (Integer) currentUser.getSession().getAttribute("userId");
+			Long userid = (Long) currentUser.getSession().getAttribute("userId");
 			System.out.println(userid);
-			redirect("/eco/main_page");
+			redirect("/vipcreate");
 		} catch (Exception e) {
 			Log.getLog(CommonController.class).info("auth error", e);
 			// TODO: handle exception

@@ -14,7 +14,7 @@ public class DipSysMenuInterceptor implements Interceptor {
 		// TODO Auto-generated method stub
 //		RequiresRoles reqRole = ai.getMethod().getAnnotation(RequiresRoles.class);
 //		if(reqRole != null) {
-			Integer userId = (Integer) SecurityUtils.getSubject().getSession().getAttribute("userId");
+			Long userId = (Long) SecurityUtils.getSubject().getSession().getAttribute("userId");
 			if(userId != null) {
 				String local = DipI18nTool.getLocal(ai.getController()); 
 //				List<SysMenu> rootList = menuService.getRootMenuByUser(userId,local);

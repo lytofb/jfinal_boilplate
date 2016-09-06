@@ -6,7 +6,7 @@ package com.bean;
 public class Createvip {
     public String carnum;
     public String name;
-    public String cartype;
+    public String carname;
     public Long tel_num;
     public Long totalnum;
     public String originalcardid;
@@ -28,12 +28,12 @@ public class Createvip {
         this.name = name;
     }
 
-    public String getCartype() {
-        return cartype;
+    public String getCarname() {
+        return carname;
     }
 
-    public void setCartype(String cartype) {
-        this.cartype = cartype;
+    public void setCarname(String carname) {
+        this.carname = carname;
     }
 
     public Long getTel_num() {

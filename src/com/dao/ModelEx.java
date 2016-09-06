@@ -25,8 +25,10 @@ public class ModelEx<M extends Model> extends Model<M> {
 	}
     
     private void checkTableName(){
-        if (StrKit.isBlank(tableName))
-            throw new IllegalArgumentException("tableName can not be blank,please setTableName(tableName)");
+        if (StrKit.isBlank(tableName)){
+            tableName = TableMapping.me().getTable(getClass()).getName();
+        }
+//            throw new IllegalArgumentException("tableName can not be blank,please setTableName(tableName)");
     }
  
     public M searchFirst(String key, Object value) {

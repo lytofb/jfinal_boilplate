@@ -413,12 +413,18 @@
 <script src="${base_path}/assets/js/filter.js"></script> <!-- Filter for support page -->
 <script src="${base_path}/assets/js/custom.js"></script> <!-- Custom codes -->
 <script src="${base_path}/assets/js/charts.js"></script> <!-- Charts & Graphs -->
+<script src="${base_path}/assets/js/jquery.gritter.min.js"></script> <!-- jQuery Gritter -->
+<script src="${base_path}/js/nnitScript.js"></script> <!-- nnitscript -->
+<script src="${base_path}/js/layer/layer.min.js"></script> <!-- nnitscript -->
 
 <script>
     $(document).ready(function() {
         $('#datatable').dataTable({"sPaginationType": "full_numbers"});
     });
 </script>
-</body>
 </#macro>
+<#macro script>
+    <#nested>
+</body>
 </html>
+</#macro>

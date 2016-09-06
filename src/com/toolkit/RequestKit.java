@@ -1,6 +1,7 @@
 package com.toolkit;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.UUID;
 
 public class RequestKit {
 
@@ -13,5 +14,11 @@ public class RequestKit {
 			return true;
 		}
     	return false;
+	}
+
+	public static String generateuuid(){
+		UUID uuid = UUID.randomUUID();
+		String randomUUIDString = uuid.toString();
+		return randomUUIDString;
 	}
 }
