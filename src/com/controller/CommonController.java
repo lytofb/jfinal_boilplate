@@ -19,25 +19,13 @@ public class CommonController extends Controller {
 	protected final Log logger = Log.getLog(getClass());
 	
 	public void index() {
-		render("vipcreate.html");
+		render("tables.html");
 	}
 	public void tables() {
 		render("tables.html");
 	}
-	public void accountbook() {
-		render("accountbook.html");
-	}
-
 	public void incomehistory() {
 		render("incomehistory.html");
-	}
-
-	public void vipinfo() {
-		render("vipinfo.html");
-	}
-
-	public void vipcharge() {
-		render("vipcharge.html");
 	}
 
 
@@ -58,7 +46,7 @@ public class CommonController extends Controller {
 			currentUser.login(pvctoken);
 			Long userid = (Long) currentUser.getSession().getAttribute("userId");
 			System.out.println(userid);
-			redirect("/vipcreate");
+			redirect("/");
 		} catch (Exception e) {
 			Log.getLog(CommonController.class).info("auth error", e);
 			// TODO: handle exception

@@ -38,6 +38,11 @@
         initAlert("操作成功","")
     }
 
+    function setMessageReload(){
+        setMessage("操作成功")
+        location.reload();
+    }
+
     function initSchemaSelector () {
       schema_data.current = schema_data.schema_list[schema_data_seq].schemaname;
       var schemaSelectorContent = $("#schemaSelectorTemplate").render(schema_data);
@@ -53,6 +58,22 @@
             $( "#filterModalTemplate" ).render( data )
         );
     }
+
+    function setMessage(message){
+        localStorage.setItem("message",message)
+    }
+
+    function getMessage(){
+        return localStorage.getItem("message")
+    }
+
+    $(function(){
+        var message = getMessage();
+        if (message) {
+            initAlert("",message)
+        };
+        localStorage.clear()
+    })
 
     //$.views.helpers({
     //

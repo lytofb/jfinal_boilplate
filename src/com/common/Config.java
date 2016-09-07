@@ -46,8 +46,8 @@ public class Config extends JFinalConfig {
 	public void configRoute(Routes me) {
 		this.routes = me;
 		me.add("/", CommonController.class,"/html");
-		me.add("/vip", VipController.class,"/html");
-		me.add("/order", OrderController.class,"/html");
+		me.add("/vip", VipController.class,"/html/vip");
+		me.add("/order", OrderController.class,"/html/order");
 		//设置权限错误路径
 		
 	}
