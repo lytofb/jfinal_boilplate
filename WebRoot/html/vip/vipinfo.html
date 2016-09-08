@@ -5,6 +5,20 @@
 <div class="matter">
     <div class="container">
         <div class="row">
+            <div class="col-md-3">
+                <label>会员名称：</label>
+                <input type="text" id="vipname" class="entersearch" value="${vipname!''}">
+            </div>
+            <div class="col-md-3">
+                <label>会员卡号：</label>
+                <input type="text" id="vipcardid" class="entersearch" value="${vipcardid!''}">
+            </div>
+            <div class="col-md-6">
+                <label>旧会员卡号：</label>
+                <input type="text" id="oldcardid" class="entersearch" value="${oldcardid!''}">
+            </div>
+        </div>
+        <div class="row">
 
             <div class="col-md-12">
                 <div class="widget">
@@ -25,46 +39,33 @@
                                 <th>#</th>
                                 <th>会员名称</th>
                                 <th>会员余额</th>
+                                <th>会员卡号</th>
+                                <th>旧会员卡号</th>
                                 <th>发生时间</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
                             <tbody>
+                            <#list page.list as vip>
                             <tr>
-                                <td>1</td>
-                                <td><span class="label label-danger">-100</span></td>
-                                <td>老杨</td>
-                                <td>08:00</td>
+                                <td>${vip_index + 1}.</td>
+                                <td>${vip.vip_name}</td>
+                                <td>${vip.card_total}</td>
+                                <th>${vip.card_id}</th>
+                                <th>${(vip.old_card_id)!""}</th>
+                                <td>${vip.updatetime?string('yyyy-MM-dd HH:mm:ss')}</td>
                                 <td><button class="btn btn-xs btn-default"><i class="fa fa-eye"></i> </button></td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><span class="label label-success">+100</span></td>
-                                <td>老张</td>
-                                <td>08:00</td>
-                                <td><button class="btn btn-xs btn-default"><i class="fa fa-eye"></i> </button></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><span class="label label-success">+100</span></td>
-                                <td>老张</td>
-                                <td>09:00</td>
-                                <td><button class="btn btn-xs btn-default"><i class="fa fa-eye"></i> </button></td>
-                            </tr>
+                            </#list>
                             </tbody>
                         </table>
 
                         <div class="widget-foot">
 
 
-                            <ul class="pagination pull-right">
-                                <li><a href="#">Prev</a></li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">Next</a></li>
-                            </ul>
+                            <#if page?? && page.list?size gt 0>
+                                <@paginate currentPage=page.pageNumber totalPage=page.totalPage actionUrl="${base_path}/vip/" urlParas=_urlParas className="pagination pull-right"/>
+                            </#if>
 
                             <div class="clearfix"></div>
 
@@ -77,3 +78,20 @@
     </div>
 </div>
 </@layout>
+<@script>
+<script type="text/javascript">
+    var dosearch = function (){
+        var urlbase = "${base_path}/vip";
+        var url = urlbase.concat("?vipname=",$("#vipname").val(),"&vipcardid=",$("#vipcardid").val(),"&oldcardid=",$("#oldcardid").val())
+        location.href=url;
+    }
+    $(function(){
+        $(".entersearch").keypress(function(event){
+            var keycode = event.which;
+            if(keycode ==13){
+                dosearch();
+            }
+        })
+    })
+</script>
+</@script>

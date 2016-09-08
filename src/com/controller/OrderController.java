@@ -9,6 +9,7 @@ import com.jfinal.plugin.activerecord.Record;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -70,8 +71,9 @@ public class OrderController extends ControllerExt{
         merchant_order.set("is_member",is_member);
         merchant_order.set("merchant_name",merchant_name);
         merchant_order.set("total",total);
-        merchant_order.set("realtotal",realtotal);
+        merchant_order.set("realtotal",realtotal+ext_money);
         merchant_order.set("ext_money",ext_money);
+        merchant_order.set("updatetime",new Date());
         merchant_order.set("desc",desc);
         String merchant_order_tablename = "z"+merchant_id+"_merchant_order";
         Db.save(merchant_order_tablename,merchant_order);
@@ -95,7 +97,7 @@ public class OrderController extends ControllerExt{
         renderText("success");
     }
 
-    public void accountbook() {
+    public void index() {
         Integer pagenum = getParaToInt(0,1);
         String merchant_order_tablename = "z"+merchant_id+"_merchant_order";
         String sqlExpect = " from "+merchant_order_tablename+" where enabled=1 order by id desc";
@@ -162,6 +164,9 @@ public class OrderController extends ControllerExt{
     }
 
     private Long getPriceById(Long id){
+        if (id==null){
+            return 0L;
+        }
         String serviceQueryTemplate = "select * from %s where enabled = 1 and id = ?";
         String sql = String.format(serviceQueryTemplate,"z"+merchant_id+"_service");
         Record service = Db.findFirst(sql, id);

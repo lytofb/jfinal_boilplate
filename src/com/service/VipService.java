@@ -6,6 +6,7 @@ import com.toolkit.RequestKit;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -29,6 +30,7 @@ public class VipService {
         cmu.set("validate_key",uuid);
         cmu.set("merchant_id",merchant_id);
         cmu.set("merchant_name",merchant_name);
+        cmu.set("updatetime",new Date());
         cmu.save();
     }
 

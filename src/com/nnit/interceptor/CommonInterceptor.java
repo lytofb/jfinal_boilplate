@@ -1,6 +1,8 @@
 package com.nnit.interceptor;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 import org.apache.shiro.SecurityUtils;
 
@@ -16,30 +18,40 @@ public class CommonInterceptor implements Interceptor {
 	
 	public CommonInterceptor() {
 		// TODO Auto-generated constructor stub
-		titleMap.put("main_page", "零售视图");
-		titleMap.put("map_page", "零售视图");
-		titleMap.put("dataFullList", "零售列表");
-		titleMap.put("cwtp", "零售环比");
-		titleMap.put("formattedForm", "零售概况");
-		titleMap.put("energyForm", "能源列表");
-		titleMap.put("userForm", "用户列表");
-		titleMap.put("roleForm", "角色列表");
-		titleMap.put("getUserList", "用户列表");
-		titleMap.put("getRoleList", "角色列表");
-		titleMap.put("getUserList", "权限列表");
-		titleMap.put("getUserRel", "角色用户关联");
-		titleMap.put("editUserRel", "更改角色关联");
-		titleMap.put("getTemplateList", "模板列表");
-		titleMap.put("amdFile", "空白");
-	 //	titleMap.put("addUser", "");
 	}
 
 	@Override
 	public void intercept(Invocation ai) {
-		// TODO Auto-generated method stub
-		ai.getController().setAttr("mvalue", titleProp.get(ai.getMethodName()));
-		Integer userId = (Integer) SecurityUtils.getSubject().getSession().getAttribute("userId");
+		String actionKey = ai.getActionKey();
+		String[] keys = actionKey.split("/");
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < keys.length; i++) {
+			if (!keys[i].equals("")){
+				sb.append(keys[i]);
+				sb.append(".");
+			}
+		}
+		if (sb.length()==0){
+			sb.append(".");
+		}
+		String sbresult = sb.substring(0,sb.length()-1);
+//		ai.getController().setAttr("placeholder", titleProp.get(ai.getMethodName(),"洗洗车"));
+		Map<String,String[]> paramMap = ai.getController().getParaMap();
+		Set<String> urlparamkeys = paramMap.keySet();
+		StringBuilder urlparamsb = new StringBuilder();
+		for(String key:urlparamkeys){
+			urlparamsb.append(key).append("=").append(paramMap.get(key)[0]);
+			urlparamsb.append("&");
+		}
+		if(urlparamsb.length()==0){
+			urlparamsb.append("&");
+		}
+		String urlParas = urlparamsb.substring(0,urlparamsb.length()-1);
+		ai.getController().setAttr("placeholder", titleProp.get(sbresult,"仪表盘"));
+		ai.getController().setAttr("actionkey", sbresult);
+		Long userId = (Long) SecurityUtils.getSubject().getSession().getAttribute("userId");
 		ai.getController().setAttr("userid", userId);
+		ai.getController().setAttr("_urlParas",urlParas);
 //		ai.getController().setAttr("bundle",I18N.getResourceBundleModel(ai.getController().getRequest().getLocale()));
 		ai.invoke();
 	}

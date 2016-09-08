@@ -1,10 +1,11 @@
+<#include "/html/common/pagination.html"/>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <!-- Title and other stuffs -->
-    <title>{placeholder}</title>
+    <title>${placeholder}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content="">
@@ -41,6 +42,9 @@
     <link href="${base_path}/assets/style/widgets.css" rel="stylesheet">
     <!-- Gritter Notifications stylesheet -->
     <link href="${base_path}/assets/style/jquery.gritter.css" rel="stylesheet">
+    <!-- Jquery validate engine stylesheet -->
+    <!--<link href="${base_path}/js/jquery_validateengine/css/validationEngine.jquery.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="${base_path}/assets/style/validationEngine.jquery.css">
 
     <!-- HTML5 Support for IE -->
     <!--[if lt IE 9]>
@@ -82,169 +86,6 @@
                             <li><a href="login.html"><i class="fa fa-key"></i> Logout</a></li>
                         </ul>
                     </li>
-                    <!-- Upload to server link. Class "dropdown-big" creates big dropdown -->
-                    <li class="dropdown dropdown-big leftonmobile">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cloud-upload"></i></a>
-                        <!-- Dropdown -->
-                        <ul class="dropdown-menu">
-                            <li>
-                                <!-- Progress bar -->
-                                <p>Photo Upload in Progress</p>
-                                <!-- Bootstrap progress bar -->
-                                <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-info"  role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                        <span class="sr-only">40% Complete</span>
-                                    </div>
-                                </div>
-
-                                <hr />
-
-                                <!-- Progress bar -->
-                                <p>Video Upload in Progress</p>
-                                <!-- Bootstrap progress bar -->
-                                <div class="progress progress-striped active">
-                                    <div class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                        <span class="sr-only">80% Complete</span>
-                                    </div>
-                                </div>
-
-                                <hr />
-
-                                <!-- Dropdown menu footer -->
-                                <div class="drop-foot">
-                                    <a href="#">View All</a>
-                                </div>
-
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!-- Sync to server link -->
-                    <li class="dropdown dropdown-big leftonmobile">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-refresh"></i></a>
-                        <!-- Dropdown -->
-                        <ul class="dropdown-menu">
-                            <li>
-                                <!-- Using "fa fa-spin" class to rotate icon. -->
-                                <p><span class="label label-info"><i class="fa fa-cloud"></i></span> Syncing Photos to Server</p>
-                                <hr />
-                                <p><span class="label label-warning"><i class="fa fa-cloud"></i></span> Syncing Bookmarks Lists to Cloud</p>
-
-                                <hr />
-
-                                <!-- Dropdown menu footer -->
-                                <div class="drop-foot">
-                                    <a href="#">View All</a>
-                                </div>
-
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown dropdown-big leftonmobile">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-                            <i class="fa fa-comments"></i><span class="label label-info">6</span>
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-header padless">
-                                <!-- Heading - h5 -->
-                                <h5><i class="fa fa-comments"></i> Chats</h5>
-                                <!-- Use hr tag to add border -->
-                            </li>
-                            <li>
-                                <hr />
-                                <!-- List item heading h6 -->
-                                <h6><a href="#">Hi :)</a> <span class="label label-warning pull-right">10:42</span></h6>
-                                <div class="clearfix"></div>
-                                <hr />
-                            </li>
-                            <li>
-                                <h6><a href="#">How are you?</a> <span class="label label-warning pull-right">20:42</span></h6>
-                                <div class="clearfix"></div>
-                                <hr />
-                            </li>
-                            <li>
-                                <h6><a href="#">What are you doing?</a> <span class="label label-warning pull-right">14:42</span></h6>
-                                <div class="clearfix"></div>
-                                <hr />
-                            </li>
-                            <li>
-                                <div class="drop-foot">
-                                    <a href="#">View All</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!-- Message button with number of latest messages count-->
-                    <li class="dropdown dropdown-big messages-dd leftonmobile">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-                            <i class="fa fa-envelope-o"></i> <span class="label label-primary">3</span>
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-header padless">
-                                <!-- Heading - h5 -->
-                                <h5><i class="fa fa-envelope-alt"></i> Messages</h5>
-                                <!-- Use hr tag to add border -->
-
-                            </li>
-                            <li>
-                                <hr /><!-- List item heading h6 -->
-                                <h6><a href="#">Hello how are you?</a></h6>
-                                <!-- List item para -->
-                                <p>Quisque eu consectetur erat eget  semper...</p>
-                                <hr />
-                            </li>
-                            <li>
-                                <h6><a href="#">Today is wonderful?</a></h6>
-                                <p>Quisque eu consectetur erat eget  semper...</p>
-                                <hr />
-                            </li>
-                            <li>
-                                <div class="drop-foot">
-                                    <a href="#">View All</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!-- Members button with number of latest members count -->
-                    <li class="dropdown dropdown-big">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-                            <i class="fa fa-user"></i> <span class="label label-success">7</span>
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-header padless">
-                                <!-- Heading - h5 -->
-                                <h5><i class="fa fa-user"></i> Users</h5>
-                                <!-- Use hr tag to add border -->
-                            </li>
-                            <li>
-                                <hr />
-                                <!-- List item heading h6-->
-                                <h6><a href="#">John Doe</a> <span class="label label-warning pull-right">Free</span></h6>
-                                <div class="clearfix"></div>
-                                <hr />
-                            </li>
-                            <li>
-                                <h6><a href="#">Iron Man</a> <span class="label label-important pull-right">Premium</span></h6>
-                                <div class="clearfix"></div>
-                                <hr />
-                            </li>
-                            <li>
-                                <h6><a href="#">Salamander</a> <span class="label label-warning pull-right">Free</span></h6>
-                                <div class="clearfix"></div>
-                                <hr />
-                            </li>
-                            <li>
-                                <div class="drop-foot">
-                                    <a href="#">View All</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
             </nav>
 
@@ -269,7 +110,12 @@
         <!-- If the main navigation has sub navigation, then add the class "has_sub" to "li" of main navigation. -->
         <ul id="nav">
             <!-- Main menu with font awesome icon -->
-            <li><a href="index.html"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+            <li><a href="${base_path}/" <#if actionkey=="">class="open"</#if>><i class="fa fa-home"></i> <span>仪表盘</span></a></li>
+            <li><a href="${base_path}/order/" <#if actionkey=="order">class="open"</#if>><i class="fa fa-table"></i> <span>订单列表</span></a></li>
+            <li><a href="${base_path}/order/ordercreate" <#if actionkey=="order.ordercreate">class="open"</#if>><i class="fa fa-edit"></i> <span>创建订单</span></a></li>
+            <li><a href="${base_path}/vip/vipcreate" <#if actionkey=="vip.vipcreate">class="open"</#if>><i class="fa fa-tasks"></i> <span>创建会员</span></a></li>
+            <li><a href="${base_path}/vip/vipcharge" <#if actionkey=="vip.vipcharge">class="open"</#if>><i class="fa fa-file-text"></i> <span>会员充值</span></a></li>
+            <!--
             <li class="has_sub"><a href="#"><i class="fa fa-list-alt"></i> <span>Widgets</span> <span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
                 <ul>
                     <li><a href="widgets1.html">Widgets #1</a></li>
@@ -331,6 +177,7 @@
                     </li>
                 </ul>
             </li>
+             -->
         </ul>
     </div>
     <!-- Sidebar ends -->
@@ -339,14 +186,14 @@
     <div class="mainbar">
         <!-- Page heading -->
         <div class="page-head">
-            <h2 class="pull-left">{PlaceHolder}</h2>
+            <h2 class="pull-left">${placeholder}</h2>
             <div class="clearfix"></div>
             <!-- Breadcrumb -->
             <div class="bread-crumb">
-                <a href="index.html"><i class="fa fa-home"></i> Home</a>
+                <a href="${base_path}/"><i class="fa fa-home"></i> 首页</a>
                 <!-- Divider -->
                 <span class="divider">/</span>
-                <a href="#" class="bread-current">{PlaceHolder}</a>
+                <a href="#" class="bread-current">${placeholder}</a>
             </div>
 
             <div class="clearfix"></div>
@@ -416,6 +263,9 @@
 <script src="${base_path}/assets/js/jquery.gritter.min.js"></script> <!-- jQuery Gritter -->
 <script src="${base_path}/js/nnitScript.js"></script> <!-- nnitscript -->
 <script src="${base_path}/js/layer/layer.min.js"></script> <!-- nnitscript -->
+<script src="${base_path}/js/jquery_validateengine/js/jquery.validationEngine.min.js"></script> <!-- nnitscript -->
+<script src="${base_path}/js/jquery_validateengine/js/jquery.validationEngine-zh_CN.js"></script> <!-- nnitscript -->
+
 
 <script>
     $(document).ready(function() {

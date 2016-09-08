@@ -27,27 +27,27 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="email">车牌</label>
-                                        <input type="text" class="validate[required,custom[email]] form-control placeholder" id="chepai" placeholder="车牌" name="createvip.carnum">
+                                        <input type="text" class="validate[required,max[20]] form-control placeholder" id="chepai" placeholder="车牌" name="createvip.carnum">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">车型</label>
-                                        <input type="text" class="validate[required,custom[email]] form-control placeholder" id="chexing" placeholder="车型" name="createvip.carname">
+                                        <input type="text" class="validate[required,max[100]] form-control placeholder" id="chexing" placeholder="车型" name="createvip.carname">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">电话</label>
-                                        <input type="text" class="validate[required] form-control placeholder" id="password" placeholder="电话" name="createvip.tel_num">
+                                        <input type="text" class="validate[required,custom[phone]] form-control placeholder" id="password" placeholder="电话" name="createvip.tel_num">
                                     </div>
                                     <div class="form-group">
                                         <label for="confirmPassword">充值</label>
-                                        <input type="text" class="validate[required,equals[password]] form-control placeholder" id="repeatPassword" placeholder="充值" name="createvip.totalnum">
+                                        <input type="text" class="validate[required,custom[number],max[20]] form-control placeholder" id="repeatPassword" placeholder="充值" name="createvip.totalnum">
                                     </div>
                                     <div class="form-group">
                                         <label for="companyName">原卡号</label>
-                                        <input type="text" class="validate[required] form-control placeholder" id="companyName" placeholder="原卡号" name="createvip.originalcardid">
+                                        <input type="text" class="form-control placeholder" id="companyName" placeholder="原卡号" name="createvip.originalcardid">
                                     </div>
                                     <div class="form-group">
                                         <label for="companyName">新卡号</label>
-                                        <input type="text" class="validate[required] form-control placeholder" id="companyName" placeholder="新卡号" name="createvip.newcardid">
+                                        <input type="text" class="validate[required,custom[number],max[20]] form-control placeholder" id="companyName" placeholder="新卡号" name="createvip.newcardid">
                                     </div>
                                     <button id="signupuser" type="button" class="btn btn-primary btn-block">建立会员</button>
                                 </fieldset>
@@ -70,10 +70,23 @@
         console.log("err")
     }
 $(function(){
-    $(".btn").on("click",function(){
+    var createvipclick = function(){
+        var validated = $('form').validationEngine("validate");
+        if(!validated){
+            return;
+        }
         commonPost("${base_path}/vip/addvip",defaultSuccessCallback,errfun,null,$('#form1').serialize(),true)
-//        $.post('${base_path}/vip/addvip', $('#form1').serialize())
+    }
+    $(".btn").on("click",function(){
+        createvipclick();
     })
+    $(window).keypress(function(event){
+        if(event.which==13){
+            createvipclick();
+        }
+    })
+    $('form').validationEngine();
+
 })
 </script>
 </@script>

@@ -1,5 +1,4 @@
 <#include "/html/common/_layout.html"/>
-<#include "/html/common/pagination.html"/>
 <@layout>
 <!-- Matter -->
 
@@ -40,17 +39,17 @@
                             <tr>
                                 <td>${order_index + 1}.</td>
                                 <td>${order.id}</td>
-                                <td>${order.user_id}</td>
-                                <td>${order.user_name}</td>
+                                <td>${(order.user_id)!""}</td>
+                                <td>${(order.user_name)!"非会员"}</td>
                                 <td>${order.discount}</td>
-                                <td>${order.ext_money}</td>
+                                <td>${(order.ext_money)!0}</td>
                                 <td>${order.realtotal}</td>
                                 <td>
                                     <#if order.is_payed==1><span class="label label-success">已付款+${order.realtotal}</span>
                                     <#else><span class="label label-danger">未付款</span>
                                     </#if>
                                 </td>
-                                <td>${order.updatetime?string('yyyy-MM-dd hh:mm:ss')}</td>
+                                <td>${order.updatetime?string('yyyy-MM-dd HH:mm:ss')}</td>
                                 <td>
                                     <#if order.is_payed==1>
                                         <button  class="btn btn-xs btn-default revokeButton" value="${order.id}"><i class="fa fa-minus"></i> </button>
@@ -66,7 +65,7 @@
                         <div class="widget-foot">
 
                             <#if page?? && page.list?size gt 0>
-                                <@paginate currentPage=page.pageNumber totalPage=page.totalPage actionUrl="../accountbook" urlParas="" className="pagination pull-right"/>
+                                <@paginate currentPage=page.pageNumber totalPage=page.totalPage actionUrl="${base_path}/order/" urlParas=_urlParas className="pagination pull-right"/>
                             </#if>
 
                             <div class="clearfix"></div>

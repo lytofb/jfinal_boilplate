@@ -18,6 +18,7 @@ import com.jfinal.ext.plugin.tablebind.AutoTableBindPlugin;
 import com.jfinal.plugin.activerecord.dialect.Dialect;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.plugin.ehcache.EhCachePlugin;
+import com.nnit.interceptor.CommonInterceptor;
 import com.nnit.interceptor.DipSysMenuInterceptor;
 import com.nnit.interceptor.XssInterceptor;
 
@@ -93,7 +94,7 @@ public class Config extends JFinalConfig {
 	 */
 	public void configInterceptor(Interceptors me) {
 //		me.add(new ShiroInterceptor());
-//		me.add(new CommonInterceptor());
+		me.add(new CommonInterceptor());
 		me.add(new DipSysMenuInterceptor());
 		me.add(new XssInterceptor());
 	}
