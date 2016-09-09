@@ -1,4 +1,5 @@
 order=订单列表
+order.preorder=预约记录
 order.ordercreate=创建订单
 vip=会员列表
 vip.vipcharge=会员充值

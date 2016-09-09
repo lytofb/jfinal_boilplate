@@ -54,7 +54,7 @@
                                 <th>${vip.card_id}</th>
                                 <th>${(vip.old_card_id)!""}</th>
                                 <td>${vip.updatetime?string('yyyy-MM-dd HH:mm:ss')}</td>
-                                <td><button class="btn btn-xs btn-default"><i class="fa fa-eye"></i> </button></td>
+                                <td><button class="btn btn-xs btn-default vipdetail" vipcardid="${vip.card_id}"><i class="fa fa-eye"></i> </button></td>
                             </tr>
                             </#list>
                             </tbody>
@@ -91,6 +91,10 @@
             if(keycode ==13){
                 dosearch();
             }
+        })
+        $(".vipdetail").click(function(){
+            var cardid = $(this).attr("vipcardid");
+            location.href="${base_path}/vip/vipconsumption?cardid="+cardid;
         })
     })
 </script>

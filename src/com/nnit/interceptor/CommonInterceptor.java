@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import com.jfinal.core.Controller;
 import org.apache.shiro.SecurityUtils;
 
 import com.jfinal.aop.Interceptor;
@@ -36,7 +37,8 @@ public class CommonInterceptor implements Interceptor {
 		}
 		String sbresult = sb.substring(0,sb.length()-1);
 //		ai.getController().setAttr("placeholder", titleProp.get(ai.getMethodName(),"洗洗车"));
-		Map<String,String[]> paramMap = ai.getController().getParaMap();
+		Controller c = ai.getController();
+		Map<String,String[]> paramMap = c.getParaMap();
 		Set<String> urlparamkeys = paramMap.keySet();
 		StringBuilder urlparamsb = new StringBuilder();
 		for(String key:urlparamkeys){
@@ -47,12 +49,15 @@ public class CommonInterceptor implements Interceptor {
 			urlparamsb.append("&");
 		}
 		String urlParas = urlparamsb.substring(0,urlparamsb.length()-1);
-		ai.getController().setAttr("placeholder", titleProp.get(sbresult,"仪表盘"));
-		ai.getController().setAttr("actionkey", sbresult);
+		c.setAttr("placeholder", titleProp.get(sbresult, "仪表盘"));
+		c.setAttr("actionkey", sbresult);
+		String menu_size_cookie = c.getCookie("menu_size","0");
+		c.setCookie("menu_size",menu_size_cookie,31536000);
+		c.setAttr("menu_size",menu_size_cookie);
 		Long userId = (Long) SecurityUtils.getSubject().getSession().getAttribute("userId");
-		ai.getController().setAttr("userid", userId);
-		ai.getController().setAttr("_urlParas",urlParas);
-//		ai.getController().setAttr("bundle",I18N.getResourceBundleModel(ai.getController().getRequest().getLocale()));
+		c.setAttr("userid", userId);
+		c.setAttr("_urlParas",urlParas);
+//		c.setAttr("bundle",I18N.getResourceBundleModel(c.getRequest().getLocale()));
 		ai.invoke();
 	}
 

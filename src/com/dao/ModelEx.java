@@ -104,7 +104,8 @@ public class ModelEx<M extends Model> extends Model<M> {
                 values.add(entry.getValue());
             }
         }
-        return paginate(pageNumber, pageSize, "select *", sb.toString(),values.toArray());
+        String sqlExpect = sb.toString()+" "+orderBy;
+        return paginate(pageNumber, pageSize, "select *", sqlExpect,values.toArray());
     }
  
     public Page<M> searchPaginateByCache(String cacheName, Object key, int pageNumber, int pageSize, Map<String, Object> maps) {

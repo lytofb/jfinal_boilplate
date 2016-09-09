@@ -94,16 +94,16 @@
 </header>
 <!-- Main content starts -->
 
-<div class="content">
+<div class="content <#if menu_size=='1'>enlarged</#if>">
 
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="sidebar-dropdown"><a href="#">Navigation</a></div>
         <!-- Search form -->
-        <form class="navbar-form" role="search">
+        <form class="navbar-form" action="${base_path}/vip">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-                <button class="btn search-button" type="submit"><i class="fa fa-search"></i></button>
+                <input type="text" class="form-control" placeholder="Search" id="cardidsearch" name="vipcardid">
+                <button class="btn search-button" type="button" id="cardidsearchbtn"><i class="fa fa-search"></i></button>
             </div>
         </form>
         <!--- Sidebar navigation -->
@@ -112,7 +112,9 @@
             <!-- Main menu with font awesome icon -->
             <li><a href="${base_path}/" <#if actionkey=="">class="open"</#if>><i class="fa fa-home"></i> <span>仪表盘</span></a></li>
             <li><a href="${base_path}/order/" <#if actionkey=="order">class="open"</#if>><i class="fa fa-table"></i> <span>订单列表</span></a></li>
+            <li><a href="${base_path}/order/preorder" <#if actionkey=="order.preorder">class="open"</#if>><i class="fa fa-table"></i> <span>预约记录</span></a></li>
             <li><a href="${base_path}/order/ordercreate" <#if actionkey=="order.ordercreate">class="open"</#if>><i class="fa fa-edit"></i> <span>创建订单</span></a></li>
+            <li><a href="${base_path}/vip/" <#if actionkey=="vip">class="open"</#if>><i class="fa fa-tasks"></i> <span>会员列表</span></a></li>
             <li><a href="${base_path}/vip/vipcreate" <#if actionkey=="vip.vipcreate">class="open"</#if>><i class="fa fa-tasks"></i> <span>创建会员</span></a></li>
             <li><a href="${base_path}/vip/vipcharge" <#if actionkey=="vip.vipcharge">class="open"</#if>><i class="fa fa-file-text"></i> <span>会员充值</span></a></li>
             <!--
@@ -258,6 +260,7 @@
 <script src="${base_path}/assets/js/jquery.slimscroll.min.js"></script> <!-- jQuery SlimScroll -->
 <script src="${base_path}/assets/js/bootstrap-switch.min.js"></script> <!-- Bootstrap Toggle -->
 <script src="${base_path}/assets/js/filter.js"></script> <!-- Filter for support page -->
+<script src="${base_path}/js/jquery.cookie.js"></script> <!-- cookie codes -->
 <script src="${base_path}/assets/js/custom.js"></script> <!-- Custom codes -->
 <script src="${base_path}/assets/js/charts.js"></script> <!-- Charts & Graphs -->
 <script src="${base_path}/assets/js/jquery.gritter.min.js"></script> <!-- jQuery Gritter -->
@@ -269,7 +272,19 @@
 
 <script>
     $(document).ready(function() {
-        $('#datatable').dataTable({"sPaginationType": "full_numbers"});
+        //$('#datatable').dataTable({"sPaginationType": "full_numbers"});
+
+        var searchvip = function(){
+            var url = "${base_path}/vip?vipcardid=".concat($("#cardidsearch").val());
+            location.href=url
+        }
+
+        $("#cardidsearchbtn").click(searchvip)
+
+        $('#myCollapsible').on('hidden.bs.collapse', function () {
+            // do something…
+        })
+
     });
 </script>
 </#macro>

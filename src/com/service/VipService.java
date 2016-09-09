@@ -3,6 +3,7 @@ package com.service;
 import com.bean.Createvip;
 import com.dao.contact_merchant_user;
 import com.toolkit.RequestKit;
+import com.toolkit.YunpianSms;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 
@@ -32,6 +33,10 @@ public class VipService {
         cmu.set("merchant_name",merchant_name);
         cmu.set("updatetime",new Date());
         cmu.save();
+
+        //new Thread(new YunpianSms.Msgsender(merchant_name,vipservice.getTel_num().toString())).start();
     }
+
+
 
 }

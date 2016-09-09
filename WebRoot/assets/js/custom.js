@@ -76,6 +76,7 @@ $(document).ready(function(){
   
   $(".menubutton").click(function(){
       if(!$(".content").hasClass("enlarged")){
+          $.cookie("menu_size", 1);
           $("#nav .has_sub ul").removeAttr("style");
           $("#nav .has_sub .pull-right i").removeClass("fa-chevron-left").addClass("fa-chevron-down");
           $("#nav ul .has_sub .pull-right i").removeClass("fa-chevron-down").addClass("fa-chevron-right");
@@ -83,6 +84,7 @@ $(document).ready(function(){
       }else{
           $("#nav .has_sub .pull-right i").addClass("fa-chevron-left").removeClass("fa-chevron-down").removeClass("fa-chevron-right");
           $(".content").removeClass("enlarged");
+          $.cookie("menu_size", 0);
       }
   });
   

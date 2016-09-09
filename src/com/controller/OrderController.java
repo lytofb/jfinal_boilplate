@@ -2,6 +2,7 @@ package com.controller;
 
 import com.bean.Createorder;
 import com.bean.Createvip;
+import com.dao.data_preorder;
 import com.jfinal.ext2.core.ControllerExt;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
@@ -9,7 +10,9 @@ import com.jfinal.plugin.activerecord.Record;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -61,7 +64,9 @@ public class OrderController extends ControllerExt{
         createOrder.setSingle(singlevalue);
 
         Integer is_member = createOrder.getVipcardid()==null?0:1;
-        Long total = caculateById(createOrder);
+        ArrayList<Object> objects = caculateById(createOrder);
+        Long total = (Long)objects.get(0);
+        String content_detail_desc = (String) objects.get(1);
         Long discount = 0L;
         Long realtotal = total-discount;
         Long ext_money = createOrder.getExt_money();
@@ -72,6 +77,7 @@ public class OrderController extends ControllerExt{
         merchant_order.set("merchant_name",merchant_name);
         merchant_order.set("total",total);
         merchant_order.set("realtotal",realtotal+ext_money);
+        merchant_order.set("content_detail_desc",content_detail_desc);
         merchant_order.set("ext_money",ext_money);
         merchant_order.set("updatetime",new Date());
         merchant_order.set("desc",desc);
@@ -104,6 +110,15 @@ public class OrderController extends ControllerExt{
         Page<Record> page = Db.paginate(pagenum, 20, "select *", sqlExpect);
         setAttr("page",page);
         render("accountbook.html");
+    }
+
+    public void preorder() {
+        Integer pagenum = getParaToInt(0,1);
+        HashMap<String,Object> paramMap = new HashMap<String, Object>();
+        paramMap.put("merchant_id",merchant_id);
+        Page<data_preorder> page = data_preorder.dao.searchPaginate(pagenum, 20,paramMap,"order by order_time desc");
+        setAttr("page",page);
+        render("preorder.html");
     }
 
     public void updateorderstatus(){
@@ -150,17 +165,37 @@ public class OrderController extends ControllerExt{
         Db.save(merchant_operate_history_tablename,operate_history);
     }
 
-    private Long caculateById(Createorder createOrder){
+    private ArrayList<Object> caculateById(Createorder createOrder){
+        ArrayList<Object> objects = new ArrayList<Object>();
         Long totalPrice = 0L;
+        String detail_desc = "";
+        objects.add(totalPrice);objects.add(detail_desc);
         Long[] singleValue = createOrder.getSingle();
         Long suiteValue = createOrder.getSuite();
         String serviceQueryTemplate = "select * from %s where enabled = 1 and id = ?";
+//        for (int i = 0; i < singleValue.length; i++) {
+//            Long servicePrice = getPriceById(singleValue[i]);
+//            totalPrice = totalPrice+servicePrice;
+//        }
+//        totalPrice = totalPrice+getPriceById(suiteValue);
         for (int i = 0; i < singleValue.length; i++) {
-            Long servicePrice = getPriceById(singleValue[i]);
-            totalPrice = totalPrice+servicePrice;
+            recordService(objects,singleValue[i]);
         }
-        totalPrice = totalPrice+getPriceById(suiteValue);
-        return totalPrice;
+        recordService(objects,suiteValue);
+        return objects;
+    }
+
+    private void recordService(ArrayList<Object> objects,Long id){
+        assert objects.size()==2;
+        if (id==null){
+            return;
+        }
+        String serviceQueryTemplate = "select * from %s where enabled = 1 and id = ?";
+        String sql = String.format(serviceQueryTemplate,"z"+merchant_id+"_service");
+        Record service = Db.findFirst(sql, id);
+        Long servicePrice = service.getLong("detail_price");
+        objects.set(0,(Long)objects.get(0)+servicePrice);
+        objects.set(1,(Long)objects.get(1)+String.format("%s[%s]",service.getStr("detail_name"),service.get("detail_price").toString())+",");
     }
 
     private Long getPriceById(Long id){

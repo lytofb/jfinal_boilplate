@@ -173,7 +173,17 @@ public class HttpKitExt {
 	public static String post(String url, String data) {
 		return post(url, null, data, null,null);
 	}
-	
+
+	public static String post(String url, Map<String, String> data) {
+		String stringdata = buildUrlWithQueryString(url, data);
+		return post(url, null, stringdata, null);
+	}
+
+	public static String post(String url,Map<String,String> headers,Map<String,String> data){
+		String stringdata = buildUrlWithQueryString(url, data);
+		return post(url,stringdata,headers);
+	}
+
 	private static String readResponseString(HttpURLConnection conn) {
 		StringBuilder sb = new StringBuilder();
 		InputStream inputStream = null;

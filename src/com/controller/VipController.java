@@ -2,6 +2,7 @@ package com.controller;
 
 import com.bean.Createvip;
 import com.dao.contact_merchant_user;
+import com.dao.data_preorder;
 import com.jfinal.ext2.core.ControllerExt;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
@@ -38,14 +39,25 @@ public class VipController extends ControllerExt {
         String vipcardid = getPara("vipcardid");
         String oldvipcardid = getPara("oldcardid");
         ArrayList<Object> listpara = new ArrayList();
+        listpara.add(merchant_id);
         listpara.add(vipname);
         listpara.add(vipcardid);
         listpara.add(oldvipcardid);
-        listpara.add(merchant_id);
         String dynamicSql = buildSql(sqlExpect.toString(),listpara,tailorderby,"merchant_id","vip_name","card_id","old_card_id");
         Page<Record> page = Db.paginate(pagenum, 20, "select *", dynamicSql,turnArrayToList(listpara));
         setAttr("page",page);
         render("vipinfo.html");
+    }
+
+    public void vipconsumption(){
+        Integer pagenum = getParaToInt(0,1);
+        Long cardid = getParaToLong("cardid");
+        HashMap<String,Object> paramMap = new HashMap<String, Object>();
+        String merchant_order_tablename = "z"+merchant_id+"_merchant_order";
+        String sqlExpect = " from "+merchant_order_tablename+" where enabled=1 and card_id = ? order by id desc";
+        Page<Record> page = Db.paginate(pagenum, 20, "select *", sqlExpect,cardid);
+        setAttr("page",page);
+        render("vipconsumption.html");
     }
 
     public void vipcharge() {
