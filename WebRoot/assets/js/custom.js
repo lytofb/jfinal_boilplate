@@ -145,7 +145,7 @@ $('.wclose').click(function(e){
     var d = date.getDate();
     var m = date.getMonth();
     var y = date.getFullYear();
-    
+/**
     $('#calendar').fullCalendar({
       header: {
         left: 'prev',
@@ -200,7 +200,8 @@ $('.wclose').click(function(e){
         }
       ]
     });
-    
+
+ **/
   });
 
 /* Progressbar animation */
@@ -232,7 +233,7 @@ $('.wclose').click(function(e){
     },600);
 
 /* Slider */
-
+/**
     $(function() {
         // Horizontal slider
         $( "#master1, #master2" ).slider({
@@ -272,7 +273,7 @@ $('.wclose').click(function(e){
             });
         });
     });
-
+**/
 /* Support */
 
 $(document).ready(function(){
@@ -280,7 +281,7 @@ $(document).ready(function(){
      e.preventDefault();
      $(this).next('p').toggle(200);
   });
-
+/**
   $( ".portlets" ).sortable({
       connectWith: ".portlets",
       handle: ".widget-head",
@@ -288,6 +289,7 @@ $(document).ready(function(){
       dropOnEmpty: true,
       forcePlaceholderSize: true
   });
+**/
 });
 
 /* Scroll to Top */
@@ -351,7 +353,7 @@ $(document).ready(function(){
 
 
 /* Date picker */
-
+/**
   $(function() {
     $('#datetimepicker1').datetimepicker({
       pickTime: false
@@ -363,23 +365,25 @@ $(document).ready(function(){
       pickDate: false
     });
   });
-
+**/
 
 
 
 /* CL Editor */
-
+/**
 $(".cleditor").cleditor({
     width: "auto",
     height: "auto"
 });
+**/
 
 /* Modal fix */
 
 $('.modal').appendTo($('body'));
 
 /* Pretty Photo for Gallery*/
-
+/**
 jQuery("a[class^='prettyPhoto']").prettyPhoto({
 overlay_gallery: false, social_tools: false
 });
+**/

@@ -79,9 +79,7 @@ public class UserAuthenticationSFDB implements UserAuthenticationInterface {
 
 	@Override
 	public SimpleAuthorizationInfo getAuthorizationById(String userId) {
-        /*Users user = Users.dao.findById(userId);*/
-		String sql = "select * from user_role_rel where user_info_id=? and deleteflag=1";
-      
+
         if (true) {
         	new Permission() {
 				
@@ -93,7 +91,7 @@ public class UserAuthenticationSFDB implements UserAuthenticationInterface {
 			};
             SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
             ArrayList<String> perms = new ArrayList<String>();
-            perms.add("testRedirect");perms.add("test");
+            perms.add("login");
             info.addStringPermissions(perms);
 //            info.addStringPermission("users/testRedirect");
             // info.addStringPermissions( role.getPermissions()

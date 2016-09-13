@@ -45,7 +45,7 @@ public class Createorder {
     }
 
     public Long getExt_money() {
-        return ext_money;
+        return ext_money==null?0L:ext_money;
     }
 
     public void setExt_money(Long ext_money) {

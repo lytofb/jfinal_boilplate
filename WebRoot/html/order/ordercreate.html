@@ -143,7 +143,12 @@
 
         $("#hiddendesc").val($("textarea").val())
 
-        commonPost("${base_path}/order/createOrder",defaultSuccessCallback,errfun,null,$('form').serialize(),true)
+        commonPost("${base_path}/order/createOrder",createcallback,errfun,null,$('form').serialize(),true)
+    }
+
+    var createcallback = function(){
+        setMessage("操作成功")
+        location.href="${base_path}/order"
     }
 
     var callback = function(result){
@@ -183,17 +188,12 @@
             $("#adjust").text($("#adjustinput").val())
             recaculate()
         });
-        $(window).keypress(function(event){
-            if(event.which==13){
-                chargeclick();
-            }
-        })
         $("input[type='checkbox']").change(recaculate);
         $("select").change(recaculate)
         $("#vipcardid").donetyping(getviptotal,500)
         $(window).keypress(function(event){
             if(event.which==13){
-                createvipclick();
+                orderclick();
             }
         })
         $('form').validationEngine();

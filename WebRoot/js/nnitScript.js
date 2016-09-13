@@ -38,6 +38,10 @@
         initAlert("操作成功","")
     }
 
+    function defaultFailCallback(jqr){
+        initAlert("操作失败",jqr.responseText)
+    }
+
     function setMessageReload(){
         setMessage("操作成功")
         location.reload();

@@ -18156,3 +18156,828 @@ net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(C
 2016-09-09 16:49:08
 [WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
 net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-12 08:50:21
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-12 08:50:21
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-12 08:50:21
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-12 08:50:21
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 08:56:58
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 08:56:58
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 08:56:58
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 08:56:58
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 08:57:18
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 08:57:18
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 08:57:18
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 08:57:18
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 08:57:38
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 08:57:38
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 08:57:38
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 08:57:38
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 08:57:50
+[ERROR]-[Thread: qtp2074185499-27]-[com.ext.Slf4jLogger.error()]: /order/
+com.ext.Slf4jLogger.error(Slf4jLogger.java:49)
+com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'xixiche.znull_merchant_order' doesn't exist
+	at com.jfinal.plugin.activerecord.DbPro.paginate(DbPro.java:514)
+	at com.jfinal.plugin.activerecord.DbPro.paginate(DbPro.java:536)
+	at com.jfinal.plugin.activerecord.Db.paginate(Db.java:363)
+	at com.controller.OrderController.index(OrderController.java:110)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
+	at com.nnit.interceptor.XssInterceptor.intercept(XssInterceptor.java:36)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.nnit.interceptor.DipSysMenuInterceptor.intercept(DipSysMenuInterceptor.java:31)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.nnit.interceptor.CommonInterceptor.intercept(CommonInterceptor.java:61)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
+	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:47)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'xixiche.znull_merchant_order' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2683)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2144)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2310)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeQuery(DruidPooledPreparedStatement.java:227)
+	at com.jfinal.plugin.activerecord.DbPro.query(DbPro.java:73)
+	at com.jfinal.plugin.activerecord.DbPro.doPaginate(DbPro.java:468)
+	at com.jfinal.plugin.activerecord.DbPro.paginate(DbPro.java:456)
+	at com.jfinal.plugin.activerecord.DbPro.paginate(DbPro.java:512)
+	... 48 more
+
+2016-09-13 09:10:06
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:10:06
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:10:06
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:10:06
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:11:06
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:11:06
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:11:06
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:11:06
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:12:30
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:12:30
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:12:30
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:12:30
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:12:35
+[WARN]-[Thread: qtp2074185499-28]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:12:40
+[WARN]-[Thread: qtp2074185499-28]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:12:46
+[WARN]-[Thread: qtp2074185499-34]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:12:49
+[WARN]-[Thread: qtp2074185499-24]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /tables
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:13:06
+[WARN]-[Thread: qtp2074185499-26]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:13:46
+[WARN]-[Thread: qtp2074185499-28]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:13:53
+[WARN]-[Thread: qtp2074185499-34]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:16:59
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:16:59
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:16:59
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:16:59
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:17:05
+[WARN]-[Thread: qtp2074185499-27]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:17:31
+[WARN]-[Thread: qtp2074185499-28]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:23:04
+[WARN]-[Thread: qtp2074185499-23]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:24:53
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:24:53
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:24:53
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:24:53
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:25:13
+[WARN]-[Thread: qtp2074185499-30]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:26:37
+[WARN]-[Thread: qtp2074185499-29]-[com.ext.Slf4jLogger.warn()]: 403 Forbidden: /tables
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:26:40
+[WARN]-[Thread: qtp2074185499-30]-[com.ext.Slf4jLogger.warn()]: 403 Forbidden: /tables
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:32:29
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:32:29
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:32:29
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:32:29
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:34:12
+[WARN]-[Thread: qtp275310919-30]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /tables
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:38:46
+[ERROR]-[Thread: qtp275310919-24]-[com.ext.Slf4jLogger.error()]: /order/
+com.ext.Slf4jLogger.error(Slf4jLogger.java:49)
+com.jfinal.plugin.activerecord.ActiveRecordException: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'xixiche.znull_merchant_order' doesn't exist
+	at com.jfinal.plugin.activerecord.DbPro.paginate(DbPro.java:514)
+	at com.jfinal.plugin.activerecord.DbPro.paginate(DbPro.java:536)
+	at com.jfinal.plugin.activerecord.Db.paginate(Db.java:363)
+	at com.controller.OrderController.index(OrderController.java:110)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
+	at com.nnit.interceptor.XssInterceptor.intercept(XssInterceptor.java:36)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.nnit.interceptor.DipSysMenuInterceptor.intercept(DipSysMenuInterceptor.java:31)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.nnit.interceptor.CommonInterceptor.intercept(CommonInterceptor.java:61)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.jfinal.ext.plugin.shiro.ShiroInterceptor.intercept(ShiroInterceptor.java:51)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
+	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:47)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'xixiche.znull_merchant_order' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.Util.getInstance(Util.java:386)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1052)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4096)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4028)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2490)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2651)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2683)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2144)
+	at com.mysql.jdbc.PreparedStatement.executeQuery(PreparedStatement.java:2310)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.executeQuery(DruidPooledPreparedStatement.java:227)
+	at com.jfinal.plugin.activerecord.DbPro.query(DbPro.java:73)
+	at com.jfinal.plugin.activerecord.DbPro.doPaginate(DbPro.java:468)
+	at com.jfinal.plugin.activerecord.DbPro.paginate(DbPro.java:456)
+	at com.jfinal.plugin.activerecord.DbPro.paginate(DbPro.java:512)
+	... 55 more
+
+2016-09-13 09:40:50
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:40:50
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:40:50
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:40:50
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:40:54
+[WARN]-[Thread: qtp2074185499-28]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:41:16
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:41:16
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:41:16
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:41:16
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:41:17
+[WARN]-[Thread: qtp2074185499-27]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:41:17
+[ERROR]-[Thread: qtp2074185499-27]-[com.ext.Slf4jLogger.error()]: /
+com.ext.Slf4jLogger.error(Slf4jLogger.java:49)
+com.jfinal.render.RenderException: java.io.FileNotFoundException: Template "/login" not found.
+	at com.jfinal.render.FreeMarkerRender.render(FreeMarkerRender.java:147)
+	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:123)
+	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:47)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.io.FileNotFoundException: Template "/login" not found.
+	at freemarker.template.Configuration.getTemplate(Configuration.java:742)
+	at freemarker.template.Configuration.getTemplate(Configuration.java:665)
+	at com.jfinal.render.FreeMarkerRender.render(FreeMarkerRender.java:143)
+	... 40 more
+
+2016-09-13 09:41:54
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:41:54
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:41:54
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:41:54
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:41:54
+[WARN]-[Thread: qtp2074185499-27]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:41:54
+[ERROR]-[Thread: qtp2074185499-27]-[com.ext.Slf4jLogger.error()]: /
+com.ext.Slf4jLogger.error(Slf4jLogger.java:49)
+com.jfinal.render.RenderException: java.io.FileNotFoundException: Template "/login.html" not found.
+	at com.jfinal.render.FreeMarkerRender.render(FreeMarkerRender.java:147)
+	at com.jfinal.render.ErrorRender.render(ErrorRender.java:51)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:123)
+	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:47)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:926)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:988)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:635)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.io.FileNotFoundException: Template "/login.html" not found.
+	at freemarker.template.Configuration.getTemplate(Configuration.java:742)
+	at freemarker.template.Configuration.getTemplate(Configuration.java:665)
+	at com.jfinal.render.FreeMarkerRender.render(FreeMarkerRender.java:143)
+	... 40 more
+
+2016-09-13 09:42:17
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:42:17
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:42:17
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:42:17
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:42:19
+[WARN]-[Thread: qtp2074185499-29]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 09:42:35
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:42:35
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:42:35
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:42:35
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 09:42:37
+[WARN]-[Thread: qtp2074185499-26]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /order/
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 10:08:25
+[ERROR]-[Thread: qtp2074185499-27]-[com.ext.Slf4jLogger.error()]: /order/createOrder
+com.ext.Slf4jLogger.error(Slf4jLogger.java:49)
+java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Long
+	at com.controller.OrderController.recordService(OrderController.java:200)
+	at com.controller.OrderController.caculateById(OrderController.java:184)
+	at com.controller.OrderController.createOrder(OrderController.java:69)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
+	at com.nnit.interceptor.XssInterceptor.intercept(XssInterceptor.java:36)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.nnit.interceptor.DipSysMenuInterceptor.intercept(DipSysMenuInterceptor.java:31)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.nnit.interceptor.CommonInterceptor.intercept(CommonInterceptor.java:61)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.jfinal.ext.plugin.shiro.ShiroInterceptor.intercept(ShiroInterceptor.java:51)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
+	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:47)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+
+2016-09-13 10:09:29
+[ERROR]-[Thread: qtp2074185499-28]-[com.ext.Slf4jLogger.error()]: /order/createOrder
+com.ext.Slf4jLogger.error(Slf4jLogger.java:49)
+java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Long
+	at com.controller.OrderController.recordService(OrderController.java:200)
+	at com.controller.OrderController.caculateById(OrderController.java:184)
+	at com.controller.OrderController.createOrder(OrderController.java:69)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
+	at com.nnit.interceptor.XssInterceptor.intercept(XssInterceptor.java:36)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.nnit.interceptor.DipSysMenuInterceptor.intercept(DipSysMenuInterceptor.java:31)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.nnit.interceptor.CommonInterceptor.intercept(CommonInterceptor.java:61)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.jfinal.ext.plugin.shiro.ShiroInterceptor.intercept(ShiroInterceptor.java:51)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
+	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:47)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:240)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+
+2016-09-13 10:10:12
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 10:10:12
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 10:10:12
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 10:10:12
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 10:10:15
+[WARN]-[Thread: qtp2074185499-29]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /order/ordercreate
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 10:11:15
+[ERROR]-[Thread: qtp2074185499-27]-[com.ext.Slf4jLogger.error()]: /order/createOrder
+com.ext.Slf4jLogger.error(Slf4jLogger.java:49)
+java.lang.NullPointerException
+	at com.controller.OrderController.createOrder(OrderController.java:81)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:73)
+	at com.nnit.interceptor.XssInterceptor.intercept(XssInterceptor.java:36)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.nnit.interceptor.DipSysMenuInterceptor.intercept(DipSysMenuInterceptor.java:31)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.nnit.interceptor.CommonInterceptor.intercept(CommonInterceptor.java:61)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.jfinal.ext.plugin.shiro.ShiroInterceptor.intercept(ShiroInterceptor.java:51)
+	at com.jfinal.aop.Invocation.invoke(Invocation.java:67)
+	at com.jfinal.core.ActionHandler.handle(ActionHandler.java:74)
+	at com.jfinal.ext.handler.ContextPathHandler.handle(ContextPathHandler.java:47)
+	at com.jfinal.core.JFinalFilter.doFilter(JFinalFilter.java:72)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:61)
+	at org.apache.shiro.web.servlet.AdviceFilter.executeChain(AdviceFilter.java:108)
+	at org.apache.shiro.web.servlet.AdviceFilter.doFilterInternal(AdviceFilter.java:137)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.apache.shiro.web.servlet.ProxiedFilterChain.doFilter(ProxiedFilterChain.java:66)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.executeChain(AbstractShiroFilter.java:449)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter$1.call(AbstractShiroFilter.java:365)
+	at org.apache.shiro.subject.support.SubjectCallable.doCall(SubjectCallable.java:90)
+	at org.apache.shiro.subject.support.SubjectCallable.call(SubjectCallable.java:83)
+	at org.apache.shiro.subject.support.DelegatingSubject.execute(DelegatingSubject.java:383)
+	at org.apache.shiro.web.servlet.AbstractShiroFilter.doFilterInternal(AbstractShiroFilter.java:362)
+	at org.apache.shiro.web.servlet.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:125)
+	at org.eclipse.jetty.servlet.ServletHandler$CachedChain.doFilter(ServletHandler.java:1307)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:453)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:560)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1072)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:382)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1006)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:365)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:485)
+	at org.eclipse.jetty.server.AbstractHttpConnection.content(AbstractHttpConnection.java:937)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.content(AbstractHttpConnection.java:998)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:856)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:628)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:52)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:745)
+
+2016-09-13 10:12:21
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 10:12:21
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 10:12:21
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 10:12:21
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 10:12:23
+[WARN]-[Thread: qtp2074185499-28]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /order/createOrder
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 10:12:29
+[WARN]-[Thread: qtp2074185499-30]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /order/ordercreate
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 10:26:15
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'null' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'null' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 10:26:15
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'getUserSchema' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'getUserSchema' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 10:26:15
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'chartData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'chartData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 10:26:15
+[WARN]-[Thread: main]-[net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL()]: Cache 'formData' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'formData' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+net.sf.ehcache.config.CacheConfiguration.isEternalValueConflictingWithTTIOrTTL(CacheConfiguration.java:858)
+
+2016-09-13 10:26:20
+[WARN]-[Thread: qtp2074185499-25]-[com.ext.Slf4jLogger.warn()]: 401 Unauthorized: /vip/vipcharge
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 10:27:10
+[WARN]-[Thread: qtp2074185499-29]-[com.ext.Slf4jLogger.warn()]: 403 Forbidden: /vip/vipmakecharge
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)
+
+2016-09-13 10:33:44
+[WARN]-[Thread: qtp2074185499-28]-[com.ext.Slf4jLogger.warn()]: 403 Forbidden: /vip/vipmakecharge
+com.ext.Slf4jLogger.warn(Slf4jLogger.java:37)

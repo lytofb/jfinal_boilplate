@@ -90,7 +90,7 @@ public class ShiroDbRealm extends AuthorizingRealm {
     	if (uai==null) {
 			return null;
 		}
-    	Integer userId = (Integer) principals.fromRealm(getName()).iterator().next();
+    	Long userId = (Long) principals.fromRealm(getName()).iterator().next();
     	return uai.getAuthorizationById(userId.toString());
     }
     /**

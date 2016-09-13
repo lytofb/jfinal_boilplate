@@ -10,7 +10,7 @@
                 <div class="widget">
 
                     <div class="widget-head">
-                        <div class="pull-left">办理会员</div>
+                        <div class="pull-left">会员充值</div>
                         <div class="widget-icons pull-right">
                             <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
                         </div>
@@ -55,10 +55,15 @@
 </@layout>
 <@script>
 <script type="text/javascript">
+    var createcallback = function(){
+        setMessage("操作成功")
+        location.href="${base_path}/vip"
+    }
+
     var chargeclick = function(){
         var validated = $('form').validationEngine("validate");
         if(validated) {
-            commonPost("${base_path}/vip/vipmakecharge",defaultSuccessCallback,errfun,null,$('form').serialize(),true)
+            commonPost("${base_path}/vip/vipmakecharge",createcallback,defaultFailCallback,null,$('form').serialize(),true)
         } else {
 
         }

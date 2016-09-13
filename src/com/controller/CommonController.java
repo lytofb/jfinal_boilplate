@@ -17,10 +17,12 @@ import com.toolkit.Md5Kit;
 public class CommonController extends Controller {
 	
 	protected final Log logger = Log.getLog(getClass());
-	
+
+	@RequiresPermissions("login")
 	public void index() {
 		render("tables.html");
 	}
+	@RequiresRoles("super")
 	public void tables() {
 		render("tables.html");
 	}
@@ -59,12 +61,10 @@ public class CommonController extends Controller {
 		redirect("/");
 	}
 	
-	@RequiresRoles("super")
 	public void test() {
 		renderText("test");
 	}
 	
-	@RequiresRoles("super")
 	@RequiresPermissions("testRedirect")
 	public void testRedirect() {
 		renderText("testRedirect");

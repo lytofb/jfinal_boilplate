@@ -8,6 +8,7 @@ import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.session.Session;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ import java.util.List;
 /**
  * Created by root on 2016/9/6.
  */
+@RequiresPermissions("login")
 public class OrderController extends ControllerExt{
     @Override
     public void onExceptionError(Exception e) {
@@ -195,7 +197,7 @@ public class OrderController extends ControllerExt{
         Record service = Db.findFirst(sql, id);
         Long servicePrice = service.getLong("detail_price");
         objects.set(0,(Long)objects.get(0)+servicePrice);
-        objects.set(1,(Long)objects.get(1)+String.format("%s[%s]",service.getStr("detail_name"),service.get("detail_price").toString())+",");
+        objects.set(1,(String)objects.get(1)+String.format("%s[%s]",service.getStr("detail_name"),service.get("detail_price").toString())+",");
     }
 
     private Long getPriceById(Long id){

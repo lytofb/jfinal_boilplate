@@ -7,8 +7,10 @@ import com.jfinal.ext2.core.ControllerExt;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
+import com.jfinal.render.TextRender;
 import com.service.VipService;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.session.Session;
 
 import java.util.ArrayList;
@@ -18,6 +20,7 @@ import java.util.List;
 /**
  * Created by root on 2016/9/5.
  */
+@RequiresPermissions("login")
 public class VipController extends ControllerExt {
 
     VipService vipService = new VipService();
@@ -65,6 +68,7 @@ public class VipController extends ControllerExt {
     }
 
     public void vipmakecharge() {
+//        renderError(403,new TextRender("test403"));
         Integer cardid = getParaToInt("cardid");
         Long cashtotal = getParaToLong("cashtotal");
         String desc = getPara("desc");

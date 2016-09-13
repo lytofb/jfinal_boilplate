@@ -13,11 +13,15 @@ import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
 import com.jfinal.core.JFinal;
 import com.jfinal.ext.handler.ContextPathHandler;
+import com.jfinal.ext.plugin.shiro.ShiroInterceptor;
 import com.jfinal.ext.plugin.shiro.ShiroPlugin;
 import com.jfinal.ext.plugin.tablebind.AutoTableBindPlugin;
 import com.jfinal.plugin.activerecord.dialect.Dialect;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.plugin.ehcache.EhCachePlugin;
+import com.jfinal.render.ErrorRender;
+import com.jfinal.render.IErrorRenderFactory;
+import com.jfinal.render.Render;
 import com.nnit.interceptor.CommonInterceptor;
 import com.nnit.interceptor.DipSysMenuInterceptor;
 import com.nnit.interceptor.XssInterceptor;
@@ -36,7 +40,16 @@ public class Config extends JFinalConfig {
 		// 加载少量必要配置，随后可用getProperty(...)获取值
 		loadPropertyFile("config.properties");
 		me.setDevMode(getPropertyToBoolean("devMode", false));
+//		me.setErrorRenderFactory(new IErrorRenderFactory() {
+//			@Override
+//			public Render getRender(int i, String s) {
+//				s = "/error/"+i+".html";
+//				return new ErrorRender(i,s);
+//			}
+//		});
 //		me.setError401View("/emp2/common/login.html");
+		me.setError401View("/html/login.html");
+		me.setError403View("/html/login.html");
 		me.setLogFactory(new Slf4jLoggerFactory());
 //		me.setI18n("i18n");
 	}
@@ -93,7 +106,7 @@ public class Config extends JFinalConfig {
 	 * 配置全局拦截器
 	 */
 	public void configInterceptor(Interceptors me) {
-//		me.add(new ShiroInterceptor());
+		me.add(new ShiroInterceptor());
 		me.add(new CommonInterceptor());
 		me.add(new DipSysMenuInterceptor());
 		me.add(new XssInterceptor());
