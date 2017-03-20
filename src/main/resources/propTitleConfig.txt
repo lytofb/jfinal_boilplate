@@ -1,0 +1,11 @@
+order=订单列表
+order.preorder=预约记录
+order.ordercreate=创建订单
+vip=会员列表
+vip.vipcharge=会员充值
+vip.vipcreate=创建会员
+vip.vipconsumption=会员消费记录
+login=登录
+incomehistory=历史收入
+index=列表
+tables=列表
