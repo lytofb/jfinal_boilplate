@@ -1,6 +1,7 @@
 package main.java.com.common;
 
 import main.java.com.controller.CommonController;
+import main.java.com.controller.LiveShowController;
 import main.java.com.controller.OrderController;
 import main.java.com.controller.VipController;
 import main.java.com.dao.ModelEx;
@@ -59,6 +60,7 @@ public class Config extends JFinalConfig {
 		me.add("/", CommonController.class,"/html");
 		me.add("/vip", VipController.class,"/html/vip");
 		me.add("/order", OrderController.class,"/html/order");
+		me.add("/live", LiveShowController.class,"/html/live");
 		//设置权限错误路径
 		
 	}
