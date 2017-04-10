@@ -36,11 +36,11 @@ public class LiveChannelManager {
         return true;
     }
 
-    public static Boolean createChannel(String channelName,String userid) throws IOException {
+    public static LiveChannelWrap createChannel(String channelName,String account) throws IOException {
         LiveChannel liveChannel = makeChannel(channelName);
-        LiveChannelWrap wrap = new LiveChannelWrap(liveChannel,userid);
+        LiveChannelWrap wrap = new LiveChannelWrap(liveChannel,account);
         liveChannelConcurrentHashMap.put(liveChannel.getCid(),wrap);
-        return true;
+        return wrap;
     }
 
     public static LiveChannel retryChannel(String cid) throws IOException {

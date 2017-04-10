@@ -6,11 +6,11 @@ package main.java.com.core;
 public class LiveChannelWrap {
     private LiveChannel liveChannel;
     private Boolean isAlive;
-    private String userid;
+    private String userAccount;
 
-    public LiveChannelWrap(LiveChannel liveChannel, String userid) {
+    public LiveChannelWrap(LiveChannel liveChannel, String userAccount) {
         setLiveChannel(liveChannel);
-        setUserid(userid);
+        setUserAccount(userAccount);
         setIsAlive(true);
     }
 
@@ -30,12 +30,12 @@ public class LiveChannelWrap {
         this.isAlive = isAlive;
     }
 
-    public String getUserid() {
-        return userid;
+    public String getUserAccount() {
+        return userAccount;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setUserAccount(String userAccount) {
+        this.userAccount = userAccount;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class LiveChannelWrap {
         return "LiveChannelWrap{" +
                 "liveChannel=" + liveChannel.toString() +
                 ", isAlive=" + isAlive +
-                ", userid='" + userid + '\'' +
+                ", userAccount='" + userAccount + '\'' +
                 '}';
     }
 }

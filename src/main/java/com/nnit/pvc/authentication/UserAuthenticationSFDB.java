@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import main.java.com.dao.contact_merchant_operator;
+import main.java.com.dao.contact_merchant_user;
 import main.java.com.dao.data_operator;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
@@ -33,12 +34,13 @@ public class UserAuthenticationSFDB implements UserAuthenticationInterface {
             if (password.equals(user.getStr("operator_password"))) {
 				contact_merchant_operator merchant_operator = new contact_merchant_operator();
 				HashMap<String, Object> operatorParam = new HashMap<String, Object>();
-				operatorParam.put("operator_id",merchant_operator.getLong("id"));
+				operatorParam.put("operator_id",user.getLong("id"));
 				merchant_operator = contact_merchant_operator.dao.searchFirst(operatorParam);
 				if (merchant_operator==null){
 					return false;
 				}
                 Session session = SecurityUtils.getSubject().getSession();
+                session.setAttribute("login_type","operator");
 				session.setAttribute("operator_name", user.getStr("operator_name"));
 				session.setAttribute("operator_account", user.getStr("operator_account"));
 				session.setAttribute("operator_id", user.getLong("id"));
@@ -49,12 +51,37 @@ public class UserAuthenticationSFDB implements UserAuthenticationInterface {
                         user.getStr("operator_password"), realmName);
                 userId = user.getLong("id");
                 return true;
+            }
+        }
+        data_user dataUser = new data_user();
+        paramMap = new HashMap<String, Object>();
+        paramMap.put("user_account", token.getUsername());
+        dataUser =  data_user.dao.searchFirst(paramMap);
+		if (dataUser!=null) {
+            if (password.equals(dataUser.getStr("user_password"))) {
+                contact_merchant_user contact_merchant_user = new contact_merchant_user();
+                HashMap<String, Object> userParam = new HashMap<String, Object>();
+                userParam.put("user_id", dataUser.getLong("id"));
+                contact_merchant_user = contact_merchant_user.dao.searchFirst(userParam);
+                if (contact_merchant_user==null){
+                    return false;
+                }
+                Session session = SecurityUtils.getSubject().getSession();
+                session.setAttribute("login_type","user");
+                session.setAttribute("user_account", dataUser.getStr("user_account"));
+                session.setAttribute("user_id", dataUser.getLong("id"));
+                session.setAttribute("user_name", dataUser.getStr("user_name"));
+                session.setAttribute("merchant_id", contact_merchant_user.getLong("merchant_id"));
+                session.setAttribute("merchant_name", contact_merchant_user.getStr("merchant_name"));
+                authenticationInfo =  new SimpleAuthenticationInfo(dataUser.getLong("id"),
+                        dataUser.getStr("user_password"), realmName);
+                userId = dataUser.getLong("id");
+                return true;
             } else {
                 return false;
             }
-        } else {
-        	return false;
         }
+		return false;
 	}
 
 	public String getUserName() {

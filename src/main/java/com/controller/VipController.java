@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import static main.java.com.toolkit.NnitSqlKit.buildSql;
+import static main.java.com.toolkit.NnitSqlKit.turnArrayToList;
+
 /**
  * Created by root on 2016/9/5.
  */
@@ -121,31 +124,4 @@ public class VipController extends ControllerExt {
         renderText("success");
     }
 
-    private Object[] turnArrayToList(ArrayList<Object> objectList){
-        Integer listlength = 0;
-        ArrayList<Object> newarray = new ArrayList<Object>();
-        for (Object o:objectList){
-            if (o!=null&&!"".equals(o)){
-                listlength++;
-                newarray.add(o);
-            }
-        }
-        Object[] objects = new Object[listlength];
-        for (int i = 0; i < listlength; i++) {
-            objects[i] = newarray.get(i);
-        }
-        return objects;
-    }
-
-    private String buildSql(String sqlbase,ArrayList<Object> paras,String orderby,String... columns){
-        assert columns.length==paras.size();
-        for (int i = 0; i < paras.size(); i++) {
-            if (paras.get(i)==null||"".equals(paras.get(i))){
-                continue;
-            } else {
-                sqlbase = sqlbase+" and "+columns[i]+" = ? ";
-            }
-        }
-        return sqlbase+orderby;
-    }
 }

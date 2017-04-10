@@ -61,9 +61,9 @@
 
                         <!-- Dropdown menu -->
                         <ul class="dropdown-menu">
-                            <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
-                            <li><a href="#"><i class="fa fa-cogs"></i> Settings</a></li>
-                            <li><a href="login.html"><i class="fa fa-key"></i> Logout</a></li>
+                            <!--<li><a href="#"><i class="fa fa-user"></i> Profile</a></li>-->
+                            <!--<li><a href="#"><i class="fa fa-cogs"></i> Settings</a></li>-->
+                            <li><a href="${base_path}/logout"><i class="fa fa-key"></i> Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -97,6 +97,10 @@
             <li><a href="${base_path}/vip/" <#if actionkey=="vip">class="open"</#if>><i class="fa fa-tasks"></i> <span>会员列表</span></a></li>
             <li><a href="${base_path}/vip/vipcreate" <#if actionkey=="vip.vipcreate">class="open"</#if>><i class="fa fa-tasks"></i> <span>创建会员</span></a></li>
             <li><a href="${base_path}/vip/vipcharge" <#if actionkey=="vip.vipcharge">class="open"</#if>><i class="fa fa-file-text"></i> <span>会员充值</span></a></li>
+            <li><a href="${base_path}/live/" <#if actionkey=="live">class="open"</#if>><i class="fa fa-tasks"></i> <span>直播</span></a></li>
+            <li><a href="${base_path}/live/listliveuser" <#if actionkey=="live.listliveuser">class="open"</#if>><i class="fa fa-tasks"></i> <span>直播列表</span></a></li>
+            <li><a href="${base_path}/livevip/toCreateLiveVip" <#if actionkey=="livevip.toCreateLiveVip">class="open"</#if>><i class="fa fa-tasks"></i> <span>创建账户</span></a></li>
+            <li><a href="${base_path}/merchant/toCreateMerchant" <#if actionkey=="merchant.toCreateMerchant">class="open"</#if>><i class="fa fa-tasks"></i> <span>创建商户</span></a></li>
             <!--
             <li class="has_sub"><a href="#"><i class="fa fa-list-alt"></i> <span>Widgets</span> <span class="pull-right"><i class="fa fa-chevron-left"></i></span></a>
                 <ul>

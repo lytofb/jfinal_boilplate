@@ -1,9 +1,6 @@
 package main.java.com.common;
 
-import main.java.com.controller.CommonController;
-import main.java.com.controller.LiveShowController;
-import main.java.com.controller.OrderController;
-import main.java.com.controller.VipController;
+import main.java.com.controller.*;
 import main.java.com.dao.ModelEx;
 import main.java.com.ext.Slf4jLoggerFactory;
 import com.jfinal.config.Constants;
@@ -61,6 +58,9 @@ public class Config extends JFinalConfig {
 		me.add("/vip", VipController.class,"/html/vip");
 		me.add("/order", OrderController.class,"/html/order");
 		me.add("/live", LiveShowController.class,"/html/live");
+        me.add("/livevip", LiveVipController.class,"/html/live");
+		me.add("/merchant",MerchantController.class,"/html/merchant");
+        me.add("/operator",OperatorController.class,"/html/operator");
 		//设置权限错误路径
 		
 	}

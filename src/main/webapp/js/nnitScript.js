@@ -47,6 +47,10 @@
         location.reload();
     }
 
+    function setMessageSuccess(){
+        setMessage("操作成功")
+    }
+
     function initSchemaSelector () {
       schema_data.current = schema_data.schema_list[schema_data_seq].schemaname;
       var schemaSelectorContent = $("#schemaSelectorTemplate").render(schema_data);

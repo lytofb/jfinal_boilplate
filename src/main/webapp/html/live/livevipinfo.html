@@ -1,4 +1,19 @@
 <#include "/html/common/_layout.html"/>
+<#function transformstatus x>
+    <#if x == "open">
+        <#return "已开启">
+    </#if>
+    <#if x == "close">
+        <#return "已关闭">
+    </#if>
+    <#if x == "suspend">
+        <#return "暂停中">
+    </#if>
+    <#if x == "live">
+        <#return "直播中">
+    </#if>
+</#function>
+
 <@layout>
 <!-- Matter -->
 
@@ -7,16 +22,16 @@
         <div class="row">
             <div class="col-md-3">
                 <label>会员名称：</label>
-                <input type="text" id="vipname" class="entersearch" value="${vipname!''}">
+                <input type="text" id="user_name" class="entersearch" value="${user_name!''}">
             </div>
-            <div class="col-md-3">
-                <label>会员卡号：</label>
-                <input type="text" id="vipcardid" class="entersearch" value="${vipcardid!''}">
-            </div>
-            <div class="col-md-6">
-                <label>旧会员卡号：</label>
-                <input type="text" id="oldcardid" class="entersearch" value="${oldcardid!''}">
-            </div>
+            <!--<div class="col-md-3">-->
+                <!--<label>会员卡号：</label>-->
+                <!--<input type="text" id="vipcardid" class="entersearch" value="${vipcardid!''}">-->
+            <!--</div>-->
+            <!--<div class="col-md-6">-->
+                <!--<label>旧会员卡号：</label>-->
+                <!--<input type="text" id="oldcardid" class="entersearch" value="${oldcardid!''}">-->
+            <!--</div>-->
         </div>
         <div class="row">
 
@@ -37,11 +52,10 @@
                             <thead>
                             <tr>
                                 <th>#</th>
-                                <th>会员名称</th>
-                                <th>会员余额</th>
-                                <th>会员卡号</th>
-                                <th>旧会员卡号</th>
-                                <th>发生时间</th>
+                                <th>帐号</th>
+                                <th>名称</th>
+                                <th>直播频道</th>
+                                <th>创建时间</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
@@ -49,12 +63,11 @@
                             <#list page.list as vip>
                             <tr>
                                 <td>${vip_index + 1}.</td>
-                                <td>${(vip.vip_name)!""}</td>
-                                <td>${(vip.card_total)!""}</td>
-                                <th>${(vip.card_id)!""}</th>
-                                <th>${(vip.old_card_id)!""}</th>
+                                <td>${(vip.user_account)!""}</td>
+                                <td>${(vip.user_name)!""}</td>
+                                <th>${transformstatus(vip.channel_status)}</th>
                                 <td>${vip.updatetime?string('yyyy-MM-dd HH:mm:ss')}</td>
-                                <td><button class="btn btn-xs btn-default vipdetail" vipcardid="${vip.card_id!''}"><i class="fa fa-eye"></i> </button></td>
+                                <td><button class="btn btn-xs btn-default vipdetail" useraccount="${vip.user_account}"><i class="fa fa-eye"></i> </button></td>
                             </tr>
                             </#list>
                             </tbody>
@@ -64,7 +77,7 @@
 
 
                             <#if page?? && page.list?size gt 0>
-                                <@paginate currentPage=page.pageNumber totalPage=page.totalPage actionUrl="${base_path}/vip/" urlParas=_urlParas className="pagination pull-right"/>
+                                <@paginate currentPage=page.pageNumber totalPage=page.totalPage actionUrl="${base_path}/live/listliveuser" urlParas=_urlParas className="pagination pull-right"/>
                             </#if>
 
                             <div class="clearfix"></div>
@@ -81,8 +94,8 @@
 <@script>
 <script type="text/javascript">
     var dosearch = function (){
-        var urlbase = "${base_path}/vip";
-        var url = urlbase.concat("?vipname=",$("#vipname").val(),"&vipcardid=",$("#vipcardid").val(),"&oldcardid=",$("#oldcardid").val())
+        var urlbase = "${base_path}/live/listliveuser";
+        var url = urlbase.concat("?vipname=",$("#user_name").val())
         location.href=url;
     }
     $(function(){
@@ -93,8 +106,9 @@
             }
         })
         $(".vipdetail").click(function(){
-            var cardid = $(this).attr("vipcardid");
-            location.href="${base_path}/vip/vipconsumption?cardid="+cardid;
+            var userAccount = $(this).attr("useraccount");
+            commonPost("${base_path}/live/openChannel",setMessageSuccess,defaultFailCallback,null,{"user_account":userAccount},true)
+            location.href="${base_path}/live/listliveuser";
         })
     })
 </script>
