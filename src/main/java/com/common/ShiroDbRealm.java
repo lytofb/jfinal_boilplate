@@ -1,5 +1,6 @@
 package main.java.com.common;
 
+import main.java.com.bean.PrincipalWrap;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -89,8 +90,8 @@ public class ShiroDbRealm extends AuthorizingRealm {
     	if (uai==null) {
 			return null;
 		}
-    	Long userId = (Long) principals.fromRealm(getName()).iterator().next();
-    	return uai.getAuthorizationById(userId.toString());
+        PrincipalWrap user = (PrincipalWrap) principals.fromRealm(getName()).iterator().next();
+    	return uai.getAuthorizationByUser(user);
     }
     /**
      * 更新用户授权信息缓存.

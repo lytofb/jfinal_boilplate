@@ -3,6 +3,7 @@ package main.java.com.nnit.pvc.authentication;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import main.java.com.bean.PrincipalWrap;
 import main.java.com.dao.contact_merchant_operator;
 import main.java.com.dao.contact_merchant_user;
 import main.java.com.dao.data_operator;
@@ -11,6 +12,7 @@ import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.Permission;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.crypto.hash.Hash;
 import org.apache.shiro.session.Session;
 
 import main.java.com.dao.data_user;
@@ -44,10 +46,9 @@ public class UserAuthenticationSFDB implements UserAuthenticationInterface {
 				session.setAttribute("operator_name", user.getStr("operator_name"));
 				session.setAttribute("operator_account", user.getStr("operator_account"));
 				session.setAttribute("operator_id", user.getLong("id"));
-				session.setAttribute("operator_name", user.getStr("operator_name"));
 				session.setAttribute("merchant_id", merchant_operator.getLong("merchant_id"));
 				session.setAttribute("merchant_name", merchant_operator.getStr("merchant_name"));
-                authenticationInfo =  new SimpleAuthenticationInfo(user.getLong("id"),
+                authenticationInfo =  new SimpleAuthenticationInfo(new PrincipalWrap(user.getStr("operator_name"),user),
                         user.getStr("operator_password"), realmName);
                 userId = user.getLong("id");
                 return true;
@@ -73,7 +74,7 @@ public class UserAuthenticationSFDB implements UserAuthenticationInterface {
                 session.setAttribute("user_name", dataUser.getStr("user_name"));
                 session.setAttribute("merchant_id", contact_merchant_user.getLong("merchant_id"));
                 session.setAttribute("merchant_name", contact_merchant_user.getStr("merchant_name"));
-                authenticationInfo =  new SimpleAuthenticationInfo(dataUser.getLong("id"),
+                authenticationInfo =  new SimpleAuthenticationInfo(new PrincipalWrap(dataUser.getStr("user_name"),dataUser),
                         dataUser.getStr("user_password"), realmName);
                 userId = dataUser.getLong("id");
                 return true;
@@ -101,7 +102,7 @@ public class UserAuthenticationSFDB implements UserAuthenticationInterface {
 		}
 	}
 
-	public SimpleAuthorizationInfo getAuthorizationById(String userId) {
+	public SimpleAuthorizationInfo getAuthorizationByUser(PrincipalWrap principalWrap) {
 
         if (true) {
         	new Permission() {
@@ -114,6 +115,26 @@ public class UserAuthenticationSFDB implements UserAuthenticationInterface {
             SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
             ArrayList<String> perms = new ArrayList<String>();
             perms.add("login");
+            Object user = principalWrap.getModel();
+            if (user instanceof data_operator){
+                perms.add("data_operator");
+                Long operatorId = ((data_operator) user).getLong("id");
+                Integer is_sysadmin = ((data_operator) user).getInt("is_sysadmin");
+                contact_merchant_operator cmo = new contact_merchant_operator();
+                HashMap<String,Object> param = new HashMap<String, Object>();
+                param.put("issuper","1");
+                param.put("operator_id",operatorId);
+                cmo = contact_merchant_operator.dao.searchFirst(param);
+                if (cmo!=null) {
+                    perms.add("super_opeartor");
+                }
+                if (is_sysadmin>0){
+                    perms.add("is_sysadmin");
+                }
+            } else if (user instanceof data_user){
+                perms.add("data_user");
+            }
+
             info.addStringPermissions(perms);
 //            info.addStringPermission("users/testRedirect");
             // info.addStringPermissions( role.getPermissions()

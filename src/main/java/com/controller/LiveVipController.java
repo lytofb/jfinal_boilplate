@@ -34,6 +34,10 @@ public class LiveVipController extends ControllerExt {
         render("livevipcreate.html");
     }
 
+    public void toCreateTest(){
+        render("livetestcreate.html");
+    }
+
     public void createLiveVip(){
         Createliveuser createliveuser = getBean(Createliveuser.class);
         //record liveuser

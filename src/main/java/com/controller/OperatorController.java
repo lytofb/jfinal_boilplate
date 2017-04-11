@@ -24,7 +24,11 @@ public class OperatorController extends ControllerExt {
 
     }
 
-    public void CreateOperator(){
+    public void toCreateOperator(){
+        render("operatorcreate.html");
+    }
+
+    public void createOperator(){
         CreateOperator co = getBean(CreateOperator.class);
         recordOperator(co);
     }

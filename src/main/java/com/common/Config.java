@@ -1,5 +1,6 @@
 package main.java.com.common;
 
+import com.jfinal.render.FreeMarkerRender;
 import main.java.com.controller.*;
 import main.java.com.dao.ModelEx;
 import main.java.com.ext.Slf4jLoggerFactory;
@@ -17,6 +18,7 @@ import com.jfinal.ext.plugin.tablebind.AutoTableBindPlugin;
 import com.jfinal.plugin.activerecord.dialect.Dialect;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.plugin.ehcache.EhCachePlugin;
+import main.java.com.ext.shiro.freemarker.ShiroTags;
 import main.java.com.nnit.interceptor.CommonInterceptor;
 import main.java.com.nnit.interceptor.DipSysMenuInterceptor;
 import main.java.com.nnit.interceptor.XssInterceptor;
@@ -46,6 +48,7 @@ public class Config extends JFinalConfig {
 		me.setError401View("/html/login.html");
 		me.setError403View("/html/login.html");
 		me.setLogFactory(new Slf4jLoggerFactory());
+		FreeMarkerRender.getConfiguration().setSharedVariable("shiro", new ShiroTags());
 //		me.setI18n("i18n");
 	}
 	

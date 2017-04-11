@@ -1,0 +1,123 @@
+<#include "/html/common/_layout.html"/>
+<@layout>
+<!-- Matter -->
+
+<div class="matter">
+    <div class="container">
+        <div class="row">
+            <!--<div class="col-md-1"></div>-->
+            <div class="col-md-12">
+                <div class="widget">
+
+                    <div class="widget-head">
+                        <div class="pull-left">创建习题</div>
+                        <div class="widget-icons pull-right">
+                            <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="widget-content">
+                        <div class="padd">
+                            <div style="height: 50px;"></div>
+                            <div style="height: 50px;border: 1px #668800 solid">
+                                <input type="textarea" id="dropzone" style="width: 100%;height: 100%;border: none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="col-md-1"></div>-->
+        </div>
+    </div>
+</div>
+</@layout>
+<@script>
+<script type="text/javascript">
+    var isAdvancedUpload = function() {
+        var div = document.createElement('div');
+        return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
+    }();
+
+    var successfun = function(){
+        console.log("sucess")
+    }
+    var errfun = function(){
+        console.log("err")
+    }
+$(function(){
+    if (isAdvancedUpload) {
+
+        var droppedFiles = false;
+
+        var $dropzone = $("#dropzone");
+
+        $(document).on('drag dragstart dragend dragover dragenter dragleave drop', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        })
+
+        $dropzone.on('drag dragstart dragend dragover dragenter dragleave drop', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        })
+        .on('dragover dragenter', function() {
+            console.log("dragover")
+        })
+        .on('dragleave dragend drop', function() {
+            console.log("dragleave")
+        })
+        .on('drop', function(e) {
+            droppedFiles = e.originalEvent.dataTransfer.files;
+            if (droppedFiles) {
+                $.each( droppedFiles, function(i, file) {
+                    ajaxData.append( 'upload', file );
+                });
+            }
+
+            $.ajax({
+                url: '${base_path}/livevip/uploadimg',
+                type: 'post',
+                data: ajaxData,
+                dataType: 'json',
+                cache: false,
+                contentType: false,
+                processData: false,
+                complete: function() {
+                    console.log('upload complete');
+                },
+                success: function(data) {
+                    $('#dropzone').insertAtCaret(droppedFiles[0].name);
+                },
+                error: function() {
+                    // Log the error, show an alert, whatever works for you
+                }
+            });
+        });
+    }
+
+    var createcallback = function(){
+        setMessage("操作成功")
+        location.href="${base_path}/livevip/toCreateLiveVip"
+    }
+
+    var createvipclick = function(){
+        var validated = $('form').validationEngine("validate");
+        if(!validated){
+            return;
+        }
+        commonPost("${base_path}/livevip/createLiveVip",createcallback,errfun,null,$('#form1').serialize(),true)
+    }
+    $(".btn").on("click",function(){
+        createvipclick();
+    })
+    $(window).keypress(function(event){
+        if(event.which==13){
+            createvipclick();
+        }
+    })
+    $('form').validationEngine();
+
+})
+</script>
+</@script>

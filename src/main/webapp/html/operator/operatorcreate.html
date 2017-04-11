@@ -10,7 +10,7 @@
                 <div class="widget">
 
                     <div class="widget-head">
-                        <div class="pull-left">创建账户</div>
+                        <div class="pull-left">创建操作账户</div>
                         <div class="widget-icons pull-right">
                             <a href="#" class="wminimize"><i class="fa fa-chevron-up"></i></a>
                         </div>
@@ -19,23 +19,19 @@
 
                     <div class="widget-content">
                         <div class="padd">
-                            <form action="${base_path}/livevip/createLiveVip" class="validate" id="form1" method="post">
+                            <form action="${base_path}/operator/createOperator" class="validate" id="form1" method="post">
                                 <fieldset>
                                     <div class="form-group">
-                                        <label for="name">姓名</label>
-                                        <input type="text" class="validate[required] form-control placeholder" id="personName" placeholder="姓名" name="createliveuser.user_name">
+                                        <label for="name">名称</label>
+                                        <input type="text" class="validate[required] form-control placeholder" id="operator_name" placeholder="名称" name="createOperator.operator_name">
                                     </div>
                                     <div class="form-group">
-                                        <label for="email">帐号</label>
-                                        <input type="text" class="validate[required,max[100]] form-control placeholder" id="chexing" placeholder="帐号" name="createliveuser.user_account">
+                                        <label for="name">账户</label>
+                                        <input type="text" class="validate[required] form-control placeholder" id="operator_account" placeholder="账户" name="createOperator.operator_account">
                                     </div>
                                     <div class="form-group">
-                                        <label for="email">密码</label>
-                                        <input type="password" class="validate[required] form-control placeholder" id="chexing" placeholder="密码" name="createliveuser.user_password">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">电话</label>
-                                        <input type="text" class="validate[required,custom[phone]] form-control placeholder" id="password" placeholder="电话" name="createliveuser.tel_num">
+                                        <label for="password">密码</label>
+                                        <input type="text" class="validate[required] form-control placeholder" id="operator_password" placeholder="密码" name="createOperator.operator_password">
                                     </div>
                                     <button id="signupuser" type="button" class="btn btn-primary btn-block">创建账户</button>
                                 </fieldset>
@@ -60,7 +56,7 @@
 $(function(){
     var createcallback = function(){
         setMessage("操作成功")
-        location.href="${base_path}/livevip/toCreateLiveVip"
+        location.href="${base_path}/operator/toCreateOperator"
     }
 
     var createvipclick = function(){
@@ -68,7 +64,7 @@ $(function(){
         if(!validated){
             return;
         }
-        commonPost("${base_path}/livevip/createLiveVip",createcallback,errfun,null,$('#form1').serialize(),true)
+        commonPost("${base_path}/operator/createOperator",createcallback,errfun,null,$('#form1').serialize(),true)
     }
     $(".btn").on("click",function(){
         createvipclick();

@@ -48,7 +48,7 @@ public class CommonInterceptor implements Interceptor {
 			urlparamsb.append("&");
 		}
 		String urlParas = urlparamsb.substring(0,urlparamsb.length()-1);
-		c.setAttr("placeholder", titleProp.get(sbresult, "仪表盘"));
+		c.setAttr("placeholder", titleProp.get(sbresult, "dashboard"));
 		c.setAttr("actionkey", sbresult);
 		String menu_size_cookie = c.getCookie("menu_size","0");
 		c.setCookie("menu_size",menu_size_cookie,31536000);
