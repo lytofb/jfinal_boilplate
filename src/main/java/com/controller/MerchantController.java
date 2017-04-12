@@ -79,7 +79,31 @@ public class MerchantController extends ControllerExt {
                 "  `enabled` int(11) DEFAULT '1',\n" +
                 "  PRIMARY KEY (`id`)\n" +
                 ") ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;";
+        String createExerciseTpl = "CREATE TABLE `z%s_exercise` (\n" +
+                "  `id` bigint(20) NOT NULL AUTO_INCREMENT,\n" +
+                "  `name` varchar(255) DEFAULT NULL,\n" +
+                "  `html` varchar(255) DEFAULT NULL,\n" +
+                "  `answer` varchar(255) DEFAULT NULL,\n" +
+                "  `group_id` bigint(20) DEFAULT NULL,\n" +
+                "  `group_name` varchar(255) DEFAULT NULL,\n" +
+                "  `user_id` bigint(20) DEFAULT NULL,\n" +
+                "  `user_name` varchar(255) DEFAULT NULL,\n" +
+                "  `enabled` int(11) DEFAULT '1',\n" +
+                "  PRIMARY KEY (`id`)\n" +
+                ") ENGINE=InnoDB DEFAULT CHARSET=utf8;\n";
+        String createExerciseGroupTpl = "CREATE TABLE `z%s_exercise_group` (\n" +
+                "  `id` bigint(20) NOT NULL AUTO_INCREMENT,\n" +
+                "  `group_name` varchar(255) DEFAULT NULL,\n" +
+                "  `user_id` bigint(20) DEFAULT NULL,\n" +
+                "  `user_name` varchar(255) DEFAULT NULL,\n" +
+                "  `enabled` int(11) DEFAULT '1',\n" +
+                "  PRIMARY KEY (`id`)\n" +
+                ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
         String createMerchantSql = String.format(createTpl,merchantid.toString());
+        String createExerciseSql = String.format(createExerciseTpl,merchantid.toString());
+        String createExerciseGroupSql = String.format(createExerciseGroupTpl,merchantid.toString());
         Db.update(createMerchantSql);
+        Db.update(createExerciseSql);
+        Db.update(createExerciseGroupSql);
     }
 }

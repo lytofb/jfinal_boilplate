@@ -19,10 +19,25 @@
 
                     <div class="widget-content">
                         <div class="padd">
-                            <div style="height: 50px;"></div>
-                            <div style="height: 50px;border: 1px #668800 solid">
-                                <input type="textarea" id="dropzone" style="width: 100%;height: 100%;border: none;">
+                            <div id="preview" style="min-height: 50px;"></div>
+                            <div style="margin-top: 10px">题目名称</div>
+                            <div><input type="text" id="testname" style="border: 1px #668800 solid"></div>
+                            <div style="margin-top: 5px">选择组别</div>
+                            <div>
+                                <select id="group">
+                                    <option value="0">新分组</option>
+                                    <#list recordlist as record>
+                                        <option value="${record.id}">${record.group_name}</option>
+                                    </#list>
+                                </select>
+                                <input type="text" id="newgroup" style="border: 1px #668800 solid;margin-left: 10px">
                             </div>
+                            <div>题目编辑，有图片请直接拖入下框</div>
+                            <div style="min-height: 300px;border: 1px #668800 solid">
+                                <textarea id="dropzone" style="width: 100%;height: 300px;border: none;"></textarea>
+                            </div>
+                            <div>答案：请填写选项，单选如c，多选如abc</div>
+                            <div><input type="text" id="answer" style="border: 1px #668800 solid"><input id="submitbtn" type="button" value="提交题目" style="margin-left: 10px"></div>
                         </div>
                     </div>
                 </div>
@@ -44,6 +59,18 @@
     }
     var errfun = function(){
         console.log("err")
+    }
+
+    function submitform(){
+        var ajaxData =
+        {
+            "createtest.name":$("#testname").val(),
+            "createtest.html":$("#preview").html(),
+            "createtest.answer":$("#answer").val(),
+            "createtest.group":$("#group").val(),
+            "createtest.newgroup":$("#newgroup").val()
+        };
+        commonPost('${base_path}/livevip/createTest',setMessageReload,defaultFailCallback,"json",ajaxData)
     }
 $(function(){
     if (isAdvancedUpload) {
@@ -69,6 +96,9 @@ $(function(){
         })
         .on('drop', function(e) {
             droppedFiles = e.originalEvent.dataTransfer.files;
+
+            var ajaxData = new FormData();
+
             if (droppedFiles) {
                 $.each( droppedFiles, function(i, file) {
                     ajaxData.append( 'upload', file );
@@ -83,18 +113,33 @@ $(function(){
                 cache: false,
                 contentType: false,
                 processData: false,
-                complete: function() {
+                complete: function(data) {
+                    console.log(data)
                     console.log('upload complete');
                 },
                 success: function(data) {
-                    $('#dropzone').insertAtCaret(droppedFiles[0].name);
+//                    $('#dropzone').insertAtCaret(data.uploadpath);
+                    var imghtml = '<img src="'+data.webserverpath+'">';
+                    $('#dropzone').insertAtCaret(imghtml);
+                    //$("#preview").html(imghtml)
                 },
                 error: function() {
                     // Log the error, show an alert, whatever works for you
                 }
             });
         });
+
     }
+
+    function refresh_preview(){
+        $("#preview").html($('#dropzone').val().replace(/\n/g,"<br>"))
+    }
+
+    setInterval(refresh_preview,1000)
+
+    $("#dropzone").on("change",$.debounce( 1000, refresh_preview ))
+
+    $("#submitbtn").on("click",submitform)
 
     var createcallback = function(){
         setMessage("操作成功")
@@ -102,20 +147,25 @@ $(function(){
     }
 
     var createvipclick = function(){
-        var validated = $('form').validationEngine("validate");
-        if(!validated){
-            return;
-        }
-        commonPost("${base_path}/livevip/createLiveVip",createcallback,errfun,null,$('#form1').serialize(),true)
+//        var validated = $('form').validationEngine("validate");
+//        if(!validated){
+//            return;
+//        }
+//        commonPost("${base_path}/livevip/createLiveVip",createcallback,errfun,null,$('#form1').serialize(),true)
     }
     $(".btn").on("click",function(){
         createvipclick();
     })
-    $(window).keypress(function(event){
-        if(event.which==13){
-            createvipclick();
-        }
-    })
+//    $("#dropzone").on("keypress",function(event){
+//        if(event.which==13){
+//            $('#dropzone').insertAtCaret("<br>");
+//        }
+//    })
+//    $(window).keypress(function(event){
+//        if(event.which==13){
+//            createvipclick();
+//        }
+//    })
     $('form').validationEngine();
 
 })
