@@ -100,7 +100,7 @@
             <@shiro.hasAnyPermission name="data_user">
             <li><a href="${base_path}/live/" <#if actionkey=="live">class="open"</#if>><i class="fa fa-tasks"></i> <span>直播</span></a></li>
             </@shiro.hasAnyPermission>
-            <@shiro.hasAnyPermission name="data_user,data_operator">
+            <@shiro.hasAnyPermission name="data_user">
                 <li><a href="${base_path}/livevip/toCreateTest" <#if actionkey=="livevip.toCreateTest">class="open"</#if>><i class="fa fa-tasks"></i> <span>创建习题</span></a></li>
             </@shiro.hasAnyPermission>
             <@shiro.hasAnyPermission name="data_operator">
